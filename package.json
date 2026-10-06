@@ -1,0 +1,9 @@
+{
+    "name": "portfolio",
+    "private": true,
+    "workspaces": ["web", "api"],
+    "scripts": {
+        "dev:web": "npm run dev -w web",
+        "dev:api": "npm run dev -w api"
+    }
+}
