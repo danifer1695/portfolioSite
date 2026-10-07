@@ -1,4 +1,7 @@
 version: 2
+ignore:
+  - dependency-name: "@types/node"
+    update-types: ["version-update:semver-major"]
 updates:
   - package-ecosystem: npm
     directory: /
