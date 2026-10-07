@@ -1,9 +1,24 @@
 {
-    "name": "portfolio",
-    "private": true,
-    "workspaces": ["web", "api"],
-    "scripts": {
-        "dev:web": "npm run dev -w web",
-        "dev:api": "npm run dev -w api"
-    }
+	"name": "portfolio",
+	"private": true,
+	"workspaces": [
+		"web",
+		"api"
+	],
+	"engines": {
+		"node": ">=22"
+	},
+	"scripts": {
+		"dev:web": "npm run dev -w web",
+		"dev:api": "npm run dev -w api",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"lint": "npm run lint --workspaces --if-present",
+		"typecheck": "npm run typecheck --workspaces --if-present",
+		"test": "npm run test --workspaces --if-present",
+		"build": "npm run build --workspaces --if-present"
+	},
+	"devDependencies": {
+		"prettier": "^3.9.9"
+	}
 }
