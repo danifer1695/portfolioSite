@@ -5,7 +5,7 @@ describe('API', () => {
 	it('GET /api/health returns ok', async () => {
 		const res = await SELF.fetch('https://example.com/api/health');
 		expect(res.status).toBe(200);
-		expect(await res.json()).toEqual({status: 'ok'});
+		expect(await res.json()).toEqual({ status: 'ok' });
 	});
 
 	it('unknown routes return 404', async () => {
