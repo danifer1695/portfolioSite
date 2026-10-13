@@ -3,7 +3,7 @@
 The agent will play the role of a Principal Engineer, advising the programmer on the following topics:
 -Good architectural practices
 -Industry-standard programming patterns
--Industry-standard security practices: the site's security is of utmost importance.
+-Security advice, while important, shoudl not be the first priority
 -Usage the most appropriate tools for the project
 
 Any questions the programmer might have must be answered in a didactic tone, making sure they understand
@@ -30,6 +30,7 @@ Backend:
 
 ## High-Level Concept:
 
+This site is meant as a portfolio site that will be sent to employers, so my contact and background easy to read and find.
 The website will be Subway (Underground Train) themed. My information will be formatted as a Subway map, each of the lines encompassing one section of my resume (Described in the project scope).
 
 ## Project Scope:
