@@ -1,9 +1,9 @@
 import { cn } from '@/lib/cn';
 
 const base =
-	'inline-flex items-center justify-center rounded-md px-4 -y-2 text-sm font-medium ' +
+	'inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium ' +
 	//only display transitions when user hasnt asked the OS for reduced motion
-	'motion-safe: transition-colors disabled:opacity-50 ' +
+	'motion-safe:transition-colors disabled:opacity-50 ' +
 	//keeping keyboard-only users in mind
 	'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent';
 
@@ -18,18 +18,4 @@ type ButtonProps = React.ComponentProps<'button'> & { variant?: keyof typeof var
 //Base button component
 export function Button({ variant = 'primary', className, ...props }: ButtonProps) {
 	return <button type="button" className={cn(base, variants[variant], className)} {...props} />;
-}
-
-//External link component
-export function ExternalLink({ className, ...props }: React.ComponentProps<'a'>) {
-	return (
-		<a
-			{...props}
-			target="_blank" //opens a new tab every time this is clicked on
-			//noreferrer: prevents passing the referrer information to the target website by removing the referral info from the HTTP header
-			//noopener: new links must not have an opener browsing context (?) aka- security stuff.
-			rel="noopener noreferrer"
-			className={cn('underline-offset-4 hover:underline', className)}
-		/>
-	);
 }

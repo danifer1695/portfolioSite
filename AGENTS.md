@@ -3,7 +3,7 @@
 The agent will play the role of a Principal Engineer, advising the programmer on the following topics:
 -Good architectural practices
 -Industry-standard programming patterns
--Industry-standard security practices: the site's security is of utmost importance.
+-Security advice, while important, shoudl not be the first priority
 -Usage the most appropriate tools for the project
 
 Any questions the programmer might have must be answered in a didactic tone, making sure they understand
@@ -28,22 +28,34 @@ Hosting:
 Backend:
 -Hono for Cloudflare Workers compatibility
 
+Localization:
+-Next-intl
+
 ## High-Level Concept:
 
+This site is meant as a portfolio site that will be sent to employers, so my contact and background easy to read and find.
 The website will be Subway (Underground Train) themed. My information will be formatted as a Subway map, each of the lines encompassing one section of my resume (Described in the project scope).
 
 ## Project Scope:
 
 This section will expand as the project goes on. The information currently missing from it should be
 consulted with the human should a potential conflict arise.
+For a more detailed description, consult STRUCTURE.md
+The site will have to include the option to be displayed in English or French, so text should not be hard-coded into the pages, and contained
+in separate files (ex: projects.ts, profile.ts, ...)
+Accesibility (aria props) are good to have but should not absorb the bulk of the work.
 
-Frontend:
--A global header and footer sitting at the top level layout.tsx file. Should always be on top.
--A home page including all personal info (Name, city, current title, etc...) inside an expanded version of the Header (it expands when url matches home "/") and an illustration of the Subway map. Clicking on each of the Subway lines links to their respective page.
--An Academic Background page (A Line) displaying my academic background as each of the Subway stops.
--A Professional Background page (P Line) displaying my professional background as each of the Subway stops.
--A Technical skills page (T Line) displaying my technical skills as Subway stops (Ex: Frontend stop - Next.js, React, Tailwind... Backend stop - Node.js, Express, Hono, ...)
-A contact page, not part of the subway map. It will include my contact info plus a contact form, the backend of which will be defined in 'api/'
+## Milestones
 
-Backend:
--A simple but tightly designed contact form.
+- M0 - Repo hygene and guardrails (done).
+- M1 - Deploy Skeleton to Cloudflare (done).
+- M2 - Design system and content model (done).
+- M3 - Working skeleton of site's page layout.
+- M4 - Work out how the Subway map classes will work (details in STRUCTURE.md). The subway map inside the Home page requires a reasonable amount of interactivity so first, a plan should be proposed on how to proceed with its construction. An initial idea can be found inside STRUCTURE.md. How do professional web designers tackle a design element like this one? Once plan is approved, we will fully immplement it.
+- M5 - Create and implement a template for pages 'Professional', 'Technical', and 'Academics'. They all follow the same functionalities, so the difference between them will lie in the specific content they contain.
+- M6 - Implement 'Resume' page (details in SCTRUCTURE.md).
+- M7 - Implement Contact page, contact form and Back-end.
+- M8 - Implement Localization using next-intl.
+
+These milestones should always be followed with a proper Pull Request to main, as should any sub-milestone created along the way.
+Changes with each milestone should be deployed to Cloudflare for live-debugging.

@@ -3,22 +3,28 @@ export type Project = {
 	title: string;
 	summary: string;
 	tech: readonly string[];
-	year: number;
+	year: string;
 	featured: boolean;
 	links: {
 		repo?: string;
 		live?: string;
 	};
+	highlights: readonly string[];
 };
 
-export const projects = [
+const projects = [
 	{
-		slug: 'portfotio-site',
+		slug: 'portfolio-site',
 		title: 'This portfolio',
-		summary: 'Next.js statuc site + Hono API on Cloudflare Workers.',
+		summary: 'Next.js static site + Hono API on Cloudflare Workers.',
 		tech: ['Next.js', 'TypeScript', 'Tailwind', 'Hono', 'Cloudflare'],
-		year: 2026,
+		year: '2026',
 		featured: true,
 		links: { repo: 'https://github.com/danifer1695/portfolioSite' },
+		highlights: ['highlight 1', 'highlight 2'],
 	},
 ] as const satisfies readonly Project[];
+
+export function getProjects(): readonly Project[] {
+	return [...projects].sort((a, b) => b.year.localeCompare(a.year));
+}

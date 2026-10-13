@@ -1,5 +1,5 @@
 import { Container } from '@/components/ui/container';
-import { ExternalLink } from '@/components/ui/button';
+import { ExternalLink } from '@/components/ui/externalLink';
 import { cn } from '@/lib/cn';
 import { focusRing } from '@/lib/styles';
 
@@ -13,7 +13,7 @@ export function Footer({ name, social }: Props) {
 				<p>
 					Copyright {new Date().getFullYear()} {name}
 				</p>
-				<ul>
+				<ul className="flex gap-4">
 					{social.map((s) => (
 						<li key={s.href}>
 							<ExternalLink href={s.href} className={cn('hover:text-foreground', focusRing)}>
