@@ -13,9 +13,9 @@ export type Project = {
 
 export const projects = [
 	{
-		slug: 'portfotio-site',
+		slug: 'portfolio-site',
 		title: 'This portfolio',
-		summary: 'Next.js statuc site + Hono API on Cloudflare Workers.',
+		summary: 'Next.js static site + Hono API on Cloudflare Workers.',
 		tech: ['Next.js', 'TypeScript', 'Tailwind', 'Hono', 'Cloudflare'],
 		year: 2026,
 		featured: true,
