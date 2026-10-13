@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from '@/lib/cn';
 
 //External link component
 export function ExternalLink({ className, ...props }: React.ComponentProps<'a'>) {

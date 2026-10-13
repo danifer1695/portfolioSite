@@ -13,7 +13,7 @@ export function Footer({ name, social }: Props) {
 				<p>
 					Copyright {new Date().getFullYear()} {name}
 				</p>
-				<ul className='flex gap-4'>
+				<ul className="flex gap-4">
 					{social.map((s) => (
 						<li key={s.href}>
 							<ExternalLink href={s.href} className={cn('hover:text-foreground', focusRing)}>

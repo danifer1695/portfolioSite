@@ -9,6 +9,10 @@
 	--foreground: oklch(21% 0.01 260);
 	--muted: oklch(46% 0.01 260);
 	--border: oklch(90% 0.005 260);
+
+	--line-p: #f5821f;
+	--line-a: #00a651;
+	--line-t: #007dc6;
 }
 
 /*Tur each variable into tailwind utilities*/
@@ -20,14 +24,17 @@
 	--color-muted: var(--muted);
 	--color-border: var(--border);
 
+	--color-line-p: var(--line-p);
+	--color-line-a: var(--line-a);
+	--color-line-t: var(--line-t);
+
 	--font-sans: var(--font-geist-sans);
 	--font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--metroBlue: #007ec5;
-		--accent: #81c340;
+		/*Only the ones that change on dark mode*/
 		--background: #010101;
 		--foreground: oklch(99% 0 0);
 		--muted: #383839;
