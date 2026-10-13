@@ -29,7 +29,7 @@ export const ui = {
 		home: {
 			intro: 'Placeholder intro.',
 			legendTitle: 'Lines',
-			mapPlaceholder: 'Map comming soon.',
+			mapPlaceholder: 'Map coming soon.',
 		},
 		professional: {
 			title: 'Professional',
@@ -54,8 +54,8 @@ export const ui = {
 		},
 		notFound: {
 			title: 'Page not found.',
-			body: 'Tat page does not exist.',
+			body: 'That page does not exist.',
 			backHome: 'Back to Home',
 		},
 	},
-};
+} as const;
