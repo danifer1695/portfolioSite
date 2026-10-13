@@ -2,15 +2,15 @@ export const ui = {
 	lines: {
 		professional: {
 			name: 'Professional',
-			tagline: 'Professional Experience'
+			tagline: 'Professional Experience',
 		},
 		academics: {
 			name: 'Academics',
-			tagline: 'Education'
+			tagline: 'Education',
 		},
 		technical: {
 			name: 'Technical',
-			tagline: 'Projects'
+			tagline: 'Projects',
 		},
 	},
 	nav: {
@@ -29,7 +29,7 @@ export const ui = {
 		home: {
 			intro: 'Placeholder intro.',
 			legendTitle: 'Lines',
-			mapPlaceholder: 'Map comming soon.'
+			mapPlaceholder: 'Map comming soon.',
 		},
 		professional: {
 			title: 'Professional',
@@ -55,7 +55,7 @@ export const ui = {
 		notFound: {
 			title: 'Page not found.',
 			body: 'Tat page does not exist.',
-			backHome: 'Back to Home'
+			backHome: 'Back to Home',
 		},
-	}
-}
+	},
+};

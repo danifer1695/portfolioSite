@@ -4,7 +4,7 @@ export type Academic = {
 	university: string;
 	location: string;
 	start: string;
-	end: string | null;	//null means current position
+	end: string | null; //null means current position
 	summary: string;
 	highlights: readonly string[];
 };
@@ -12,7 +12,7 @@ export type Academic = {
 //not exported, accessed through getProfessional()
 const academic = [
 	{
-		slug: 'concordia-2025',	//becomes '/academic#concordia-2025'
+		slug: 'concordia-2025', //becomes '/academic#concordia-2025'
 		title: 'Graduate Degree in Computer Science',
 		university: 'Concordia University',
 		location: 'Montreal, Canada',
@@ -25,5 +25,5 @@ const academic = [
 
 export function getProfessional(): readonly Academic[] {
 	//Sort entries by date - newest first
-	return [...academic].sort((a, b) => b.start.localeCompare(a.start))
+	return [...academic].sort((a, b) => b.start.localeCompare(a.start));
 }

@@ -21,10 +21,10 @@ const projects = [
 		year: '2026',
 		featured: true,
 		links: { repo: 'https://github.com/danifer1695/portfolioSite' },
-		highlights: ['highlight 1', 'highlight 2']
+		highlights: ['highlight 1', 'highlight 2'],
 	},
 ] as const satisfies readonly Project[];
 
 export function getProjects(): readonly Project[] {
-	return [...projects].sort((a, b) => b.year.localeCompare(a.year))
+	return [...projects].sort((a, b) => b.year.localeCompare(a.year));
 }

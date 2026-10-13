@@ -1,4 +1,4 @@
-export const lineIds = ['professional', 'academics', 'technical' ] as const
+export const lineIds = ['professional', 'academics', 'technical'] as const;
 export type LineId = (typeof lineIds)[number];
 
 export type Line = {
@@ -6,7 +6,7 @@ export type Line = {
 	href: string;
 	bgClass: string;
 	borderClass: string;
-}
+};
 
 //Record<LineId, Line> forces an entry for every id.
 export const lines: Record<LineId, Line> = {
@@ -14,18 +14,18 @@ export const lines: Record<LineId, Line> = {
 		code: 'P',
 		href: '/professional',
 		bgClass: 'bg-line-p',
-		borderClass: 'border-line-p'
+		borderClass: 'border-line-p',
 	},
 	academics: {
 		code: 'A',
 		href: '/academics',
 		bgClass: 'bg-line-a',
-		borderClass: 'border-line-a'
+		borderClass: 'border-line-a',
 	},
 	technical: {
 		code: 'T',
 		href: '/technical',
 		bgClass: 'bg-line-t',
-		borderClass: 'border-line-t'
-	}
-}
+		borderClass: 'border-line-t',
+	},
+};

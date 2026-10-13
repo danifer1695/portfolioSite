@@ -4,7 +4,7 @@ export type Professional = {
 	company: string;
 	location: string;
 	start: string;
-	end: string | null;	//null means current position
+	end: string | null; //null means current position
 	summary: string;
 	highlights: readonly string[];
 };
@@ -12,7 +12,7 @@ export type Professional = {
 //not exported, accessed through getProfessional()
 const professional = [
 	{
-		slug: 'readality',	//becomes '/professional#readality'
+		slug: 'readality', //becomes '/professional#readality'
 		role: 'Unity developer',
 		company: 'Readality',
 		location: 'Montreal, Canada',
@@ -25,5 +25,5 @@ const professional = [
 
 export function getProfessional(): readonly Professional[] {
 	//Sort entries by date - newest first
-	return [...professional].sort((a, b) => b.start.localeCompare(a.start))
+	return [...professional].sort((a, b) => b.start.localeCompare(a.start));
 }
