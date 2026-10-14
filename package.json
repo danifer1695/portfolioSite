@@ -19,6 +19,6 @@
 		"build": "npm run build --workspaces --if-present"
 	},
 	"devDependencies": {
-		"prettier": "^3.9.9"
+		"prettier": "^3.9.10"
 	}
 }
