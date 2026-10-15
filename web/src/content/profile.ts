@@ -1,5 +1,6 @@
 export const profile = {
 	name: 'Daniel Fernandez Martinez',
+	initials: 'DF',
 	headline: 'Software Developer',
 	intro: 'Software developer with experience in Full-Stack development, Game Development and Production Design',
 	about: ['Currently based in Lille, France', '5 years of experience in game development'],

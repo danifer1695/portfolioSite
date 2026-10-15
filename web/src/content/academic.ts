@@ -9,7 +9,7 @@ export type Academic = {
 	highlights: readonly string[];
 };
 
-//not exported, accessed through getProfessional()
+//not exported, accessed through getAcademic()
 const academic = [
 	{
 		slug: 'concordia-2025', //becomes '/academic#concordia-2025'

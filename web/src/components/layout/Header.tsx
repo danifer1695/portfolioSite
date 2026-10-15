@@ -2,32 +2,68 @@ import Link from 'next/link';
 import { Container } from '@/components/ui/container';
 import { cn } from '@/lib/cn';
 import { focusRing } from '@/lib/styles';
+import type { NavItem } from '@/content/navigation';
+import { NavLink } from './NavLink';
 
-type NavItem = { label: string; href: string };
-type Props = { name: string; nav: readonly NavItem[] };
+type Props = {
+	initials: string;
+	homeLabel: string;
+	nav: readonly NavItem[];
+};
 
-export function Header({ name, nav }: Props) {
+export function Header({ initials, homeLabel, nav }: Props) {
 	return (
-		<header className="border-b border-accent bg-metroBlue">
-			<Container className="flex h-16 items-center justify-between">
-				<Link href="/" className={cn('font-semibold', focusRing)}>
-					{name}
+		<header className="tet-white bg-metroBlue">
+			<Container
+				className="
+				flex
+				flex-wrap
+				min-h-16
+				items-center
+				justify-between
+				gap-x-6
+				gap-y-2
+				py-3
+			"
+			>
+				{/*Personal logo - link to home page*/}
+				<Link href="/" aria-label={homeLabel} className={cn('shrink-0', focusRing)}>
+					<span
+						className="
+						flex
+						size-10
+						items-center
+						justify-center
+						rounded-full
+						border-4
+						border-white
+						font-bold
+					"
+					>
+						{initials}
+					</span>
 				</Link>
 
 				{/*Do not display an empty nav if list is empty*/}
-				{nav.length > 0 && (
-					<nav aria-label="Main">
-						<ul className="flex gap-6 text-sm">
-							{nav.map((item) => (
-								<li key={item.href}>
-									<Link href={item.href} className={cn('text-white hover:text-foreground', focusRing)}>
-										{item.label}
-									</Link>
-								</li>
-							))}
-						</ul>
-					</nav>
-				)}
+				<nav aria-label="Main">
+					<ul
+						className="
+						flex
+						flex-wrap
+						items-center
+						gap-x-5
+						gap-y-2
+						text-sm"
+					>
+						{nav.map((item) => (
+							<li key={item.href}>
+								<NavLink href={item.href} dotClass={item.dotClass}>
+									{item.label}
+								</NavLink>
+							</li>
+						))}
+					</ul>
+				</nav>
 			</Container>
 		</header>
 	);
