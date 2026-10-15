@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Container } from '@/components/ui/container';
 import { cn } from '@/lib/cn';
 import { focusRing } from '@/lib/styles';
-import { NavItem } from '@/content/navigation';
+import type { NavItem } from '@/content/navigation';
 import { NavLink } from './NavLink';
 
 type Props = {
