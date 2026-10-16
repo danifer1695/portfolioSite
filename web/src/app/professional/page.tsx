@@ -18,5 +18,5 @@ export default function ProfessionalPage() {
 		summary: job.summary,
 	}));
 
-	return <LinePage line={lines.academics} title={ui.pages.academics.title} intro={ui.pages.academics.intro} stops={stops} />;
+	return <LinePage line={lines.professional} title={ui.pages.professional.title} intro={ui.pages.professional.intro} stops={stops} />;
 }

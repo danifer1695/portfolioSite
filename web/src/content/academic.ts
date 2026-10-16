@@ -19,7 +19,17 @@ const academic = [
 		start: '2025-09',
 		end: '2026-08',
 		summary: 'Graduated from a Graduate Degree in Computer Science',
-		highlights: ['Unity development', 'Development in C#'],
+		highlights: ['C/C++', 'Java', 'Databases', 'Python', 'Project Management', 'Operating Systems'],
+	},
+	{
+		slug: 'syn-2018',
+		title: 'Attestation d\'etudes Universitaires',
+		institution: 'Syn Studio',
+		location: 'Montreal, Canada',
+		start: '2018-09',
+		end: '2020-04',
+		summary: 'Diploma in Concept Art, aimed to students wishing to join the Videogame industry as designers. Taught by professionals currenly working as professionals at different studios.',
+		highlights: ['Concept Art', '3D Art', 'Blender'],
 	},
 ] as const satisfies readonly Academic[];
 
