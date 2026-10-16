@@ -26,14 +26,14 @@ const projects = [
 	{
 		slug: 'shirabeyou',
 		title: 'Shirabeyou - A kanji-learning Chrome extension',
-		summary: 'An Chromium Manifest V3 extension aimed to make learning kanji a more fluid experience. Front end is divided between a desktop and mobile client, back end is deployed on Railway.',
+		summary:
+			'An Chromium Manifest V3 extension aimed to make learning kanji a more fluid experience. Front end is divided between a desktop and mobile client, back end is deployed on Railway.',
 		tech: ['JavaScript', 'HTML', 'React Native', 'TypeScript', 'PostgreSQL', 'Node.js', 'Express', 'Zod', 'Bcrypt', 'Github'],
 		year: '2026',
 		featured: true,
 		links: { repo: 'https://github.com/danifer1695/kanji_extension' },
 		highlights: ['highlight 1', 'highlight 2'],
 	},
-
 ] as const satisfies readonly Project[];
 
 export function getProjects(): readonly Project[] {

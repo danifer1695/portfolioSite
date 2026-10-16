@@ -25,7 +25,9 @@ export function LinePage({ line, title, intro, stops }: Props) {
 		<Container className="space-y-10 py-12">
 			{/*Content header*/}
 			<header className="flex items-center gap-4">
-				<span className={cn('flex size-12 shrink-0 items-center justify-center rounded-full text-xl font-bold',line.bgClass, line.textClass)}>
+				<span
+					className={cn('flex size-12 shrink-0 items-center justify-center rounded-full text-xl font-bold', line.bgClass, line.textClass)}
+				>
 					{line.code}
 				</span>
 				<div>

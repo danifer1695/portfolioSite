@@ -31,7 +31,6 @@ const professional = [
 		summary: 'I plan, develop and integrate web sites and services for a variety of clients',
 		highlights: ['Frontend', 'Backend', 'Migration', 'Agentic Development'],
 	},
-
 ] as const satisfies readonly Professional[];
 
 export function getProfessional(): readonly Professional[] {
