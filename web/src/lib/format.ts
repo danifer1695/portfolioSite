@@ -8,7 +8,7 @@ export function format(template: string, values: Record<string, string | number>
 //Transform '2026-09' into 'Sept 2026'
 export function formatMonth(value: string, locale: string) {
 	//separate month substring from the year substring
-	const [month, year] = value.split('-').map(Number);
+	const [year, month] = value.split('-').map(Number);
 
 	//Intl.DateTimeFormat is the browser's and node's built-in formatter.
 	//It will format the date differently depending on the locale

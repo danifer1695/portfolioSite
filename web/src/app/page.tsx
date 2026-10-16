@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 export default function Home() {
 	return (
-		<Container className="space-y-12 py-12">
+		<Container className="space-y-2 py-12">
 			<section className="space-y-12">
 				<h1 className="text-4xl font-bold tracking-tight">{profile.name}</h1>
 				<p className="text-xl text-muted">{profile.headline}</p>

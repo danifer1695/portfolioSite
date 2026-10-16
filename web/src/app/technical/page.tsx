@@ -17,5 +17,5 @@ export default function TechnicalPage() {
 		summary: project.summary,
 	}));
 
-	return <LinePage line={lines.academics} title={ui.pages.academics.title} intro={ui.pages.academics.intro} stops={stops} />;
+	return <LinePage line={lines.technical} title={ui.pages.technical.title} intro={ui.pages.technical.intro} stops={stops} />;
 }
