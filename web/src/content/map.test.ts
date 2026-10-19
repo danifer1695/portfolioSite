@@ -37,7 +37,7 @@ describe('map data contract', () => {
 			expect(p.x).toBeGreaterThanOrEqual(0);
 			expect(p.x).toBeLessThanOrEqual(mapGrid.width);
 			expect(p.y).toBeGreaterThanOrEqual(0);
-			expect(p.y).toBeLessThanOrEqual(mapGrid.width);
+			expect(p.y).toBeLessThanOrEqual(mapGrid.height);
 		}
 	});
 
