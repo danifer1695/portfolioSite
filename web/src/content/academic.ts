@@ -1,6 +1,7 @@
 export type Academic = {
 	slug: string;
 	title: string;
+	mapLabel?: string;
 	institution: string;
 	location: string;
 	start: string;
@@ -14,6 +15,7 @@ const academic = [
 	{
 		slug: 'concordia-2025', //becomes '/academic#concordia-2025'
 		title: 'Graduate Degree in Computer Science',
+		mapLabel: 'Concordia',
 		institution: 'Concordia University',
 		location: 'Montreal, Canada',
 		start: '2025-09',
@@ -24,6 +26,7 @@ const academic = [
 	{
 		slug: 'syn-2018',
 		title: "Attestation d'etudes Universitaires",
+		mapLabel: 'Syn Studio',
 		institution: 'Syn Studio',
 		location: 'Montreal, Canada',
 		start: '2018-09',

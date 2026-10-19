@@ -1,6 +1,7 @@
 export type Project = {
 	slug: string;
 	title: string;
+	mapLabel?: string;
 	summary: string;
 	tech: readonly string[];
 	year: string;
@@ -16,6 +17,7 @@ const projects = [
 	{
 		slug: 'portfolio-site',
 		title: 'This portfolio',
+		mapLabel: 'Portfolio Site',
 		summary: 'Next.js static site + Hono API on Cloudflare Workers.',
 		tech: ['Next.js', 'TypeScript', 'Tailwind', 'Hono', 'Cloudflare'],
 		year: '2026',
@@ -26,6 +28,7 @@ const projects = [
 	{
 		slug: 'shirabeyou',
 		title: 'Shirabeyou - A kanji-learning Chrome extension',
+		mapLabel: 'Shirabeyou',
 		summary:
 			'An Chromium Manifest V3 extension aimed to make learning kanji a more fluid experience. Front end is divided between a desktop and mobile client, back end is deployed on Railway.',
 		tech: ['JavaScript', 'HTML', 'React Native', 'TypeScript', 'PostgreSQL', 'Node.js', 'Express', 'Zod', 'Bcrypt', 'Github'],
