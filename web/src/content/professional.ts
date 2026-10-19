@@ -1,6 +1,7 @@
 export type Professional = {
 	slug: string;
 	role: string;
+	mapLabel?: string;
 	company: string;
 	location: string;
 	start: string;
@@ -14,6 +15,7 @@ const professional = [
 	{
 		slug: 'readality', //becomes '/professional#readality'
 		role: 'Unity developer',
+		mapLabel: 'Readality', //how it gets displayed on the map
 		company: 'Readality',
 		location: 'Montreal, Canada',
 		start: '2026-01',
@@ -24,6 +26,7 @@ const professional = [
 	{
 		slug: 'freelance', //becomes '/professional#readality'
 		role: 'Freelande Full-Stack Development',
+		mapLabel: 'Freelance Full-Stack', //how it gets displayed on the map
 		company: 'Self-Employed',
 		location: 'Lille, Hauts-de-France',
 		start: '2026-08',
