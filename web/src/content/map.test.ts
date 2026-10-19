@@ -36,8 +36,8 @@ describe('map data contract', () => {
 		for (const p of linePaths.flatMap((l) => l.points)) {
 			expect(p.x).toBeGreaterThanOrEqual(0);
 			expect(p.x).toBeLessThanOrEqual(mapGrid.width);
-			expect(p.x).toBeGreaterThanOrEqual(0);
-			expect(p.x).toBeLessThanOrEqual(mapGrid.width);
+			expect(p.y).toBeGreaterThanOrEqual(0);
+			expect(p.y).toBeLessThanOrEqual(mapGrid.width);
 		}
 	});
 
