@@ -1,5 +1,7 @@
+import { SubwayMap } from '@/components/map/SubwayMap';
 import { Container } from '@/components/ui/container';
 import { lineIds, lines } from '@/content/lines';
+import { getMapView } from '@/content/map-view';
 import { profile } from '@/content/profile';
 import { ui } from '@/content/ui';
 import { cn } from '@/lib/cn';
@@ -8,8 +10,8 @@ import Link from 'next/link';
 
 export default function Home() {
 	return (
-		<Container className="space-y-2 py-12">
-			<section className="space-y-12">
+		<Container className="space-y-12 py-12">
+			<section className="space-y-2">
 				<h1 className="text-4xl font-bold tracking-tight">{profile.name}</h1>
 				<p className="text-xl text-muted">{profile.headline}</p>
 				<p className="max-w-prose">{profile.intro}</p>
@@ -55,7 +57,7 @@ export default function Home() {
 				text-muted
 			"
 			>
-				{ui.pages.home.mapPlaceholder}
+				<SubwayMap view={getMapView()} title={ui.pages.home.mapTitle} />
 			</div>
 		</Container>
 	);

@@ -29,7 +29,7 @@ export const ui = {
 		home: {
 			intro: 'Placeholder intro.',
 			legendTitle: 'Lines',
-			mapPlaceholder: 'Map coming soon.',
+			mapTitle: 'Career Map',
 		},
 		professional: {
 			title: 'Professional',

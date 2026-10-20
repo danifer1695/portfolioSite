@@ -1,4 +1,5 @@
 import type { GridPoint } from '@/content/map';
+import { LabelSide } from '@/content/map';
 
 //True if the segment a --> b is horizontal, vertical or exactly 45 degrees
 export function isOctilinear(a: GridPoint, b: GridPoint): boolean {
@@ -6,3 +7,18 @@ export function isOctilinear(a: GridPoint, b: GridPoint): boolean {
 	const dy = Math.abs(b.y - a.y);
 	return dx === 0 || dy === 0 || dx === dy;
 }
+
+//Grid points to SVG path data. Ex: "M2 13 L2 11 L5 8"
+//Mx y: move the pen here
+//Lx y: draw line until here
+export function toPathData(points: readonly GridPoint[]): string {
+	return points.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x} ${p.y}`).join(' ');
+}
+
+//Where a label is placed relative to its station (grid units, +y is down)
+export const labelPlacement: Record<LabelSide, { dx: number; dy: number; anchor: 'start' | 'end' }> = {
+	ne: { dx: 0.45, dy: -0.4, anchor: 'start' },
+	se: { dx: 0.45, dy: 0.75, anchor: 'start' },
+	sw: { dx: -0.45, dy: 0.75, anchor: 'end' },
+	nw: { dx: -0.45, dy: -0.4, anchor: 'end' },
+};
