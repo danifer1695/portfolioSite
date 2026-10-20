@@ -7,6 +7,7 @@ export type Line = {
 	bgClass: string; //tailwind class for line's color
 	borderClass: string; //tailwind class for line's borders
 	textClass: 'text-white' | 'text-black'; //tailwind class for line's text color
+	strokeClass: 'stroke-line-p' | 'stroke-line-a' | 'stroke-line-t'; //for the map SVGs
 };
 
 //Record<LineId, Line> forces an entry for every id.
@@ -17,6 +18,7 @@ export const lines: Record<LineId, Line> = {
 		bgClass: 'bg-line-p',
 		borderClass: 'border-line-p',
 		textClass: 'text-white',
+		strokeClass: 'stroke-line-p',
 	},
 	academics: {
 		code: 'A',
@@ -24,6 +26,7 @@ export const lines: Record<LineId, Line> = {
 		bgClass: 'bg-line-a',
 		borderClass: 'border-line-a',
 		textClass: 'text-white',
+		strokeClass: 'stroke-line-a',
 	},
 	technical: {
 		code: 'T',
@@ -31,5 +34,6 @@ export const lines: Record<LineId, Line> = {
 		bgClass: 'bg-line-t',
 		borderClass: 'border-line-t',
 		textClass: 'text-black',
+		strokeClass: 'stroke-line-t',
 	},
 };

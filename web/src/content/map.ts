@@ -30,7 +30,7 @@ export const linePaths: readonly LinePath[] = [
 	{
 		id: 'academics',
 		points: [
-			{ kind: 'stop', slug: 'syn-2018', x: 2, y: 13, labelSide: 'se' },
+			{ kind: 'stop', slug: 'syn-2018', x: 2, y: 13, labelSide: 'nw' },
 			{ kind: 'corner', x: 2, y: 11 },
 			{ kind: 'stop', slug: 'concordia-2025', x: 5, y: 8, labelSide: 'nw' },
 		],
@@ -39,15 +39,17 @@ export const linePaths: readonly LinePath[] = [
 		id: 'technical',
 		points: [
 			{ kind: 'stop', slug: 'shirabeyou', x: 6, y: 8, labelSide: 'se' },
-			{ kind: 'stop', slug: 'portfolio-site', x: 6, y: 3, labelSide: 'se' },
+			{ kind: 'stop', slug: 'portfolio-site', x: 6, y: 3, labelSide: 'nw' },
 		],
 	},
 	{
 		id: 'professional',
 		points: [
-			{ kind: 'stop', slug: 'readality', x: 10, y: 10, labelSide: 'se' },
-			{ kind: 'corner', x: 10, y: 6 },
-			{ kind: 'stop', slug: 'freelance', x: 8, y: 4, labelSide: 'se' },
+			{ kind: 'stop', slug: 'freelance', x: 11, y: 14, labelSide: 'nw' },
+			{ kind: 'corner', x: 11, y: 10 },
+			{ kind: 'stop', slug: 'readality', x: 8, y: 7, labelSide: 'ne' },
+			{ kind: 'stop', slug: 'virtuos', x: 8, y: 5, labelSide: 'ne' },
+			{ kind: 'stop', slug: 'kabam', x: 8, y: 3, labelSide: 'ne' },
 		],
 	},
 ];
