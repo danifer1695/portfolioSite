@@ -1,5 +1,4 @@
-import type { GridPoint } from '@/content/map';
-import { LabelSide } from '@/content/map';
+import type { GridPoint, LabelSide } from '@/content/map';
 
 //True if the segment a --> b is horizontal, vertical or exactly 45 degrees
 export function isOctilinear(a: GridPoint, b: GridPoint): boolean {

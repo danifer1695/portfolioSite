@@ -14,7 +14,8 @@ export function SubwayMap({ view, title }: { view: MapView; title: string }) {
 			//viewBox tells the SVG what coordinate system it uses.
 			//The browser then scales those coordinates to whatever size the SVG element occupies
 			//In this case, it is set to occupy 'full' space
-			viewBox={`${-PAD} ${PAD} ${width + PAD * 2} ${height + PAD * 2}`}
+			//Params: min-x min-y width height
+			viewBox={`${-PAD} ${-PAD} ${width + PAD * 2} ${height + PAD * 2}`}
 			className="mx-auto h-auto w-full max-w-xl"
 			aria-labelledby="map-title"
 		>

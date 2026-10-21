@@ -11,10 +11,10 @@ import Link from 'next/link';
 export default function Home() {
 	return (
 		<Container className="space-y-12 py-12">
-			<section className="space-y-2">
+			<section className="space-y-2 w-full">
 				<h1 className="text-4xl font-bold tracking-tight">{profile.name}</h1>
 				<p className="text-xl text-muted">{profile.headline}</p>
-				<p className="max-w-prose">{profile.intro}</p>
+				<p>{profile.intro}</p>
 			</section>
 
 			{/*Map Legend*/}
@@ -43,18 +43,15 @@ export default function Home() {
 				</ul>
 			</section>
 
-			{/*Map - Placeholder right now*/}
+			{/*Map*/}
 			<div
 				className="
-				flex
-				aspect-[4/3]
-				items-center
-				justify-center
-				rounded-lg
-				border-2
-				border-dashed
-				border-border
-				text-muted
+					flex
+					items-center
+					rounded-lg
+					border-2
+					border-dashed
+					border-border
 			"
 			>
 				<SubwayMap view={getMapView()} title={ui.pages.home.mapTitle} />
