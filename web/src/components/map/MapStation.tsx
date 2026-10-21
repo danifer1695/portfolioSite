@@ -35,6 +35,7 @@ export function MapStation({
 			{/*Invisiable larger hitbox, to make it easier to select*/}
 			<circle cx={x} cy={y} r={0.6} className="fill-transparent" />
 
+			{/*Actual stop shape*/}
 			<circle
 				cx={x}
 				cy={y}
@@ -47,12 +48,14 @@ export function MapStation({
 						: cn(isActive ? 'fill-background stroke-foreground' : cn('stroke-transparent', lines[line].fillClass)),
 				)}
 			/>
+
+			{/*Stop Label*/}
 			<text
 				x={x + dx}
 				y={y + dy}
 				textAnchor={anchor}
 				fontSize={0.45}
-				className={cn('fill-foreground font-semibold', isActive && 'underline')}
+				className={cn('font-semibold', isMuted ? 'fill-muted' : 'fill-foreground', isActive && 'underline')}
 			>
 				{label}
 			</text>

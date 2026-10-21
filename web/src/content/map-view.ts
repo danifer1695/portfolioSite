@@ -73,8 +73,8 @@ export function getMapView(): MapView {
 
 			return {
 				id: `${a}--${b}`,
-				from: positionBySlug.get(a)!,
-				to: positionBySlug.get(b)!,
+				from: stopA,
+				to: stopB,
 				lines: [stopA.line, stopB.line],
 			};
 		}),

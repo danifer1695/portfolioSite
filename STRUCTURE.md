@@ -15,7 +15,7 @@ The hope page will be designed to visually resemble a Metro map. Laid out as a c
 
 The map will work in the follwing way:
 Each line is made up of connected nodes, each node representing a subway stop, an element inside each of the categories.
-Hovering over a specific stop will Highlight its text by muting the rest, make its node grow in size, and clicking on it will take the user to its own #section within tha appropriate page (ex: /projects/#portfolio-site).
+Hovering over a specific stop will Highlight its text, make its node grow in size, and clicking on it will take the user to its own #section within tha appropriate page (ex: /projects/#portfolio-site).
 
 Here is how I envision the map working technically, but I'm open to a different approach should there be a better way:
 

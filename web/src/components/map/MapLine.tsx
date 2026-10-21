@@ -15,10 +15,10 @@ export function MapLine({
 	onDeactivate: () => void;
 }) {
 	return (
-		<g className="motion-safe:transition-opacity" onPointerEnter={onActivate} onPointerLeave={onDeactivate}>
+		<g onPointerEnter={onActivate} onPointerLeave={onDeactivate}>
 			<path
 				d={d}
-				className={cn('fill-none', isMuted ? 'stroke-muted' : strokeClass)} //fill-none tells SVG not to fill the space contained by the path
+				className={cn('fill-none motion-safe:transition-all motion-safe:duration-200', isMuted ? 'stroke-muted' : strokeClass)} //fill-none tells SVG not to fill the space contained by the path
 				strokeWidth={0.32}
 				strokeLinecap="round"
 				strokeLinejoin="round"

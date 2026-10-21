@@ -1,11 +1,11 @@
 'use client';
 
-import { MapView } from '@/content/map-view';
+import type { MapView } from '@/content/map-view';
+import type { LineId } from '@/content/lines';
 import { MapLine } from './MapLine';
 import { MapLegend } from './MapLegend';
 import { MapInterchange } from './MapInterchange';
 import { MapStation } from './MapStation';
-import { LineId } from '@/content/lines';
 import { useState } from 'react';
 
 type Active = { line: LineId | null; stop: string | null };
