@@ -3,7 +3,7 @@ import type { LineId } from './lines';
 export type GridPoint = { x: number; y: number }; //coordinates in grid, not pixels
 
 //orientation of a stop's label
-export type LabelSide = 'ne' | 'se' | 'sw' | 'nw';
+export type LabelSide = 'ne' | 'se' | 'sw' | 'nw' | 'n' | 'e' | 's' | 'w';
 
 //Map vertices: they can either be stops, or simple changes in direction of the line
 export type LineStop = GridPoint & {
@@ -34,7 +34,7 @@ export const linePaths: readonly LinePath[] = [
 			{ kind: 'corner', x: 9, y: 2 },
 			{ kind: 'stop', slug: 'shirabeyou', x: 9, y: 3, labelSide: 'se' },
 			{ kind: 'corner', x: 8, y: 4 },
-			{ kind: 'stop', slug: 'snake', x: 6, y: 4, labelSide: 'nw' },
+			{ kind: 'stop', slug: 'snake', x: 6, y: 4, labelSide: 'n' },
 			{ kind: 'corner', x: 5, y: 4 },
 			{ kind: 'stop', slug: 'graphics', x: 4, y: 3, labelSide: 'nw' },
 		],
@@ -56,8 +56,8 @@ export const linePaths: readonly LinePath[] = [
 		points: [
 			{ kind: 'stop', slug: 'freelance', x: 3, y: 1, labelSide: 'nw' },
 			{ kind: 'corner', x: 2, y: 2 },
-			{ kind: 'stop', slug: 'readality', x: 2, y: 5, labelSide: 'nw' },
-			{ kind: 'stop', slug: 'virtuos', x: 2, y: 7, labelSide: 'nw' },
+			{ kind: 'stop', slug: 'readality', x: 2, y: 5, labelSide: 'w' },
+			{ kind: 'stop', slug: 'virtuos', x: 2, y: 7, labelSide: 'w' },
 			{ kind: 'stop', slug: 'kabam', x: 3, y: 8, labelSide: 'sw' },
 			{ kind: 'stop', slug: 'microsoft', x: 3, y: 10, labelSide: 'sw' },
 			{ kind: 'corner', x: 3, y: 12 },

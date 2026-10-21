@@ -1,10 +1,11 @@
 import type { GridPoint } from '@/content/map';
+import { cn } from '@/lib/cn';
 
 //Draws the shape that connects two stops at an interchange.
 //Arguments:
 //- from: GridPoint(x, y)
 //- to: GridPoint(x, y)
-export function MapInterchange({ from, to }: { from: GridPoint; to: GridPoint }) {
+export function MapInterchange({ from, to, isMuted }: { from: GridPoint; to: GridPoint; isMuted: boolean }) {
 	return (
 		<g strokeLinecap="round">
 			{/*Interchange shape Outline*/}

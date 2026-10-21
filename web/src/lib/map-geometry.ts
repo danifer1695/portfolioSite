@@ -16,8 +16,12 @@ export function toPathData(points: readonly GridPoint[]): string {
 
 //Where a label is placed relative to its station (grid units, +y is down)
 export const labelPlacement: Record<LabelSide, { dx: number; dy: number; anchor: 'start' | 'end' }> = {
+	n: { dx: 0, dy: -0.75, anchor: 'start' },
 	ne: { dx: 0.45, dy: -0.4, anchor: 'start' },
+	e: { dx: 0.75, dy: 0, anchor: 'start' },
 	se: { dx: 0.45, dy: 0.75, anchor: 'start' },
+	s: { dx: 0, dy: 0.75, anchor: 'end' },
 	sw: { dx: -0.45, dy: 0.75, anchor: 'end' },
+	w: { dx: -0.75, dy: 0, anchor: 'end' },
 	nw: { dx: -0.45, dy: -0.4, anchor: 'end' },
 };

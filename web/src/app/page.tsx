@@ -1,12 +1,8 @@
 import { SubwayMap } from '@/components/map/SubwayMap';
 import { Container } from '@/components/ui/container';
-import { lineIds, lines } from '@/content/lines';
 import { getMapView } from '@/content/map-view';
 import { profile } from '@/content/profile';
 import { ui } from '@/content/ui';
-import { cn } from '@/lib/cn';
-import { focusRing } from '@/lib/styles';
-import Link from 'next/link';
 
 export default function Home() {
 	return (
@@ -17,45 +13,7 @@ export default function Home() {
 				<p>{profile.intro}</p>
 			</section>
 
-			{/*Map Legend*/}
-			<section aria-labelledby="legend-heading" className="space-y-4">
-				{/*Legend title*/}
-				<h2 id="legend-heading" className="text-2xl font-semibold">
-					{ui.pages.home.legendTitle}
-				</h2>
-
-				<ul className="flex flex-col gap-4 sm:flex-row sm:gap-10">
-					{lineIds.map((id) => (
-						<li key={id}>
-							<Link href={lines[id].href} className={cn('group flex items-center gap-3', focusRing)}>
-								<span
-									className={cn('flex size-10 items-center justify-center rounded-full font-bold', lines[id].bgClass, lines[id].textClass)}
-								>
-									{lines[id].code}
-								</span>
-								<span>
-									<span className="block font-semibold group-hover:underline">{ui.lines[id].name}</span>
-									<span className="block text-sm text-muted">{ui.lines[id].tagline}</span>
-								</span>
-							</Link>
-						</li>
-					))}
-				</ul>
-			</section>
-
-			{/*Map*/}
-			<div
-				className="
-					flex
-					items-center
-					rounded-lg
-					border-2
-					border-dashed
-					border-border
-			"
-			>
-				<SubwayMap view={getMapView()} title={ui.pages.home.mapTitle} />
-			</div>
+			<SubwayMap view={getMapView()} title={ui.pages.home.mapTitle} />
 		</Container>
 	);
 }
