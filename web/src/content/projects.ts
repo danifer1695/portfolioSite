@@ -37,6 +37,30 @@ const projects = [
 		links: { repo: 'https://github.com/danifer1695/kanji_extension' },
 		highlights: ['highlight 1', 'highlight 2'],
 	},
+	{
+		slug: 'snake',
+		title: 'Snake Arcade',
+		mapLabel: 'Snake Arcade',
+		summary:
+			'Reworked an outdated Java codebase to comply with modern game design principles and efficient graphics logic - implemented using Swing. Game consists of a reinterpretation of the arcade classic \"Snake\" that incorporates local multi-player leaderboards. It was built as a team project during my time at Concordia.',
+		tech: ['Java', 'Git', 'Maven', 'SQLite', 'Swing'],
+		year: '2026',
+		featured: true,
+		links: { repo: 'https://github.com/lucienfradet/Snake_COMP_5541' },
+		highlights: ['Software Engineering', 'Game Design', 'Databases', 'Team Project'],
+	},
+	{
+		slug: 'graphics',
+		title: 'C++ / OpenGL Custom Graphics Engine',
+		mapLabel: 'Custom Graphics Engine',
+		summary:
+			'Built a real-time 3D rendering engine from the ground up, using C++ and OpenGL with ImGUI-based UI. Version control with Git, debugging using RenderDoc.',
+		tech: ['C++', 'OpenGL', 'GLSL', 'Git', 'ImGui', 'RenderDoc'],
+		year: '2025',
+		featured: true,
+		links: { repo: 'https://github.com/danifer1695/3DEngine' },
+		highlights: ['Graphics Programming', 'Shader Programming'],
+	},
 ] as const satisfies readonly Project[];
 
 export function getProjects(): readonly Project[] {

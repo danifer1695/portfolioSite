@@ -23,36 +23,51 @@ export type LinePath = {
 export type Interchange = readonly [slugA: string, slugB: string];
 
 //Map grid: portrait ratio - works on phones and desktop
-export const mapGrid = { width: 12, height: 16 };
+export const mapGrid = { width: 10, height: 16 };
 
 //This is where we map out all the lines. (Maybe we could automate it in the future)
 export const linePaths: readonly LinePath[] = [
 	{
-		id: 'academics',
+		id: 'technical',
 		points: [
-			{ kind: 'stop', slug: 'syn-2018', x: 2, y: 13, labelSide: 'nw' },
-			{ kind: 'corner', x: 2, y: 11 },
-			{ kind: 'stop', slug: 'concordia-2025', x: 5, y: 8, labelSide: 'nw' },
+			{ kind: 'stop', slug: 'portfolio-site', x: 10, y: 1, labelSide: 'nw' },
+			{ kind: 'corner', x: 9, y: 2 },
+			{ kind: 'stop', slug: 'shirabeyou', x: 9, y: 3, labelSide: 'se' },
+			{ kind: 'corner', x: 8, y: 4 },
+			{ kind: 'stop', slug: 'snake', x: 6, y: 4, labelSide: 'nw' },
+			{ kind: 'corner', x: 5, y: 4 },
+			{ kind: 'stop', slug: 'graphics', x: 4, y: 3, labelSide: 'nw' },
 		],
 	},
 	{
-		id: 'technical',
+		id: 'academics',
 		points: [
-			{ kind: 'stop', slug: 'shirabeyou', x: 6, y: 8, labelSide: 'se' },
-			{ kind: 'stop', slug: 'portfolio-site', x: 6, y: 3, labelSide: 'nw' },
+			{ kind: 'stop', slug: 'concordia-2025', x: 6, y: 5, labelSide: 'se' },
+			{ kind: 'stop', slug: 'syn-2018', x: 6, y: 7, labelSide: 'ne' },
+			{ kind: 'corner', x: 7, y: 8 },
+			{ kind: 'stop', slug: 'focalpoint', x: 7, y: 10, labelSide: 'ne' },
+			{ kind: 'corner', x: 5, y: 12 },
+			{ kind: 'stop', slug: 'digipen-2013', x: 5, y: 13, labelSide: 'se' },
+			{ kind: 'stop', slug: 'parsons-2013', x: 5, y: 15, labelSide: 'se' },
 		],
 	},
 	{
 		id: 'professional',
 		points: [
-			{ kind: 'stop', slug: 'freelance', x: 11, y: 14, labelSide: 'nw' },
-			{ kind: 'corner', x: 11, y: 10 },
-			{ kind: 'stop', slug: 'readality', x: 8, y: 7, labelSide: 'ne' },
-			{ kind: 'stop', slug: 'virtuos', x: 8, y: 5, labelSide: 'ne' },
-			{ kind: 'stop', slug: 'kabam', x: 8, y: 3, labelSide: 'ne' },
+			{ kind: 'stop', slug: 'freelance', x: 3, y: 1, labelSide: 'nw' },
+			{ kind: 'corner', x: 2, y: 2 },
+			{ kind: 'stop', slug: 'readality', x: 2, y: 5, labelSide: 'nw' },
+			{ kind: 'stop', slug: 'virtuos', x: 2, y: 7, labelSide: 'nw' },
+			{ kind: 'stop', slug: 'kabam', x: 3, y: 8, labelSide: 'sw' },
+			{ kind: 'stop', slug: 'microsoft', x: 3, y: 10, labelSide: 'sw' },
+			{ kind: 'corner', x: 3, y: 12 },
+			{ kind: 'stop', slug: 'ta', x: 4, y: 13, labelSide: 'sw' },
 		],
 	},
 ];
 
 //we define the connected interchanges
-export const interchanges: readonly Interchange[] = [['concordia-2025', 'shirabeyou']];
+export const interchanges: readonly Interchange[] = [
+	['digipen-2013', 'ta'],
+	['concordia-2025', 'snake'],
+];

@@ -35,6 +35,41 @@ const academic = [
 			'Diploma in Concept Art, aimed to students wishing to join the Videogame industry as designers. Taught by professionals currenly working as professionals at different studios.',
 		highlights: ['Concept Art', '3D Art', 'Blender'],
 	},
+	{
+		slug: 'focalpoint',
+		title: 'Independent Studies',
+		mapLabel: 'Focal Point',
+		institution: 'Focal Point School',
+		location: 'Gdansk, Poland',
+		start: '2018-06',
+		end: '2018-09',
+		summary: 'Full-time semester in Poland taking Concept Art courses taught by industry giants Darek Zabrocky and Michal Kus',
+		highlights: ['Concept Art', 'Illustration', 'Environment Design'],
+	},
+	{
+		slug: 'digipen-2013',
+		title: 'Bachelor of Fine Arts in Digital Arts and Animation',
+		mapLabel: 'DigiPen',
+		institution: 'DigiPen Institute of Technology',
+		location: 'Redmond, WA',
+		start: '2013-09',
+		end: '2017-05',
+		summary:
+			'Diploma in Concept Art, aimed to students wishing to join the Videogame industry as designers. Taught by professionals currenly working as professionals at different studios.',
+		highlights: ['2D Animation', '3D Animation', 'Concept Art', '3D Art', 'Game Development'],
+	},
+	{
+		slug: 'parsons-2013',
+		title: 'Independent Studies',
+		mapLabel: 'Parsons',
+		institution: 'The New School - Parsons School of Design',
+		location: 'New York City, NY',
+		start: '2012-06',
+		end: '2014-09',
+		summary:
+			'During my last year of High School and first year of college, in the summer semesters of 2012 and 2014, I attender Parsons as an independent student to take some college courses on drawing, painting and illustration.',
+		highlights: ['Drawing', 'Paingint', 'Illustration', 'Art'],
+	},
 ] as const satisfies readonly Academic[];
 
 export function getAcademic(): readonly Academic[] {
