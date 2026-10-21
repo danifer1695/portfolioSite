@@ -1,9 +1,10 @@
 import { toPathData } from '@/lib/map-geometry';
 import { getAcademic } from './academic';
-import { lines, LineId } from './lines';
+import { lines, LineId, lineIds } from './lines';
 import { interchanges, mapGrid, linePaths, type LineStop, type LabelSide, type GridPoint } from './map';
 import { getProfessional } from './professional';
 import { getProjects } from './projects';
+import { ui } from './ui';
 
 export type MapStationView = {
 	slug: string;
@@ -12,6 +13,7 @@ export type MapStationView = {
 	labelSide: LabelSide;
 	label: string;
 	href: string;
+	line: LineId;
 };
 
 export type MapLineView = {
@@ -25,6 +27,7 @@ export type MapInterchangeView = {
 	id: string;
 	from: GridPoint;
 	to: GridPoint;
+	lines: readonly [LineId, LineId];
 };
 
 export type MapView = {
@@ -54,18 +57,26 @@ export function getMapView(): MapView {
 				labelSide: stop.labelSide,
 				label: mapLabels[stop.slug] ?? stop.slug,
 				href: `${lines[path.id].href}#${stop.slug}`, //page#id
+				line: path.id,
 			})),
 	}));
 
-	const positionBySlug = new Map(lineViews.flatMap((l) => l.stations.map((s) => [s.slug, { x: s.x, y: s.y }] as const)));
+	//create one big dictionary using all the stations
+	const positionBySlug = new Map(lineViews.flatMap((l) => l.stations.map((s) => [s.slug, { x: s.x, y: s.y, line: s.line }] as const)));
 
 	return {
 		grid: mapGrid,
 		lines: lineViews,
-		interchanges: interchanges.map(([a, b]) => ({
-			id: `${a}--${b}`,
-			from: positionBySlug.get(a)!,
-			to: positionBySlug.get(b)!,
-		})),
+		interchanges: interchanges.map(([a, b]) => {
+			const stopA = positionBySlug.get(a)!;
+			const stopB = positionBySlug.get(b)!;
+
+			return {
+				id: `${a}--${b}`,
+				from: positionBySlug.get(a)!,
+				to: positionBySlug.get(b)!,
+				lines: [stopA.line, stopB.line],
+			};
+		}),
 	};
 }

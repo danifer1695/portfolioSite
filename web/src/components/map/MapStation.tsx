@@ -1,23 +1,59 @@
 import type { MapStationView } from '@/content/map-view';
 import { labelPlacement } from '@/lib/map-geometry';
+import { cn } from '@/lib/cn';
+import { lines } from '@/content/lines';
 
-export function MapStation({ x, y, label, href, labelSide }: MapStationView) {
+export function MapStation({
+	x,
+	y,
+	label,
+	href,
+	labelSide,
+	line,
+	isActive,
+	isMuted,
+	onActivate,
+	onDeactivate,
+}: MapStationView & {
+	isActive: boolean;
+	isMuted: boolean;
+	onActivate: () => void;
+	onDeactivate: () => void;
+}) {
 	//deconstruct label elements - direction coords, anchor
 	const { dx, dy, anchor } = labelPlacement[labelSide];
 
 	return (
-		<a href={href} className="group">
+		<a
+			href={href}
+			className="outline-none motion-safe:transition-opacity"
+			onPointerEnter={onActivate}
+			onPointerLeave={onDeactivate}
+			onFocus={onActivate}
+			onBlur={onDeactivate}
+		>
+			{/*Invisiable larger hitbox, to make it easier to select*/}
+			<circle cx={x} cy={y} r={0.6} className="fill-transparent" />
+
 			<circle
 				cx={x}
 				cy={y}
 				r={0.28}
-				className="
-					fill-background
-					stroke-foreground
-				"
 				strokeWidth={0.1}
+				className={cn(
+					'origin-center [transform-box:fill-box] motion-safe:transition-all motion-safe:duration-200',
+					isMuted
+						? 'fill-muted stroke-transparent'
+						: cn(isActive ? 'fill-background stroke-foreground' : cn('stroke-transparent', lines[line].fillClass)),
+				)}
 			/>
-			<text x={x + dx} y={y + dy} textAnchor={anchor} fontSize={0.45} className="fill-foreground font-semibold group-hover:underline">
+			<text
+				x={x + dx}
+				y={y + dy}
+				textAnchor={anchor}
+				fontSize={0.45}
+				className={cn('fill-foreground font-semibold', isActive && 'underline')}
+			>
 				{label}
 			</text>
 		</a>
