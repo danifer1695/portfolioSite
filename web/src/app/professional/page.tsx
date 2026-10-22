@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { LinePage } from '@/components/layout/LinePage';
+import { LinePage } from '@/components/line/LinePage';
 import { lines } from '@/content/lines';
 import { getProfessional } from '@/content/professional';
 import { ui } from '@/content/ui';

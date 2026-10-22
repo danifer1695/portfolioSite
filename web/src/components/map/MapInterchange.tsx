@@ -9,10 +9,17 @@ export function MapInterchange({ from, to, isMuted }: { from: GridPoint; to: Gri
 	return (
 		<g strokeLinecap="round">
 			{/*Interchange shape Outline*/}
-			<line x1={from.x} y1={from.y} x2={to.x} y2={to.y} className="stroke-foreground" strokeWidth={0.76} />
+			<line
+				x1={from.x}
+				y1={from.y}
+				x2={to.x}
+				y2={to.y}
+				className={cn("motion-safe:transition-all motion-safe:duration-200", isMuted ? 'stroke-muted' : 'stroke-foreground')}
+				strokeWidth={0.76}
+			/>
 
 			{/*Interchange shape Inside*/}
-			<line x1={from.x} y1={from.y} x2={to.x} y2={to.y} className="stroke-foreground" strokeWidth={0.56} />
+			{/*<line x1={from.x} y1={from.y} x2={to.x} y2={to.y} className="stroke-background" strokeWidth={0.56} />*/}
 		</g>
 	);
 }

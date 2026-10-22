@@ -57,11 +57,9 @@ export function MapStation({
 				y={y + dy}
 				textAnchor={anchor}
 				fontSize={0.35}
-				strokeWidth={0.12}
-				strokeLinejoin="round"
 				className={cn(
 					//paint-order:stroke tells the browser to draw the stroke first, then the fill
-					'font-semibold stroke-background [paint-order:stroke]',
+					'font-semibold',
 					isMuted ? 'fill-muted' : 'fill-foreground',
 					isActive && 'underline',
 				)}
