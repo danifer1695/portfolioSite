@@ -1,25 +1,19 @@
 import { describe, expect, it } from 'vitest';
-import { isOctilinear, toPathData } from './map-geometry';
+import { isOctilinear, labelPlacement, toRoundPathData } from './map-geometry';
 
-describe('toPathData', () => {
-	it('starts with M and continues with L', () => {
-		expect(
-			toPathData([
-				{ x: 2, y: 13 },
-				{ x: 2, y: 11 },
-				{ x: 5, y: 8 },
-			]),
-		).toBe('M2 13 L2 11 L5 8');
-	});
-});
+describe('toRoundPathData', () => {
+	const stop = (x: number, y: number) => ({ kind: 'stop' as const, slug: 's', labelSide: 'ne' as const, x, y });
+	const corner = (x: number, y: number) => ({ kind: 'corner' as const, x, y });
 
-describe('isOctilinear', () => {
-	it('accepts 0, 90 and 45 degrees', () => {
-		expect(isOctilinear({ x: 0, y: 0 }, { x: 3, y: 0 })).toBe(true);
-		expect(isOctilinear({ x: 0, y: 0 }, { x: 0, y: 3 })).toBe(true);
-		expect(isOctilinear({ x: 0, y: 0 }, { x: 2, y: -2 })).toBe(true);
+	it('curves around a corner', () => {
+		expect(toRoundPathData([stop(0, 0), corner(0, 2), stop(2, 2)], 0.5)).toBe('M0 0 L0 1.5 Q0 2 0.5 2 L2 2');
 	});
-	it('rejects other angles', () => {
-		expect(isOctilinear({ x: 0, y: 0 }, { x: 2, y: 3 })).toBe(false);
+
+	it('clamps the radius to hallf the shortest neighboring segment', () => {
+		expect(toRoundPathData([stop(0, 0), corner(0, 0.6), stop(2, 0.6)], 0.5)).toBe('M0 0 L0 0.3 Q0 0.6 0.3 0.6 L2 0.6');
+	});
+
+	it('leaves stations as straight points', () => {
+		expect(toRoundPathData([stop(0, 0), stop(0, 2)], 0.5)).toBe('M0 0 L0 2');
 	});
 });
