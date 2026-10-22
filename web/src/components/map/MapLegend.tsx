@@ -29,7 +29,7 @@ export function MapLegend({
 							onPointerLeave={onDeactivate}
 							onFocus={() => onActivate(id)}
 							onBlur={onDeactivate}
-							className={cn('group flex items-center gap-3', isMuted(id) && 'opacity-25', focusRing)}
+							className={cn('group flex items-center gap-3 motion-safe:transition-opacity', isMuted(id) && 'opacity-25', focusRing)}
 						>
 							{/*Line Badge*/}
 							<span

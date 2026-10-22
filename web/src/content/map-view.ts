@@ -1,4 +1,4 @@
-import { toPathData } from '@/lib/map-geometry';
+import { toRoundPathData } from '@/lib/map-geometry';
 import { getAcademic } from './academic';
 import { lines, LineId, lineIds } from './lines';
 import { interchanges, mapGrid, linePaths, type LineStop, type LabelSide, type GridPoint } from './map';
@@ -47,7 +47,7 @@ export function getMapView(): MapView {
 	const lineViews = linePaths.map((path) => ({
 		id: path.id,
 		strokeClass: lines[path.id].strokeClass,
-		d: toPathData(path.points),
+		d: toRoundPathData(path.points, 0.15),
 		stations: path.points
 			.filter((p): p is LineStop => p.kind === 'stop')
 			.map((stop) => ({
