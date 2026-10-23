@@ -15,6 +15,8 @@ export default function TechnicalPage() {
 		subtitle: project.tech.join(', '),
 		period: project.year,
 		summary: project.summary,
+		highlights: project.highlights,
+		images: project.images ?? [],
 	}));
 
 	return <LinePage line={lines.technical} title={ui.pages.technical.title} intro={ui.pages.technical.intro} stops={stops} />;

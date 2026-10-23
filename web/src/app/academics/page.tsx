@@ -16,6 +16,8 @@ export default function AcademicsPage() {
 		subtitle: study.institution,
 		period: formatPeriod(study.start, study.end, 'en', ui.common.present),
 		summary: study.summary,
+		highlights: study.highlights,
+		images: study.images ?? [], //pass an empty array if images are empty
 	}));
 
 	return <LinePage line={lines.academics} title={ui.pages.academics.title} intro={ui.pages.academics.intro} stops={stops} />;

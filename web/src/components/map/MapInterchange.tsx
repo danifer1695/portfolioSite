@@ -14,7 +14,7 @@ export function MapInterchange({ from, to, isMuted }: { from: GridPoint; to: Gri
 				y1={from.y}
 				x2={to.x}
 				y2={to.y}
-				className={cn("motion-safe:transition-all motion-safe:duration-200", isMuted ? 'stroke-muted' : 'stroke-foreground')}
+				className={cn('motion-safe:transition-all motion-safe:duration-200', isMuted ? 'stroke-muted' : 'stroke-foreground')}
 				strokeWidth={0.76}
 			/>
 

@@ -16,6 +16,8 @@ export default function ProfessionalPage() {
 		subtitle: job.company,
 		period: formatPeriod(job.start, job.end, 'en', ui.common.present),
 		summary: job.summary,
+		highlights: job.highlights,
+		images: job.images ?? [],
 	}));
 
 	return <LinePage line={lines.professional} title={ui.pages.professional.title} intro={ui.pages.professional.intro} stops={stops} />;

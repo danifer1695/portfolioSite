@@ -4,6 +4,8 @@
 import { Container } from '../ui/container';
 import { cn } from '@/lib/cn';
 import type { Line } from '@/content/lines';
+import { GalleryImage } from '@/content/media';
+import { LineTrack } from './LineTrack';
 
 export type Stop = {
 	slug: string;
@@ -11,6 +13,8 @@ export type Stop = {
 	subtitle: string;
 	period: string; //formatted with lib/format's formatPeriod
 	summary: string;
+	highlights: readonly string[];
+	images: readonly GalleryImage[];
 };
 
 type Props = {
@@ -37,23 +41,7 @@ export function LinePage({ line, title, intro, stops }: Props) {
 			</header>
 
 			{/*Line - ordered list*/}
-			<ol className={cn('ml-5 border-l-8', line.borderClass)}>
-				{stops.map((stop) => (
-					<li key={stop.slug}>
-						{/*ex: id={readality} becomes /professional#readality*/}
-						<section id={stop.slug} className="relative scroll-mt-6 pb-10 pl-8">
-							<span
-								aria-hidden="true"
-								className="absolute -left-[18px] top-1 size-7 rounded-full border-4 border-foreground bg-background"
-							/>
-							<h2 className="text-xl font-semibold">{stop.title}</h2>
-							<p className="text-muted">{stop.subtitle}</p>
-							<p className="text-sm text-muted">{stop.period}</p>
-							<p className="mt-2 max-w-prose">{stop.summary}</p>
-						</section>
-					</li>
-				))}
-			</ol>
+			<LineTrack line={line} stops={stops} />
 		</Container>
 	);
 }
