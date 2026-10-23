@@ -2,7 +2,8 @@
 
 ## HEADER AND FOOTER
 
-Header and footer will always be present. They are located directly inside RootLayour in layout.tsx
+Header is always present, meaning it does not scroll with the rest of the page and remains on top.
+They are located directly inside RootLayour in layout.tsx
 The header will contain An icon positioned at the top left, and navigation links to its right.
 The footer will contain a link to the contact page, a copyright label and links to socials.
 
@@ -29,9 +30,7 @@ This page will be dedicated to my past professional experience. Visually, it wil
 
 Only one stop will be expanded at a time, contracting as the user scrolls past them. By contrating, i mean the total vertical screen space that the stop occupies is contracted to hide its 'collapsable content'
 
-When scrolling down, each of the items will expand one at a time, showing details pulled from "src/content/professional.ts" and an image gallery.
-The web moves up or down a stop following mouse input, after scrolling a specific amount, not by observing the screen (scroll-snapping).
-This means that there is no movement on the website until a specific amount of scrolling is done, then the site snaps up or down to the next stop
+Details are pulled from "src/content/professional.ts" and an image gallery.
 
 ## A LINE - ACADEMICS PAGE
 
