@@ -1,3 +1,5 @@
+import type { GalleryImage } from './media';
+
 export type Professional = {
 	slug: string;
 	role: string;
@@ -7,6 +9,7 @@ export type Professional = {
 	start: string;
 	end: string | null; //null means current position
 	summary: string;
+	images?: GalleryImage[];
 	highlights: readonly string[];
 };
 
@@ -61,7 +64,7 @@ const professional = [
 	{
 		slug: 'microsoft', //becomes '/professional#readality'
 		role: 'Localization QA',
-		mapLabel: 'Localization QA',
+		mapLabel: 'Microsoft',
 		company: 'Microsoft',
 		location: 'Redmond, WA',
 		start: '2018-03',

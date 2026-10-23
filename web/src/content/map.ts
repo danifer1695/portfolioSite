@@ -36,7 +36,7 @@ export const linePaths: readonly LinePath[] = [
 			{ kind: 'corner', x: 8, y: 4 },
 			{ kind: 'stop', slug: 'snake', x: 6, y: 4, labelSide: 'n' },
 			{ kind: 'corner', x: 5, y: 4 },
-			{ kind: 'stop', slug: 'graphics', x: 4, y: 3, labelSide: 'nw' },
+			{ kind: 'stop', slug: 'graphics', x: 4, y: 3, labelSide: 'n' },
 		],
 	},
 	{
@@ -54,12 +54,12 @@ export const linePaths: readonly LinePath[] = [
 	{
 		id: 'professional',
 		points: [
-			{ kind: 'stop', slug: 'freelance', x: 3, y: 1, labelSide: 'nw' },
+			{ kind: 'stop', slug: 'freelance', x: 3, y: 1, labelSide: 'n' },
 			{ kind: 'corner', x: 2, y: 2 },
 			{ kind: 'stop', slug: 'readality', x: 2, y: 5, labelSide: 'w' },
 			{ kind: 'stop', slug: 'virtuos', x: 2, y: 7, labelSide: 'w' },
 			{ kind: 'stop', slug: 'kabam', x: 3, y: 8, labelSide: 'sw' },
-			{ kind: 'stop', slug: 'microsoft', x: 3, y: 10, labelSide: 'sw' },
+			{ kind: 'stop', slug: 'microsoft', x: 3, y: 11, labelSide: 'w' },
 			{ kind: 'corner', x: 3, y: 12 },
 			{ kind: 'stop', slug: 'ta', x: 4, y: 13, labelSide: 'sw' },
 		],

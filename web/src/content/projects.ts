@@ -1,3 +1,5 @@
+import type { GalleryImage } from './media';
+
 export type Project = {
 	slug: string;
 	title: string;
@@ -10,6 +12,7 @@ export type Project = {
 		repo?: string;
 		live?: string;
 	};
+	images?: GalleryImage[];
 	highlights: readonly string[];
 };
 

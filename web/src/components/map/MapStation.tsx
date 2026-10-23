@@ -44,7 +44,7 @@ export function MapStation({
 				className={cn(
 					'origin-center [transform-box:fill-box] motion-safe:transition-all motion-safe:duration-200',
 					isMuted
-						? 'fill-muted stroke-transparent'
+						? 'fill-muted-line stroke-transparent'
 						: isActive
 							? 'fill-background stroke-foreground'
 							: cn('stroke-transparent', lines[line].fillClass),
@@ -57,12 +57,10 @@ export function MapStation({
 				y={y + dy}
 				textAnchor={anchor}
 				fontSize={0.35}
-				strokeWidth={0.12}
-				strokeLinejoin="round"
 				className={cn(
 					//paint-order:stroke tells the browser to draw the stroke first, then the fill
-					'font-semibold stroke-background [paint-order:stroke]',
-					isMuted ? 'fill-muted' : 'fill-foreground',
+					'font-semibold',
+					isMuted ? 'fill-muted-line' : 'fill-foreground',
 					isActive && 'underline',
 				)}
 			>

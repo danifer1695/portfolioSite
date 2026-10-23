@@ -1,3 +1,5 @@
+import { GalleryImage } from './media';
+
 export type Academic = {
 	slug: string;
 	title: string;
@@ -7,6 +9,7 @@ export type Academic = {
 	start: string;
 	end: string | null; //null means current position
 	summary: string;
+	images?: GalleryImage[];
 	highlights: readonly string[];
 };
 

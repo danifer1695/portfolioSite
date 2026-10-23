@@ -2,7 +2,8 @@
 
 ## HEADER AND FOOTER
 
-Header and footer will always be present. They are located directly inside RootLayour in layout.tsx
+Header is always present, meaning it does not scroll with the rest of the page and remains on top.
+They are located directly inside RootLayour in layout.tsx
 The header will contain An icon positioned at the top left, and navigation links to its right.
 The footer will contain a link to the contact page, a copyright label and links to socials.
 
@@ -25,7 +26,13 @@ Here is how I envision the map working technically, but I'm open to a different 
 
 ## P LINE - PROFESSIONAL PAGE
 
-This page will be dedicated to my past professional experience. Visually, it will be represented as a vertically stretched-out subway line, with each of my past job positions as stops. When scrolling down, each of the items will expand one at a time, showing details pulled from "src/content/professional.ts" and an image gallery. Only one stop will be expanded at a time, contracting as the user scrolls past them.
+This page will be dedicated to my past professional experience. Visually, it will be represented as a vertically stretched-out subway line, with each of my past job positions as stops.
+
+By default, all the stops in the line will show collapsed, showing just the basic info (non-collapsible data in the code). These elements can be expanded by clicking on them.
+
+When someone arrives to one of the stops through /page#stop that stop will expand and the all other stops collapse.
+
+Details are pulled from "src/content/professional.ts" and an image gallery.
 
 ## A LINE - ACADEMICS PAGE
 

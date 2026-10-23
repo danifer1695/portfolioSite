@@ -18,8 +18,8 @@ export function MapLine({
 		<g onPointerEnter={onActivate} onPointerLeave={onDeactivate}>
 			<path
 				d={d}
-				className={cn('fill-none motion-safe:transition-all motion-safe:duration-200', isMuted ? 'stroke-muted' : strokeClass)} //fill-none tells SVG not to fill the space contained by the path
-				strokeWidth={0.32}
+				className={cn('fill-none motion-safe:transition-all motion-safe:duration-200', isMuted ? 'stroke-muted-line' : strokeClass)} //fill-none tells SVG not to fill the space contained by the path
+				strokeWidth={0.25}
 				strokeLinecap="round"
 				strokeLinejoin="round"
 			/>
