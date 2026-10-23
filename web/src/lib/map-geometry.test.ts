@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { isOctilinear, labelPlacement, toRoundPathData } from './map-geometry';
+import { toRoundPathData } from './map-geometry';
 
 describe('toRoundPathData', () => {
 	const stop = (x: number, y: number) => ({ kind: 'stop' as const, slug: 's', labelSide: 'ne' as const, x, y });

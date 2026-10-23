@@ -1,10 +1,9 @@
 import { toRoundPathData } from '@/lib/map-geometry';
 import { getAcademic } from './academic';
-import { lines, LineId, lineIds } from './lines';
+import { lines, LineId } from './lines';
 import { interchanges, mapGrid, linePaths, type LineStop, type LabelSide, type GridPoint } from './map';
 import { getProfessional } from './professional';
 import { getProjects } from './projects';
-import { ui } from './ui';
 
 export type MapStationView = {
 	slug: string;

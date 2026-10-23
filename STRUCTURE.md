@@ -25,7 +25,13 @@ Here is how I envision the map working technically, but I'm open to a different 
 
 ## P LINE - PROFESSIONAL PAGE
 
-This page will be dedicated to my past professional experience. Visually, it will be represented as a vertically stretched-out subway line, with each of my past job positions as stops. When scrolling down, each of the items will expand one at a time, showing details pulled from "src/content/professional.ts" and an image gallery. Only one stop will be expanded at a time, contracting as the user scrolls past them.
+This page will be dedicated to my past professional experience. Visually, it will be represented as a vertically stretched-out subway line, with each of my past job positions as stops.
+
+Only one stop will be expanded at a time, contracting as the user scrolls past them. By contrating, i mean the total vertical screen space that the stop occupies is contracted to hide its 'collapsable content'
+
+When scrolling down, each of the items will expand one at a time, showing details pulled from "src/content/professional.ts" and an image gallery.
+The web moves up or down a stop following mouse input, after scrolling a specific amount, not by observing the screen (scroll-snapping).
+This means that there is no movement on the website until a specific amount of scrolling is done, then the site snaps up or down to the next stop
 
 ## A LINE - ACADEMICS PAGE
 
