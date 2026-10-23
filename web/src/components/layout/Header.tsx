@@ -13,7 +13,7 @@ type Props = {
 
 export function Header({ initials, homeLabel, nav }: Props) {
 	return (
-		<header className="text-white bg-metroBlue">
+		<header className="sticky top-0 z-50 text-white bg-metroBlue">
 			<Container
 				className="
 				flex

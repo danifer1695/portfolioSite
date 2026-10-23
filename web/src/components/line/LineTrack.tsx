@@ -1,7 +1,7 @@
 'use client';
 
-import { Line } from '@/content/lines';
-import { Stop } from './LinePage';
+import type { Line } from '@/content/lines';
+import type { Stop } from './types';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/cn';
 import { StopCard } from './StopCard';
@@ -17,7 +17,13 @@ export function LineTrack({ line, stops }: { line: Line; stops: readonly Stop[] 
 
 		const observer = new IntersectionObserver(
 			(entries) => {
-				for (const entry of entries) if (entry.isIntersecting) setActiveSlug(entry.target.id);
+				const hit = entries.find((entry) => entry.isIntersecting)
+				if(hit)
+					setActiveSlug(hit.target.id)
+				else
+				{
+					setActiveSlug((prev) => (prev === undefined) ? (stops[0]?.slug ?? null) : prev)
+				}
 			},
 			//watch only a thin band across the middle of the screen
 			//top: starts looking after 35% of the screen from the top

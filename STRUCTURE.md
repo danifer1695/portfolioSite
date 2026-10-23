@@ -28,7 +28,9 @@ Here is how I envision the map working technically, but I'm open to a different 
 
 This page will be dedicated to my past professional experience. Visually, it will be represented as a vertically stretched-out subway line, with each of my past job positions as stops.
 
-Only one stop will be expanded at a time, contracting as the user scrolls past them. By contrating, i mean the total vertical screen space that the stop occupies is contracted to hide its 'collapsable content'
+By default, all the stops in the line will show collapsed, showing just the basic info (non-collapsible data in the code). These elements can be expanded by clicking on them.
+
+When someone arrives to one of the stops through /page#stop that stop will expand and the all other stops collapse.
 
 Details are pulled from "src/content/professional.ts" and an image gallery.
 

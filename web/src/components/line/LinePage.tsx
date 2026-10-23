@@ -4,27 +4,20 @@
 import { Container } from '../ui/container';
 import { cn } from '@/lib/cn';
 import type { Line } from '@/content/lines';
-import { GalleryImage } from '@/content/media';
 import { LineTrack } from './LineTrack';
+import { Stop } from './types';
 
-export type Stop = {
-	slug: string;
-	title: string;
-	subtitle: string;
-	period: string; //formatted with lib/format's formatPeriod
-	summary: string;
-	highlights: readonly string[];
-	images: readonly GalleryImage[];
-};
-
-type Props = {
-	line: Line;
-	title: string;
-	intro: string;
-	stops: readonly Stop[];
-};
-
-export function LinePage({ line, title, intro, stops }: Props) {
+export function LinePage({
+	line,
+	title,
+	intro,
+	stops
+}: {
+	line: Line
+	title: string
+	intro: string
+	stops: readonly Stop[]
+}) {
 	return (
 		<Container className="space-y-10 py-12">
 			{/*Content header*/}

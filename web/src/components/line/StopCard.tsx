@@ -1,5 +1,5 @@
-import { Line } from '@/content/lines';
-import { Stop } from './LinePage';
+import type { Line } from '@/content/lines';
+import type { Stop } from './types';
 import { cn } from '@/lib/cn';
 import { Gallery } from './Gallery';
 
@@ -10,7 +10,7 @@ export function StopCard({ stop, line, isActive, isExpanded }: { stop: Stop; lin
 			<span
 				aria-hidden="true"
 				className={cn(
-					'absolute -left-[18px] top-i size-7 rounded-full border-4 motion-safe:transition-all motion-safe:duration-200',
+					'absolute -left-[18px] top-1 size-7 rounded-full border-4 motion-safe:transition-all motion-safe:duration-200',
 					isActive ? 'border-foreground bg-background' : cn('border-transparent', line.bgClass),
 				)}
 			/>
@@ -23,7 +23,7 @@ export function StopCard({ stop, line, isActive, isExpanded }: { stop: Stop; lin
 			{/*Collapsable content*/}
 			<div
 				//removes collapsed content from Tab order and from screen readers, while keeping it in the page
-				inert={isExpanded}
+				inert={!isExpanded}
 				className={cn(
 					'grid motion-safe:transition-[grid-template-rows,opacity] motion-safe:duration-300',
 					isExpanded ? 'grid-rows-[1fr] min-h-60 opacity-100' : 'grid-rows-[0fr] min-h-auto opacity-0',
