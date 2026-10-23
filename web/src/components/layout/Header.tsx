@@ -13,7 +13,7 @@ type Props = {
 
 export function Header({ initials, homeLabel, nav }: Props) {
 	return (
-		<header className="text-white bg-metroBlue">
+		<header className="sticky top-0 z-50 text-white bg-metroBlue">
 			<Container
 				className="
 				flex
@@ -31,11 +31,12 @@ export function Header({ initials, homeLabel, nav }: Props) {
 					<span
 						className="
 						flex
-						size-10
+						size-18
 						items-center
 						justify-center
+						text-3xl
 						rounded-full
-						border-4
+						border-6
 						border-white
 						font-bold
 					"

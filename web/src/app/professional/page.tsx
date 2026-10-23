@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { LinePage } from '@/components/layout/LinePage';
+import { LinePage } from '@/components/line/LinePage';
 import { lines } from '@/content/lines';
 import { getProfessional } from '@/content/professional';
 import { ui } from '@/content/ui';
@@ -16,6 +16,8 @@ export default function ProfessionalPage() {
 		subtitle: job.company,
 		period: formatPeriod(job.start, job.end, 'en', ui.common.present),
 		summary: job.summary,
+		highlights: job.highlights,
+		images: job.images ?? [],
 	}));
 
 	return <LinePage line={lines.professional} title={ui.pages.professional.title} intro={ui.pages.professional.intro} stops={stops} />;

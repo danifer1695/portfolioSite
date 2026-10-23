@@ -1,16 +1,16 @@
 export const ui = {
 	lines: {
 		professional: {
-			name: 'Professional',
-			tagline: 'Professional Experience',
+			name: 'Work Experience',
+			tagline: 'Listing of previous positions.',
 		},
 		academics: {
-			name: 'Academics',
-			tagline: 'Education',
+			name: 'Academic Background',
+			tagline: 'Completed programs.',
 		},
 		technical: {
-			name: 'Technical',
-			tagline: 'Projects',
+			name: 'Projects',
+			tagline: 'Personal and group projects.',
 		},
 	},
 	nav: {
