@@ -64,7 +64,7 @@ const professional = [
 	{
 		slug: 'microsoft', //becomes '/professional#readality'
 		role: 'Localization QA',
-		mapLabel: 'Localization QA',
+		mapLabel: 'Microsoft',
 		company: 'Microsoft',
 		location: 'Redmond, WA',
 		start: '2018-03',

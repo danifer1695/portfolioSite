@@ -6,18 +6,9 @@ import { cn } from '@/lib/cn';
 import type { Line } from '@/content/lines';
 import { LineTrack } from './LineTrack';
 import { Stop } from './types';
+import { OpenStopFromId } from './OpenStopFromId';
 
-export function LinePage({
-	line,
-	title,
-	intro,
-	stops
-}: {
-	line: Line
-	title: string
-	intro: string
-	stops: readonly Stop[]
-}) {
+export function LinePage({ line, title, intro, stops }: { line: Line; title: string; intro: string; stops: readonly Stop[] }) {
 	return (
 		<Container className="space-y-10 py-12">
 			{/*Content header*/}
@@ -35,6 +26,7 @@ export function LinePage({
 
 			{/*Line - ordered list*/}
 			<LineTrack line={line} stops={stops} />
+			<OpenStopFromId />
 		</Container>
 	);
 }

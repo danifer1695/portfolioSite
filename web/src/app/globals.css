@@ -8,6 +8,7 @@
 	--background: oklch(99% 0 0);
 	--foreground: oklch(21% 0.01 260);
 	--muted: oklch(46% 0.01 260);
+	--muted-line: oklch(76% 0.01 260);
 	--border: oklch(90% 0.005 260);
 
 	--line-p: #f5821f;
@@ -22,6 +23,7 @@
 	--color-metroBlue: var(--metroBlue);
 	--color-accent: var(--accent);
 	--color-muted: var(--muted);
+	--color-muted-line: var(--muted-line);
 	--color-border: var(--border);
 
 	--color-line-p: var(--line-p);
@@ -34,11 +36,28 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
+		/*Lets CSS anumate to/from 'auto'*/
+		interpolate-size: allow-keywords;
+
 		/*Only the ones that change on dark mode*/
 		--background: #010101;
 		--foreground: oklch(99% 0 0);
 		--border: oklch(76% 0.01 260);
-		--muted: oklch(46% 0.01 260);
+		--muted: oklch(76% 0.01 260);
+		--muted-line: oklch(46% 0.01 260);
+	}
+
+	/*details: the collapsable elements*/
+	details::details-content {
+		block-size: 0;
+		overflow: hidden;
+		transition:
+			block-size 0.3s ease,
+			content-visibility 0.3s allow-discrete;
+	}
+
+	details[open]::details-content {
+		block-size: auto;
 	}
 }
 

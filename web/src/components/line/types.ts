@@ -1,4 +1,4 @@
-import { GalleryImage } from "@/content/media";
+import { GalleryImage } from '@/content/media';
 
 export type Stop = {
 	slug: string;
@@ -9,5 +9,3 @@ export type Stop = {
 	highlights: readonly string[];
 	images: readonly GalleryImage[];
 };
-
-

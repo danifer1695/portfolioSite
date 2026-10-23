@@ -59,7 +59,7 @@ export const linePaths: readonly LinePath[] = [
 			{ kind: 'stop', slug: 'readality', x: 2, y: 5, labelSide: 'w' },
 			{ kind: 'stop', slug: 'virtuos', x: 2, y: 7, labelSide: 'w' },
 			{ kind: 'stop', slug: 'kabam', x: 3, y: 8, labelSide: 'sw' },
-			{ kind: 'stop', slug: 'microsoft', x: 3, y: 10, labelSide: 'sw' },
+			{ kind: 'stop', slug: 'microsoft', x: 3, y: 11, labelSide: 'w' },
 			{ kind: 'corner', x: 3, y: 12 },
 			{ kind: 'stop', slug: 'ta', x: 4, y: 13, labelSide: 'sw' },
 		],
