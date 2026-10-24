@@ -32,20 +32,21 @@ export const ui = {
 			mapTitle: 'Career Map',
 		},
 		professional: {
-			title: 'Professional',
+			title: 'Work Experience',
 			intro: 'Placeholder intro.',
 		},
 		academics: {
-			title: 'Academics',
+			title: 'Academic Background',
 			intro: 'Placeholder intro.',
 		},
 		technical: {
-			title: 'Technical',
+			title: 'Projects',
 			intro: 'Placeholder intro.',
 		},
 		resume: {
 			title: 'Resume',
-			placeholder: 'Coming soon',
+			print: 'Print / Save as PDF',
+			skills: 'Skills',
 		},
 		contact: {
 			title: 'Contact',
