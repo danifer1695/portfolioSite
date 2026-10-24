@@ -16,6 +16,12 @@
 	--line-t: #ffde00;
 }
 
+/*Physical page when printing*/
+@page {
+	size: A4;
+	margin: 12mm;
+}
+
 /*Tur each variable into tailwind utilities*/
 @theme inline {
 	--color-background: var(--background);
@@ -61,6 +67,18 @@
 	}
 }
 
+@media print {
+	/*Force light mode when printing*/
+	:root {
+		--background: #ffffff;
+		--foreground: #000000;
+		--muted: #4b5563;
+		--border: #d1d5db;
+	}
+	body {
+		background: #ffffff;
+	}
+}
 html {
 	scroll-padding-top: 7rem;
 }

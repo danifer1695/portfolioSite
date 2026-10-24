@@ -8,8 +8,9 @@ type SocialLink = { label: string; href: string };
 type Props = { contactLabel: string; copyright: string; social: readonly SocialLink[] };
 
 export function Footer({ contactLabel, copyright, social }: Props) {
+	/*print-hidden: hide this element for printing*/
 	return (
-		<footer className="text-white bg-metroBlue">
+		<footer className="text-white bg-metroBlue print:hidden">
 			<Container
 				className="
 				flex
