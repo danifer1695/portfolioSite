@@ -33,7 +33,7 @@ const projects = [
 		title: 'Shirabeyou - A kanji-learning Chrome extension',
 		mapLabel: 'Shirabeyou',
 		summary:
-			'An Chromium Manifest V3 extension aimed to make learning kanji a more fluid experience. Front end is divided between a desktop and mobile client, back end is deployed on Railway.',
+			'A Chromium Manifest V3 extension aimed to make learning kanji a more fluid experience. Front end is divided between a desktop and mobile client, back end is deployed on Railway.',
 		tech: ['JavaScript', 'HTML', 'React Native', 'TypeScript', 'PostgreSQL', 'Node.js', 'Express', 'Zod', 'Bcrypt', 'Github'],
 		year: '2026',
 		featured: true,

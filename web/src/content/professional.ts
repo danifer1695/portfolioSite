@@ -28,7 +28,7 @@ const professional = [
 	},
 	{
 		slug: 'freelance', //becomes '/professional#readality'
-		role: 'Freelande Full-Stack Development',
+		role: 'Freelance Full-Stack Development',
 		mapLabel: 'Freelance Full-Stack', //how it gets displayed on the map
 		company: 'Self-Employed',
 		location: 'Lille, Hauts-de-France',

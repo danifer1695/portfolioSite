@@ -35,7 +35,7 @@ const academic = [
 		start: '2018-09',
 		end: '2020-04',
 		summary:
-			'Diploma in Concept Art, aimed to students wishing to join the Videogame industry as designers. Taught by professionals currenly working as professionals at different studios.',
+			'Diploma in Concept Art, aimed to students wishing to join the Videogame industry as designers. Taught by professionals actively working as professionals at different studios.',
 		highlights: ['Concept Art', '3D Art', 'Blender'],
 	},
 	{
@@ -58,7 +58,7 @@ const academic = [
 		start: '2013-09',
 		end: '2017-05',
 		summary:
-			'Diploma in Concept Art, aimed to students wishing to join the Videogame industry as designers. Taught by professionals currenly working as professionals at different studios.',
+			'4-year career program where we were taught the workflows and techniques that we would be expected to be familiar with when entering the animation or videogame industries. Courses covered topics like 2D animation, 3D animation, 3D modeling, anatomy, drawing, painting, concept art, or project management. Each year, students were expected to group up with other fellow artists and students from other programs to produce a game or animation project that they would be working on from fall to summer semesters.',
 		highlights: ['2D Animation', '3D Animation', 'Concept Art', '3D Art', 'Game Development'],
 	},
 	{
