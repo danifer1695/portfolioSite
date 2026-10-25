@@ -1,3 +1,4 @@
+import { ContactForm } from '@/components/contact/ContactForm';
 import { Container } from '@/components/ui/container';
 import { profile } from '@/content/profile';
 import { ui } from '@/content/ui';
@@ -27,7 +28,7 @@ export default function ContactPage() {
 			</dl>
 
 			{/*Form placeholder*/}
-			<p className="text-muted">{ui.pages.contact.formPlaceholder}</p>
+			<ContactForm labels={ui.pages.contact.form} />
 		</Container>
 	);
 }

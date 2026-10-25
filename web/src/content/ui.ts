@@ -54,6 +54,20 @@ export const ui = {
 			formPlaceholder: 'Form coming soon',
 			emailLabel: 'Email',
 			phoneLabel: 'Phone',
+			form: {
+				name: 'Name',
+				email: 'Email',
+				company: 'Company (optional)',
+				message: 'Message',
+				submit: 'Send',
+				sending: 'Sending…',
+				success: 'Thanks! Your message has been sent. I’ll get back to you soon.',
+				errors: {
+					invalid: 'Please check the fields and try again.',
+					rate_limited: 'Too many messages. Please wait a minute and try again.',
+					generic: 'Something went wrong. Please try again, or email me directly.',
+				},
+			},
 		},
 		notFound: {
 			title: 'Page not found.',
