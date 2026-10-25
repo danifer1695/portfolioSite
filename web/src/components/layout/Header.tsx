@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import { Container } from '@/components/ui/container';
 import { cn } from '@/lib/cn';
 import { focusRing } from '@/lib/styles';
@@ -7,13 +8,14 @@ import { NavLink } from './NavLink';
 
 type Props = {
 	initials: string;
-	homeLabel: string;
 	nav: readonly NavItem[];
 };
 
-export function Header({ initials, homeLabel, nav }: Props) {
+export function Header({ initials, nav }: Props) {
+
+	const t = useTranslations()
 	return (
-		<header className="sticky top-0 z-50 text-white bg-metroBlue">
+		<header className="sticky top-0 z-50 text-white bg-metroBlue print:hidden">
 			<Container
 				className="
 				flex
@@ -27,7 +29,7 @@ export function Header({ initials, homeLabel, nav }: Props) {
 			"
 			>
 				{/*Personal logo - link to home page*/}
-				<Link href="/" aria-label={homeLabel} className={cn('shrink-0', focusRing)}>
+				<Link href="/" aria-label={t('nav.home')} className={cn('shrink-0', focusRing)}>
 					<span
 						className="
 						flex
@@ -59,7 +61,7 @@ export function Header({ initials, homeLabel, nav }: Props) {
 						{nav.map((item) => (
 							<li key={item.href}>
 								<NavLink href={item.href} dotClass={item.dotClass}>
-									{item.label}
+									{t(item.labelKey)}
 								</NavLink>
 							</li>
 						))}

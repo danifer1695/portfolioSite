@@ -4,12 +4,16 @@ import { lines } from '@/content/lines';
 import { getAcademic } from '@/content/academic';
 import { ui } from '@/content/ui';
 import { formatPeriod } from '@/lib/format';
+import { setRequestLocale } from 'next-intl/server';
 
 export const metadata: Metadata = {
 	title: ui.pages.academics.title,
 };
 
-export default function AcademicsPage() {
+export default async function AcademicsPage({ params }: PageProps<'/[locale]/academics'>) {
+	const { locale } = await params;
+	setRequestLocale(locale);
+
 	const stops = getAcademic().map((study) => ({
 		slug: study.slug,
 		title: study.title,

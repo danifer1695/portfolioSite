@@ -55,7 +55,7 @@ export function getMapView(): MapView {
 				y: stop.y,
 				labelSide: stop.labelSide,
 				label: mapLabels[stop.slug] ?? stop.slug,
-				href: `${lines[path.id].href}#${stop.slug}`, //page#id
+				href: `${locale}${lines[path.id].href}#${stop.slug}`, //page#id
 				line: path.id,
 			})),
 	}));

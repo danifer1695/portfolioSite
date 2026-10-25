@@ -3,10 +3,14 @@ import { Container } from '@/components/ui/container';
 import { profile } from '@/content/profile';
 import { ui } from '@/content/ui';
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 
 export const metadata: Metadata = { title: ui.pages.contact.title };
 
-export default function ContactPage() {
+export default async function ContactPage({ params }: PageProps<'/[locale]/contact'>) {
+	const { locale } = await params;
+	setRequestLocale(locale);
+
 	return (
 		<Container className="space-y-4 py-12">
 			<h1 className="text-4xl font-bold tracking-tight">{ui.pages.contact.title}</h1>

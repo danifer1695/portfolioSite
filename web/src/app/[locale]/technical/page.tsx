@@ -3,12 +3,16 @@ import { LinePage } from '@/components/line/LinePage';
 import { lines } from '@/content/lines';
 import { getProjects } from '@/content/projects';
 import { ui } from '@/content/ui';
+import { setRequestLocale } from 'next-intl/server';
 
 export const metadata: Metadata = {
 	title: ui.pages.technical.title,
 };
 
-export default function TechnicalPage() {
+export default async function TechnicalPage({ params }: PageProps<'/[locale]/technical'>) {
+	const { locale } = await params;
+	setRequestLocale(locale);
+
 	const stops = getProjects().map((project) => ({
 		slug: project.slug,
 		title: project.title,

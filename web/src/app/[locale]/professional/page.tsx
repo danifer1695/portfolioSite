@@ -4,12 +4,16 @@ import { lines } from '@/content/lines';
 import { getProfessional } from '@/content/professional';
 import { ui } from '@/content/ui';
 import { formatPeriod } from '@/lib/format';
+import { setRequestLocale } from 'next-intl/server';
 
 export const metadata: Metadata = {
 	title: ui.pages.professional.title,
 };
 
-export default function ProfessionalPage() {
+export default async function ProfessionalPage({ params }: PageProps<'/[locale]/professional'>) {
+	const { locale } = await params;
+	setRequestLocale(locale);
+
 	const stops = getProfessional().map((job) => ({
 		slug: job.slug,
 		title: job.role,

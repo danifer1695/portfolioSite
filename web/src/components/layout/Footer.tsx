@@ -1,13 +1,16 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Container } from '@/components/ui/container';
 import { ExternalLink } from '@/components/ui/externalLink';
 import { cn } from '@/lib/cn';
 import { focusRing } from '@/lib/styles';
+import { useTranslations } from 'next-intl';
 
 type SocialLink = { label: string; href: string };
 type Props = { contactLabel: string; copyright: string; social: readonly SocialLink[] };
 
 export function Footer({ contactLabel, copyright, social }: Props) {
+
+	const t = useTranslations('footer')
 	/*print-hidden: hide this element for printing*/
 	return (
 		<footer className="text-white bg-metroBlue print:hidden">
