@@ -10,7 +10,6 @@ import { Footer } from '@/components/layout/Footer';
 import { routing } from '@/i18n/routings';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -29,7 +28,7 @@ export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Pr
 		metadataBase: new URL(profile.siteURL),
 		title: {
 			default: `[Portfolio - ${profile.name}]`,
-			template: '[Portfolio] - %s'
+			template: '[DFM] - %s'
 		},
 		description: profile.description
 	}
@@ -43,9 +42,6 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
 	const { locale } = await params;
 
 	if (!hasLocale(routing.locales, locale)) notFound();
-	setRequestLocale(locale);
-
-	const t = await getTranslations({locale})
 
 	return (
 		<html lang={locale} className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
@@ -57,8 +53,6 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
 						{children}
 					</main>
 					<Footer
-						contactLabel={t('footer.contact')}
-						copyright={t('footer.copyright', { year: new Date().getFullYear(), name: profile.name })}
 						social={profile.social}
 					/>
 				</NextIntlClientProvider>
