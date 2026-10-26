@@ -4,6 +4,7 @@ import { lines, LineId } from './lines';
 import { interchanges, mapGrid, linePaths, type LineStop, type LabelSide, type GridPoint } from './map';
 import { getProfessional } from './professional';
 import { getProjects } from './projects';
+import { Locale } from '@/i18n/routings';
 
 export type MapStationView = {
 	slug: string;
@@ -36,13 +37,17 @@ export type MapView = {
 };
 
 //lookup table containing all label information for all lines
-const mapLabels: Record<string, string> = Object.fromEntries([
-	...getProfessional().map((e) => [e.slug, e.mapLabel ?? e.company]), //default to company name if no label available
-	...getAcademic().map((e) => [e.slug, e.mapLabel ?? e.institution]), //default to institution name if no label is available
-	...getProjects().map((e) => [e.slug, e.mapLabel ?? e.title]), //default to project name if no label is available
-]);
+function buildMapLabels(locale: Locale): Record<string, string> {
+	return Object.fromEntries([
+		...getProfessional(locale).map((e) => [e.slug, e.mapLabel ?? e.company]), //default to company name if no label available
+		...getAcademic(locale).map((e) => [e.slug, e.mapLabel ?? e.institution]), //default to institution name if no label is available
+		...getProjects(locale).map((e) => [e.slug, e.mapLabel ?? e.title]), //default to project name if no label is available
+	]);
+}
 
-export function getMapView(): MapView {
+export function getMapView(locale: Locale): MapView {
+	const mapLabels = buildMapLabels(locale);
+
 	const lineViews = linePaths.map((path) => ({
 		id: path.id,
 		strokeClass: lines[path.id].strokeClass,
@@ -55,7 +60,7 @@ export function getMapView(): MapView {
 				y: stop.y,
 				labelSide: stop.labelSide,
 				label: mapLabels[stop.slug] ?? stop.slug,
-				href: `${lines[path.id].href}#${stop.slug}`, //page#id
+				href: `${locale}${lines[path.id].href}#${stop.slug}`, //page#id
 				line: path.id,
 			})),
 	}));

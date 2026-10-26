@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { LineId, lineIds, lines } from '@/content/lines';
-import { ui } from '@/content/ui';
 import { cn } from '@/lib/cn';
 import { focusRing } from '@/lib/styles';
+import { useTranslations } from 'next-intl';
 
 export function MapLegend({
 	isMuted,
@@ -13,11 +13,13 @@ export function MapLegend({
 	onActivate: (id: LineId) => void;
 	onDeactivate: () => void;
 }) {
+	const t = useTranslations();
+
 	return (
 		<section aria-labelledby="legend-heading" className="space-y-4">
 			{/*Legend title*/}
 			<h2 id="legend-heading" className="text-2xl font-semibold">
-				{ui.pages.home.legendTitle}
+				{t('pages.home.legendTitle')}
 			</h2>
 
 			<ul className="flex flex-col gap-4 sm:flex-row sm:gap-10">
@@ -40,8 +42,8 @@ export function MapLegend({
 
 							{/*Line Info*/}
 							<span>
-								<span className="block font-semibold group-hover:underline">{ui.lines[id].name}</span>
-								<span className="block text-sm text-muted">{ui.lines[id].tagline}</span>
+								<span className="block font-semibold group-hover:underline">{t(`lines.${id}.name`)}</span>
+								<span className="block text-sm text-muted">{t(`lines.${id}.tagline`)}</span>
 							</span>
 						</Link>
 					</li>

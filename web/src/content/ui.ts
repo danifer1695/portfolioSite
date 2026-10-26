@@ -51,7 +51,6 @@ export const ui = {
 		contact: {
 			title: 'Contact',
 			intro: 'Placeholder intro.',
-			formPlaceholder: 'Form coming soon',
 			emailLabel: 'Email',
 			phoneLabel: 'Phone',
 			form: {

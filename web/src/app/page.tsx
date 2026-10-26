@@ -1,19 +1,17 @@
-import { SubwayMap } from '@/components/map/SubwayMap';
-import { Container } from '@/components/ui/container';
-import { getMapView } from '@/content/map-view';
-import { profile } from '@/content/profile';
-import { ui } from '@/content/ui';
+import Link from 'next/link';
+import './globals.css';
 
-export default function Home() {
+export default function RootPage() {
 	return (
-		<Container className="space-y-12 py-12">
-			<section className="space-y-2 w-full">
-				<h1 className="text-4xl font-bold tracking-tight">{profile.name}</h1>
-				<p className="text-xl text-muted">{profile.headline}</p>
-				<p>{profile.intro}</p>
-			</section>
-
-			<SubwayMap view={getMapView()} title={ui.pages.home.mapTitle} />
-		</Container>
+		<html lang="en">
+			<body className="flex min-h-screen items-center justify-center gap-8 bg-background text-foreground">
+				<Link href="/en" lang="en" className="text-xl underline-offset-4 hover:underline">
+					English
+				</Link>
+				<Link href="/fr" lang="fr" className="text-xl underline-offset-4 hover:underline">
+					French
+				</Link>
+			</body>
+		</html>
 	);
 }

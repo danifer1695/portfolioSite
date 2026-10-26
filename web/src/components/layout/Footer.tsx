@@ -1,13 +1,15 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Container } from '@/components/ui/container';
 import { ExternalLink } from '@/components/ui/externalLink';
 import { cn } from '@/lib/cn';
 import { focusRing } from '@/lib/styles';
+import { useTranslations } from 'next-intl';
+import { profile } from '@/content/profile';
 
 type SocialLink = { label: string; href: string };
-type Props = { contactLabel: string; copyright: string; social: readonly SocialLink[] };
 
-export function Footer({ contactLabel, copyright, social }: Props) {
+export function Footer({ social }: { social: readonly SocialLink[] }) {
+	const t = useTranslations('footer');
 	/*print-hidden: hide this element for printing*/
 	return (
 		<footer className="text-white bg-metroBlue print:hidden">
@@ -24,9 +26,9 @@ export function Footer({ contactLabel, copyright, social }: Props) {
 			"
 			>
 				<Link href="/contact" className={cn('font-semibold underline-offset-4 hover:underline', focusRing)}>
-					{contactLabel}
+					{t('contact')}
 				</Link>
-				<p>{copyright}</p>
+				<p>{t('copyright', { year: new Date().getFullYear(), name: profile.name })}</p>
 				<ul className="flex gap-4">
 					{social.map((s) => (
 						<li key={s.href}>
