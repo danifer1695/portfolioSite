@@ -1,21 +1,21 @@
 {
 	"lines": {
 		"professional": {
-			"name": "Work Experience",
-			"tagline": "Listing of previous positions."
+			"name": "Expérience professionnelle",
+			"tagline": "Postes occupés par le passé et actuellement."
 		},
 		"academics": {
-			"name": "Academic Background",
-			"tagline": "Completed programs."
+			"name": "Parcours académique",
+			"tagline": "Programmes de premier, deuxième et troisième cycles."
 		},
 		"technical": {
-			"name": "Projects",
-			"tagline": "Personal and group projects."
+			"name": "Projets",
+			"tagline": "Projets personnels et collectifs."
 		}
 	},
 	"nav": {
-		"home": "Home",
-		"resume": "Resume",
+		"home": "Accueil",
+		"resume": "CV",
 		"contact": "Contact"
 	},
 	"footer": {
@@ -23,55 +23,55 @@
 		"copyright": "© {year} {name}"
 	},
 	"common": {
-		"present": "Present"
+		"present": "Aujourd’hui"
 	},
 	"pages": {
 		"home": {
-			"intro": "Placeholder intro.",
-			"legendTitle": "Lines",
-			"mapTitle": "Career Map"
+			"intro": "Texte d’introduction provisoire.",
+			"legendTitle": "Lignes",
+			"mapTitle": "Carte de carrière"
 		},
 		"professional": {
-			"title": "Work Experience",
-			"intro": "Placeholder intro."
+			"title": "Expérience professionnelle",
+			"intro": "Les postes occupés au fil des années, de mes débuts comme designer dans l’industrie du jeu vidéo à mes rôles actuels en développement logiciel."
 		},
 		"academics": {
-			"title": "Academic Background",
-			"intro": "Placeholder intro."
+			"title": "Parcours académique",
+			"intro": "Programmes de premier, deuxième et troisième cycles complétés."
 		},
 		"technical": {
-			"title": "Projects",
-			"intro": "Placeholder intro."
+			"title": "Projets",
+			"intro": "Aperçu des différents projets auxquels j’ai participé, à divers titres."
 		},
 		"resume": {
-			"title": "Resume",
-			"print": "Print / Save as PDF",
-			"skills": "Skills"
+			"title": "CV",
+			"print": "Imprimer / Enregistrer en PDF",
+			"skills": "Compétences"
 		},
 		"contact": {
 			"title": "Contact",
-			"intro": "Placeholder intro.",
-			"emailLabel": "Email",
-			"phoneLabel": "Phone",
+			"intro": "Envie de me contacter ? Vous pouvez me joindre grâce aux coordonnées ci-dessous, ou en remplissant le formulaire de contact.",
+			"emailLabel": "E-mail",
+			"phoneLabel": "Téléphone",
 			"form": {
-				"name": "Name",
-				"email": "Email",
-				"company": "Company (optional)",
+				"name": "Nom",
+				"email": "E-mail",
+				"company": "Entreprise (facultatif)",
 				"message": "Message",
-				"submit": "Send",
-				"sending": "Sending…",
-				"success": "Thanks! Your message has been sent. I’ll get back to you soon.",
+				"submit": "Envoyer",
+				"sending": "Envoi en cours…",
+				"success": "Merci ! Votre message a bien été envoyé. Je vous répondrai prochainement.",
 				"errors": {
-					"invalid": "Please check the fields and try again.",
-					"rate_limited": "Too many messages. Please wait a minute and try again.",
-					"generic": "Something went wrong. Please try again, or email me directly."
+					"invalid": "Veuillez vérifier les champs et réessayer.",
+					"rate_limited": "Trop de messages envoyés. Veuillez patienter une minute et réessayer.",
+					"generic": "Une erreur s’est produite. Veuillez réessayer ou m’écrire directement par e-mail."
 				}
 			}
 		},
 		"notFound": {
-			"title": "Page not found.",
-			"body": "That page does not exist.",
-			"backHome": "Back to Home"
+			"title": "Page introuvable.",
+			"body": "Cette page n’existe pas.",
+			"backHome": "Retour à l’accueil"
 		}
 	}
 }
