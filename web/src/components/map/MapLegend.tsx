@@ -42,8 +42,8 @@ export function MapLegend({
 
 							{/*Line Info*/}
 							<span>
-								<span className="block font-semibold group-hover:underline">{t(`lines${[id]}.name`)}</span>
-								<span className="block text-sm text-muted">{t(`lines${[id]}lines[id].tagline`)}</span>
+								<span className="block font-semibold group-hover:underline">{t(`lines.${id}.name`)}</span>
+								<span className="block text-sm text-muted">{t(`lines.${id}.tagline`)}</span>
 							</span>
 						</Link>
 					</li>
