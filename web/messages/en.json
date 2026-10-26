@@ -2,11 +2,11 @@
 	"lines": {
 		"professional": {
 			"name": "Work Experience",
-			"tagline": "Listing of previous positions."
+			"tagline": "Positions held in the past and present."
 		},
 		"academics": {
 			"name": "Academic Background",
-			"tagline": "Completed programs."
+			"tagline": "Under-graduate, Graduate and Post-Graduate programs."
 		},
 		"technical": {
 			"name": "Projects",
@@ -33,15 +33,15 @@
 		},
 		"professional": {
 			"title": "Work Experience",
-			"intro": "Placeholder intro."
+			"intro": "Positions held throughout the years. From my beginnings as a Designer in the videogame industry to my current roles in software development."
 		},
 		"academics": {
 			"title": "Academic Background",
-			"intro": "Placeholder intro."
+			"intro": "Completed Under-Graduate, Graduate and Post-Graduate programs."
 		},
 		"technical": {
 			"title": "Projects",
-			"intro": "Placeholder intro."
+			"intro": "Overview of the different projects I have been involved in in diffferent capacities."
 		},
 		"resume": {
 			"title": "Resume",
@@ -50,7 +50,7 @@
 		},
 		"contact": {
 			"title": "Contact",
-			"intro": "Placeholder intro.",
+			"intro": "Want to reach out? you can contact me using the coordinates below, or by filling in the contact form provided.",
 			"emailLabel": "Email",
 			"phoneLabel": "Phone",
 			"form": {
