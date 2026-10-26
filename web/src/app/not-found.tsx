@@ -1,6 +1,7 @@
 import './globals.css';
 import en from '../../messages/en.json';
 import fr from '../../messages/fr.json';
+import Link from 'next/link';
 
 export default function NotFound() {
 	return (
@@ -10,12 +11,12 @@ export default function NotFound() {
 					{en.pages.notFound.title} · <span lang="fr">{fr.pages.notFound.title}</span>
 				</h1>
 				<p className="flex gap-4">
-					<a href="/en" className="underline">
+					<Link href="/en" className="underline">
 						{en.pages.notFound.backHome}
-					</a>
-					<a href="/fr" lang="fr" className="underline">
+					</Link>
+					<Link href="/fr" lang="fr" className="underline">
 						{fr.pages.notFound.backHome}
-					</a>
+					</Link>
 				</p>
 			</body>
 		</html>

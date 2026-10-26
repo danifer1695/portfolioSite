@@ -4,7 +4,7 @@ import { Container } from '@/components/ui/container';
 import { getResumeView } from '@/content/resume-view';
 import { initLocale } from '@/i18n/locale';
 import type { Metadata } from 'next';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({ params }: PageProps<'/[locale]/resume'>): Promise<Metadata> {
 	const locale = await initLocale(params);

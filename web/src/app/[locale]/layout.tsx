@@ -24,8 +24,6 @@ const geistMono = Geist_Mono({
 });
 
 export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Promise<Metadata> {
-	const locale = await initLocale(params);
-
 	return {
 		metadataBase: new URL(profile.siteURL),
 		title: {

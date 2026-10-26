@@ -6,21 +6,6 @@ import { Button } from '../ui/button';
 import { focusRing } from '@/lib/styles';
 import { useTranslations } from 'next-intl';
 
-type Labels = {
-	name: string;
-	email: string;
-	company: string;
-	message: string;
-	submit: string;
-	sending: string;
-	success: string;
-	errors: {
-		invalid: string;
-		rate_limited: string;
-		generic: string;
-	};
-};
-
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? '';
