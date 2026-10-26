@@ -2,27 +2,31 @@ import type { Metadata } from 'next';
 import { LinePage } from '@/components/line/LinePage';
 import { lines } from '@/content/lines';
 import { getProfessional } from '@/content/professional';
-import { ui } from '@/content/ui';
 import { formatPeriod } from '@/lib/format';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
+import { initLocale } from '@/i18n/locale';
 
-export const metadata: Metadata = {
-	title: ui.pages.professional.title,
-};
+export async function generateMetadata({ params }: PageProps<'/[locale]/professional'>): Promise<Metadata>
+{
+	const locale = await initLocale(params)
+	const t = await getTranslations({ locale, namespace: 'pages.professional'})
+	return { title: t('title')}
+}
 
 export default async function ProfessionalPage({ params }: PageProps<'/[locale]/professional'>) {
-	const { locale } = await params;
-	setRequestLocale(locale);
 
-	const stops = getProfessional().map((job) => ({
+	const locale = await initLocale(params)
+	const t = await getTranslations({locale})
+
+	const stops = getProfessional(locale).map((job) => ({
 		slug: job.slug,
 		title: job.role,
 		subtitle: job.company,
-		period: formatPeriod(job.start, job.end, 'en', ui.common.present),
+		period: formatPeriod(job.start, job.end, 'en', t('common.present')),
 		summary: job.summary,
 		highlights: job.highlights,
 		images: job.images ?? [],
 	}));
 
-	return <LinePage line={lines.professional} title={ui.pages.professional.title} intro={ui.pages.professional.intro} stops={stops} />;
+	return <LinePage line={lines.professional} title={t('pages.professional.title')} intro={t('pages.professional.intro')} stops={stops} />;
 }

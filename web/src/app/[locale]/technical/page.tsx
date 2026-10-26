@@ -2,18 +2,23 @@ import type { Metadata } from 'next';
 import { LinePage } from '@/components/line/LinePage';
 import { lines } from '@/content/lines';
 import { getProjects } from '@/content/projects';
-import { ui } from '@/content/ui';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
+import { initLocale } from '@/i18n/locale';
 
-export const metadata: Metadata = {
-	title: ui.pages.technical.title,
-};
+export async function generateMetadata({ params }: PageProps<'/[locale]/technical'>): Promise<Metadata>
+{
+	const locale = await initLocale(params)
+	const t = await getTranslations({ locale, namespace: 'pages.technical'})
+	return { title: t('title')}
+}
+
 
 export default async function TechnicalPage({ params }: PageProps<'/[locale]/technical'>) {
-	const { locale } = await params;
-	setRequestLocale(locale);
 
-	const stops = getProjects().map((project) => ({
+	const locale = await initLocale(params)
+	const t = await getTranslations({locale, namespace: 'pages.technical'})
+
+	const stops = getProjects(locale).map((project) => ({
 		slug: project.slug,
 		title: project.title,
 		subtitle: project.tech.join(', '),
@@ -23,5 +28,5 @@ export default async function TechnicalPage({ params }: PageProps<'/[locale]/tec
 		images: project.images ?? [],
 	}));
 
-	return <LinePage line={lines.technical} title={ui.pages.technical.title} intro={ui.pages.technical.intro} stops={stops} />;
+	return <LinePage line={lines.technical} title={t('title')} intro={t('intro')} stops={stops} />;
 }

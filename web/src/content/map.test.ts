@@ -7,9 +7,9 @@ import { getAcademic } from './academic';
 import { isOctilinear } from '@/lib/map-geometry';
 
 const contentSlugs: Record<LineId, readonly string[]> = {
-	professional: getProfessional().map((e) => e.slug),
-	academics: getAcademic().map((e) => e.slug),
-	technical: getProjects().map((e) => e.slug),
+	professional: getProfessional('en').map((e) => e.slug),
+	academics: getAcademic('en').map((e) => e.slug),
+	technical: getProjects('en').map((e) => e.slug),
 };
 
 const stops = linePaths.flatMap((line) =>

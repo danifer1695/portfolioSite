@@ -5,6 +5,7 @@ import { cn } from '@/lib/cn';
 import { focusRing } from '@/lib/styles';
 import type { NavItem } from '@/content/navigation';
 import { NavLink } from './NavLink';
+import { LocaleSwitcher } from './LocaleSwitcher';
 
 type Props = {
 	initials: string;
@@ -67,6 +68,8 @@ export function Header({ initials, nav }: Props) {
 						))}
 					</ul>
 				</nav>
+
+				<LocaleSwitcher />
 			</Container>
 		</header>
 	);

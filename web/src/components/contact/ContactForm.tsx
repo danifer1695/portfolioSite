@@ -4,6 +4,7 @@ import { cn } from '@/lib/cn';
 import { useState } from 'react';
 import { Button } from '../ui/button';
 import { focusRing } from '@/lib/styles';
+import { useTranslations } from 'next-intl';
 
 type Labels = {
 	name: string;
@@ -25,7 +26,10 @@ type Status = 'idle' | 'sending' | 'sent' | 'error';
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? '';
 const field = cn('w-full rounded-md border border-border bg-background px-3 py-2', focusRing);
 
-export function ContactForm({ labels }: { labels: Labels }) {
+export function ContactForm() {
+
+	const t = useTranslations('pages.contact.form')
+
 	const [status, setStatus] = useState<Status>('idle');
 	const [errorMessage, setErrorMessage] = useState('');
 
@@ -54,11 +58,11 @@ export function ContactForm({ labels }: { labels: Labels }) {
 				setStatus('sent');
 				form.reset();
 			} else {
-				setErrorMessage(data.error === 'invalid' || data.error === 'rate_limited' ? labels.errors[data.error] : labels.errors.generic);
+				setErrorMessage(data.error === 'invalid' || data.error === 'rate_limited' ? t(`errors.${data.error}`) : t('errors.generic'));
 				setStatus('error');
 			}
 		} catch {
-			setErrorMessage(labels.errors.generic);
+			setErrorMessage(t('errors.generic'));
 			setStatus('error');
 		}
 	}
@@ -67,19 +71,19 @@ export function ContactForm({ labels }: { labels: Labels }) {
 	return (
 		<form onSubmit={handleSubmit} className="max-w-prose space-y-4">
 			<label className="block space-y-1">
-				<span className="text-sm font-medium">{labels.name}</span>
+				<span className="text-sm font-medium">{t('name')}</span>
 				<input name="name" required maxLength={100} autoComplete="name" className={field} />
 			</label>
 			<label className="block space-y-1">
-				<span className="text-sm font-medium">{labels.email}</span>
+				<span className="text-sm font-medium">{t('email')}</span>
 				<input name="email" required maxLength={254} autoComplete="email" className={field} />
 			</label>
 			<label className="block space-y-1">
-				<span className="text-sm font-medium">{labels.company}</span>
+				<span className="text-sm font-medium">{t('company')}</span>
 				<input name="company" required maxLength={100} autoComplete="organization" className={field} />
 			</label>
 			<label className="block space-y-1">
-				<span className="text-sm font-medium">{labels.message}</span>
+				<span className="text-sm font-medium">{t('message')}</span>
 				<textarea name="message" required minLength={10} maxLength={5000} rows={6} className={field} />
 			</label>
 
@@ -90,12 +94,12 @@ export function ContactForm({ labels }: { labels: Labels }) {
 
 			{/*Submit button*/}
 			<Button type="submit" disabled={status === 'sending'}>
-				{status === 'sending' ? labels.sending : labels.submit}
+				{status === 'sending' ? t('sending') : t('submit')}
 			</Button>
 
 			{/*Status message*/}
 			<p aria-live="polite" className={cn('text-sm', status === 'error' && 'text-red-600')}>
-				{status === 'sent' && labels.success}
+				{status === 'sent' && t('success')}
 				{status === 'error' && errorMessage}
 			</p>
 		</form>

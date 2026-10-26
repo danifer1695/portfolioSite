@@ -5,7 +5,7 @@ import { getProjects } from './projects';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-const allImages = [...getProfessional(), ...getAcademic(), ...getProjects()].flatMap((e) => e.images ?? []);
+const allImages = [...getProfessional('en'), ...getAcademic('en'), ...getProjects('en')].flatMap((e) => e.images ?? []);
 
 describe('media contract', () => {
 	it('every referenced image exists in public/', () => {

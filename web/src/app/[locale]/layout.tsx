@@ -10,6 +10,8 @@ import { Footer } from '@/components/layout/Footer';
 import { routing } from '@/i18n/routings';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
+import { setRequestLocale } from 'next-intl/server';
+import { initLocale } from '@/i18n/locale';
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -23,14 +25,15 @@ const geistMono = Geist_Mono({
 
 export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Promise<Metadata>
 {
-	const { locale } = await params
+	const locale = await initLocale(params)
+
 	return {
 		metadataBase: new URL(profile.siteURL),
 		title: {
 			default: `[Portfolio - ${profile.name}]`,
-			template: '[DFM] - %s'
+			template: '[DFM] - %s',
 		},
-		description: profile.description
+		description: profile.description,
 	}
 }
 
@@ -39,9 +42,10 @@ export function generateStaticParams() {
 }
 
 export default async function LocaleLayout({ children, params }: LayoutProps<'/[locale]'>) {
-	const { locale } = await params;
 
+	const { locale } = await params;
 	if (!hasLocale(routing.locales, locale)) notFound();
+	setRequestLocale(locale)
 
 	return (
 		<html lang={locale} className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
