@@ -5,8 +5,7 @@ import { profile } from '@/content/profile';
 import { useTranslations } from 'next-intl';
 
 export default function Home() {
-
-	const t = useTranslations('pages')
+	const t = useTranslations('pages');
 	return (
 		<Container className="space-y-12 py-12">
 			<section className="space-y-2 w-full">

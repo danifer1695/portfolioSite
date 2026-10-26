@@ -20,8 +20,12 @@ export type ProfessionalSource = {
 
 //Page receives: version of ProfessionalSource with no Text or TextList types
 export type Professional = Omit<ProfessionalSource, 'role' | 'mapLabel' | 'location' | 'summary' | 'highlights'> & {
-	role: string; mapLabel?: string; location: string, summary: string; highlights: readonly string[]
-}
+	role: string;
+	mapLabel?: string;
+	location: string;
+	summary: string;
+	highlights: readonly string[];
+};
 
 //=================NEEDS TRANSLATION=========================
 //not exported, accessed through getProfessional()
@@ -47,7 +51,7 @@ const professional = [
 		highlights: {
 			en: ['Unity development', 'Development in C#'],
 			fr: ['Unity development', 'Development in C#'],
-		}
+		},
 	},
 	{
 		slug: 'freelance', //becomes '/professional#readality'
@@ -182,6 +186,6 @@ export function getProfessional(locale: Locale): readonly Professional[] {
 			mapLabel: e.mapLabel && tr(e.mapLabel, locale),
 			location: tr(e.location, locale),
 			summary: tr(e.summary, locale),
-			highlights: trList(e.highlights, locale)
+			highlights: trList(e.highlights, locale),
 		}));
 }

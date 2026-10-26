@@ -6,17 +6,15 @@ import { formatPeriod } from '@/lib/format';
 import { getTranslations } from 'next-intl/server';
 import { initLocale } from '@/i18n/locale';
 
-export async function generateMetadata({ params }: PageProps<'/[locale]/professional'>): Promise<Metadata>
-{
-	const locale = await initLocale(params)
-	const t = await getTranslations({ locale, namespace: 'pages.professional'})
-	return { title: t('title')}
+export async function generateMetadata({ params }: PageProps<'/[locale]/professional'>): Promise<Metadata> {
+	const locale = await initLocale(params);
+	const t = await getTranslations({ locale, namespace: 'pages.professional' });
+	return { title: t('title') };
 }
 
 export default async function ProfessionalPage({ params }: PageProps<'/[locale]/professional'>) {
-
-	const locale = await initLocale(params)
-	const t = await getTranslations({locale})
+	const locale = await initLocale(params);
+	const t = await getTranslations({ locale });
 
 	const stops = getProfessional(locale).map((job) => ({
 		slug: job.slug,

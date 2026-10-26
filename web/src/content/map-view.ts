@@ -46,7 +46,7 @@ function buildMapLabels(locale: Locale): Record<string, string> {
 }
 
 export function getMapView(locale: Locale): MapView {
-	const mapLabels = buildMapLabels(locale)
+	const mapLabels = buildMapLabels(locale);
 
 	const lineViews = linePaths.map((path) => ({
 		id: path.id,

@@ -45,9 +45,8 @@ const LOCALE = 'en';
 const displayURL = (href: string) => href.replace(/^https?:\/\/(www\.)?/, '');
 
 export async function getResumeView(locale: Locale): Promise<ResumeView> {
-
-	const t = await getTranslations({locale})
-	const present = t('common.present')
+	const t = await getTranslations({ locale });
+	const present = t('common.present');
 
 	const entriesByLine: Record<LineId, () => readonly ResumeEntry[]> = {
 		professional: () =>
@@ -90,7 +89,7 @@ export async function getResumeView(locale: Locale): Promise<ResumeView> {
 			id,
 			heading: t(`lines.${id}.name`),
 			line: lines[id],
-			entries: entriesByLine[id]()
+			entries: entriesByLine[id](),
 		})),
 		skillHeading: t('pages.resume.skills'),
 		skills: profile.skills,

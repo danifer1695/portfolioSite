@@ -23,9 +23,8 @@ const geistMono = Geist_Mono({
 	subsets: ['latin'],
 });
 
-export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Promise<Metadata>
-{
-	const locale = await initLocale(params)
+export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Promise<Metadata> {
+	const locale = await initLocale(params);
 
 	return {
 		metadataBase: new URL(profile.siteURL),
@@ -34,7 +33,7 @@ export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Pr
 			template: '[DFM] - %s',
 		},
 		description: profile.description,
-	}
+	};
 }
 
 export function generateStaticParams() {
@@ -42,10 +41,9 @@ export function generateStaticParams() {
 }
 
 export default async function LocaleLayout({ children, params }: LayoutProps<'/[locale]'>) {
-
 	const { locale } = await params;
 	if (!hasLocale(routing.locales, locale)) notFound();
-	setRequestLocale(locale)
+	setRequestLocale(locale);
 
 	return (
 		<html lang={locale} className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
@@ -56,9 +54,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
 					<main id="main" tabIndex={-1} className="flex-1 outline-none">
 						{children}
 					</main>
-					<Footer
-						social={profile.social}
-					/>
+					<Footer social={profile.social} />
 				</NextIntlClientProvider>
 			</body>
 		</html>

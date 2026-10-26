@@ -13,8 +13,7 @@ type Props = {
 };
 
 export function Header({ initials, nav }: Props) {
-
-	const t = useTranslations()
+	const t = useTranslations();
 	return (
 		<header className="sticky top-0 z-50 text-white bg-metroBlue print:hidden">
 			<Container

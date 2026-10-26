@@ -13,8 +13,7 @@ export function MapLegend({
 	onActivate: (id: LineId) => void;
 	onDeactivate: () => void;
 }) {
-
-	const t = useTranslations()
+	const t = useTranslations();
 
 	return (
 		<section aria-labelledby="legend-heading" className="space-y-4">

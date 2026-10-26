@@ -8,9 +8,8 @@ import { profile } from '@/content/profile';
 
 type SocialLink = { label: string; href: string };
 
-export function Footer({ social }: {social: readonly SocialLink[]}) {
-
-	const t = useTranslations('footer')
+export function Footer({ social }: { social: readonly SocialLink[] }) {
+	const t = useTranslations('footer');
 	/*print-hidden: hide this element for printing*/
 	return (
 		<footer className="text-white bg-metroBlue print:hidden">
@@ -29,7 +28,7 @@ export function Footer({ social }: {social: readonly SocialLink[]}) {
 				<Link href="/contact" className={cn('font-semibold underline-offset-4 hover:underline', focusRing)}>
 					{t('contact')}
 				</Link>
-				<p>{t('copyright', {year: new Date().getFullYear(), name: profile.name})}</p>
+				<p>{t('copyright', { year: new Date().getFullYear(), name: profile.name })}</p>
 				<ul className="flex gap-4">
 					{social.map((s) => (
 						<li key={s.href}>

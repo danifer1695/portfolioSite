@@ -16,8 +16,12 @@ export type AcademicSource = {
 };
 
 export type Academic = Omit<AcademicSource, 'title' | 'mapLabel' | 'location' | 'summary' | 'highlights'> & {
-	title: string, mapLabel: string, location: string, summary: string, highlights: readonly string[]
-}
+	title: string;
+	mapLabel: string;
+	location: string;
+	summary: string;
+	highlights: readonly string[];
+};
 
 //not exported, accessed through getAcademic()
 const academic = [
@@ -81,7 +85,7 @@ const academic = [
 		},
 		mapLabel: {
 			en: 'Focal Point',
-			fr: 'Focal Point'
+			fr: 'Focal Point',
 		},
 		institution: 'Focal Point School',
 		location: {
@@ -147,8 +151,8 @@ const academic = [
 			fr: 'During my last year of High School and first year of college, in the summer semesters of 2012 and 2014, I attender Parsons as an independent student to take some college courses on drawing, painting and illustration.',
 		},
 		highlights: {
-			en:['Drawing', 'Paingint', 'Illustration', 'Art'],
-			fr:['Drawing', 'Paingint', 'Illustration', 'Art'],
+			en: ['Drawing', 'Paingint', 'Illustration', 'Art'],
+			fr: ['Drawing', 'Paingint', 'Illustration', 'Art'],
 		},
 	},
 ] as const satisfies readonly AcademicSource[];
@@ -163,6 +167,6 @@ export function getAcademic(locale: Locale): readonly Academic[] {
 			mapLabel: tr(e.mapLabel, locale),
 			location: tr(e.location, locale),
 			summary: tr(e.summary, locale),
-			highlights: trList(e.highlights, locale)
-		}))
+			highlights: trList(e.highlights, locale),
+		}));
 }

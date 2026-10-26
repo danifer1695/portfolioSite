@@ -27,8 +27,7 @@ const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? '';
 const field = cn('w-full rounded-md border border-border bg-background px-3 py-2', focusRing);
 
 export function ContactForm() {
-
-	const t = useTranslations('pages.contact.form')
+	const t = useTranslations('pages.contact.form');
 
 	const [status, setStatus] = useState<Status>('idle');
 	const [errorMessage, setErrorMessage] = useState('');

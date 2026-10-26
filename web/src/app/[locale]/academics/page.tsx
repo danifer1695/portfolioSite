@@ -6,18 +6,15 @@ import { formatPeriod } from '@/lib/format';
 import { getTranslations } from 'next-intl/server';
 import { initLocale } from '@/i18n/locale';
 
-export async function generateMetadata({ params }: PageProps<'/[locale]/academics'>): Promise<Metadata>
-{
-	const locale = await initLocale(params)
-	const t = await getTranslations({ locale, namespace: 'pages.academics'})
-	return { title: t('title')}
+export async function generateMetadata({ params }: PageProps<'/[locale]/academics'>): Promise<Metadata> {
+	const locale = await initLocale(params);
+	const t = await getTranslations({ locale, namespace: 'pages.academics' });
+	return { title: t('title') };
 }
 
-
 export default async function AcademicsPage({ params }: PageProps<'/[locale]/academics'>) {
-
-	const locale = await initLocale(params)
-	const t = await getTranslations({locale})
+	const locale = await initLocale(params);
+	const t = await getTranslations({ locale });
 
 	const stops = getAcademic(locale).map((study) => ({
 		slug: study.slug,

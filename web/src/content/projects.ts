@@ -19,8 +19,11 @@ export type ProjectSource = {
 };
 
 export type Project = Omit<ProjectSource, 'title' | 'mapLabel' | 'summary' | 'highlights'> & {
-	title: string, mapLabel: string, summary: string, highlights: readonly string[]
-}
+	title: string;
+	mapLabel: string;
+	summary: string;
+	highlights: readonly string[];
+};
 
 const projects = [
 	{
@@ -125,6 +128,6 @@ export function getProjects(locale: Locale): readonly Project[] {
 			title: tr(e.title, locale),
 			mapLabel: tr(e.mapLabel, locale),
 			summary: tr(e.summary, locale),
-			highlights: trList(e.highlights, locale)
-		}))
+			highlights: trList(e.highlights, locale),
+		}));
 }
