@@ -1,4 +1,7 @@
 {
+	"temp": {
+		"wip": "Please note: This site is still under construction."
+	},
 	"lines": {
 		"professional": {
 			"name": "Work Experience",
@@ -29,7 +32,8 @@
 		"home": {
 			"intro": "Placeholder intro.",
 			"legendTitle": "Lines",
-			"mapTitle": "Career Map"
+			"mapTitle": "Career Map",
+			"msg-noGimmicks": "No time for gimmicks? Go straight to the resume page: "
 		},
 		"professional": {
 			"title": "Work Experience",

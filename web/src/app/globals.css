@@ -14,6 +14,13 @@
 	--line-p: #f5821f;
 	--line-a: #00a651;
 	--line-t: #ffde00;
+
+	--info-fg: #81c340;
+	--info-bg: #81c34050;
+	--warning-fg: #ffde00;
+	--warning-bg: #ffde0050;
+	--error-fg: #ee3f2f;
+	--error-bg: #ee3f2f50;
 }
 
 /*Physical page when printing*/
@@ -35,6 +42,13 @@
 	--color-line-p: var(--line-p);
 	--color-line-a: var(--line-a);
 	--color-line-t: var(--line-t);
+
+	--color-info-fg: var(--info-fg);
+	--color-info-bg: var(--info-bg);
+	--color-warning-fg: var(--warning-fg);
+	--color-warning-bg: var(--warning-bg);
+	--color-error-fg: var(--error-fg);
+	--color-error-bg: var(--error-bg);
 
 	--font-sans: var(--font-geist-sans);
 	--font-mono: var(--font-geist-mono);
