@@ -13,6 +13,7 @@ export type AcademicSource = {
 	summary: Text;
 	images?: GalleryImage[];
 	highlights: TextList;
+	featResume: boolean;	//use this field to filter entries out from the resume section
 };
 
 export type Academic = Omit<AcademicSource, 'title' | 'mapLabel' | 'location' | 'summary' | 'highlights'> & {
@@ -80,6 +81,7 @@ const academic = [
 				'Programmation avancée',
 			],
 		},
+		featResume: true,
 	},
 	{
 		slug: 'syn-2018',
@@ -106,6 +108,7 @@ const academic = [
 			en: ['Concept Art', 'Illustration', 'Game Development', 'Visual Development', '3D Art', 'Blender'],
 			fr: ['Concept art', 'Illustration', 'Développement de jeux', 'Développement visuel', 'Art 3D', 'Blender'],
 		},
+		featResume: true,
 	},
 	{
 		slug: 'focalpoint',
@@ -132,6 +135,7 @@ const academic = [
 			en: ['Concept Art', 'Illustration', 'Environment Design'],
 			fr: ['Concept art', 'Illustration', 'Conception d’environnements'],
 		},
+		featResume: false,
 	},
 	{
 		slug: 'digipen-2013',
@@ -158,6 +162,7 @@ const academic = [
 			en: ['2D Animation', '3D Animation', 'Concept Art', '3D Art', 'Game Development'],
 			fr: ['Animation 2D', 'Animation 3D', 'Concept art', 'Art 3D', 'Développement de jeux'],
 		},
+		featResume: true,
 	},
 	{
 		slug: 'parsons-2013',
@@ -184,6 +189,7 @@ const academic = [
 			en: ['Drawing', 'Paingint', 'Illustration', 'Art'],
 			fr: ['Dessin', 'Peinture', 'Illustration', 'Art'],
 		},
+		featResume: false,
 	},
 ] as const satisfies readonly AcademicSource[];
 

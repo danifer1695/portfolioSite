@@ -14,7 +14,9 @@ export type ResumeEntry = {
 	subtitle: string;
 	period: string;
 	location?: string;
+	description?: string;
 	points: readonly string[];
+	features: boolean;
 };
 
 export type ResumeContact = {
@@ -56,7 +58,9 @@ export async function getResumeView(locale: Locale): Promise<ResumeView> {
 				subtitle: job.company,
 				location: job.location,
 				period: formatPeriod(job.start, job.end, LOCALE, present),
+				description: job.summary_short || job.summary,
 				points: job.highlights,
+				features: job.featResume,
 			})),
 		academics: () =>
 			getAcademic(locale).map((study) => ({
@@ -65,7 +69,9 @@ export async function getResumeView(locale: Locale): Promise<ResumeView> {
 				subtitle: study.institution,
 				location: study.location,
 				period: formatPeriod(study.start, study.end, LOCALE, present),
+				description: study.summary,
 				points: study.highlights,
+				features: study.featResume,
 			})),
 		technical: () =>
 			getProjects(locale).map((proj) => ({
@@ -73,7 +79,9 @@ export async function getResumeView(locale: Locale): Promise<ResumeView> {
 				title: proj.title,
 				subtitle: proj.tech.join(' - '),
 				period: proj.year,
+				description: proj.summary_short,
 				points: proj.highlights,
+				features: proj.featResume,
 			})),
 	};
 
