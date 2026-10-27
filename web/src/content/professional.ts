@@ -14,7 +14,7 @@ export type ProfessionalSource = {
 	start: string;
 	end: string | null; //null means current position
 	summary: Text;
-	summary_short?: Text;	//short format description better suited for the resume
+	summary_short?: Text; //short format description better suited for the resume
 	images?: GalleryImage[];
 	highlights: TextList;
 	featResume: boolean;
@@ -52,7 +52,7 @@ const professional = [
 			fr: "J'ai aidé l'équipe à concevoir et développer de nouvelles fonctionnalités pour son projet de réalité virtuelle sous Unity",
 		},
 		summary_short: {
-			en: 'Onboarded onto a production Unity/C# codebase and shipped new features independently, using Meta\'s XR SDK without disrupting existing architecture. Collaborated with the development team to discuss the feasibility and implementation of bug fixes and new functionalities.',
+			en: "Onboarded onto a production Unity/C# codebase and shipped new features independently, using Meta's XR SDK without disrupting existing architecture. Collaborated with the development team to discuss the feasibility and implementation of bug fixes and new functionalities.",
 			fr: "J'ai pris en main une base de code Unity/C# en production et livré en autonomie de nouvelles fonctionnalités avec le Meta XR SDK, sans perturber l'architecture existante. J'ai collaboré avec l'équipe de développement pour évaluer la faisabilité et la mise en œuvre de corrections de bugs et de nouvelles fonctionnalités.",
 		},
 

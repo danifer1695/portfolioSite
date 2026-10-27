@@ -7,7 +7,7 @@ export type ProjectSource = {
 	title: Text;
 	mapLabel?: Text;
 	summary: Text;
-	summary_short: Text;	//short form for the CV
+	summary_short: Text; //short form for the CV
 	tech: readonly string[];
 	year: string;
 	featured: boolean;
@@ -24,7 +24,7 @@ export type Project = Omit<ProjectSource, 'title' | 'mapLabel' | 'summary' | 'su
 	title: string;
 	mapLabel: string;
 	summary: string;
-	summary_short: string;	//short form for the CV
+	summary_short: string; //short form for the CV
 	highlights: readonly string[];
 };
 
@@ -45,7 +45,7 @@ const projects = [
 		},
 		summary_short: {
 			en: '',
-			fr: "",
+			fr: '',
 		},
 		tech: ['Next.js', 'TypeScript', 'Tailwind', 'Hono', 'Cloudflare'],
 		year: '2026',
@@ -72,7 +72,7 @@ const projects = [
 			fr: "Développée en solo de bout en bout, cette extension Chromium Manifest V3 est née de mes propres besoins dans l'apprentissage du japonais. Son objectif est de rendre l'apprentissage des kanji aussi fluide que possible, en permettant de consulter directement n'importe quel caractère rencontré en naviguant sur le web. Il suffit de surligner un texte contenant un ou plusieurs kanji pour qu'une petite fenêtre contextuelle apparaisse avec des informations détaillées à leur sujet. L'utilisateur peut ensuite enregistrer ceux qu'il souhaite apprendre et les retrouver dans la fenêtre principale de l'application. L'extension propose également un système de répétition espacée : l'utilisateur est interrogé sur ses kanji enregistrés, et l'application détermine quand les lui proposer à nouveau en fonction de son niveau de maîtrise. Sur le plan technique, le projet comprend le client Chromium principal, ainsi qu'une application mobile compagnon actuellement en développement. Le back-end est hébergé sur Railway et utilise PostgreSQL pour le stockage et la gestion des données utilisateur.",
 		},
 		summary_short: {
-			en: "Manifest V3 Chromium application for Japanese language learning. Developed solo end-to-end with self-managed deadlines, and now live on the Chrome Web Store. Web client developed using vanilla JavaScript plus HTML/CSS, mobile client with TypeScript + React Native, back end with JavaScript + Node.js + Express, hosted on Railway.",
+			en: 'Manifest V3 Chromium application for Japanese language learning. Developed solo end-to-end with self-managed deadlines, and now live on the Chrome Web Store. Web client developed using vanilla JavaScript plus HTML/CSS, mobile client with TypeScript + React Native, back end with JavaScript + Node.js + Express, hosted on Railway.',
 			fr: "Application Chromium Manifest V3 dédiée à l'apprentissage du japonais. Développée en solo de bout en bout, avec des échéances autogérées, et désormais disponible sur le Chrome Web Store. Client web développé en JavaScript vanilla avec HTML/CSS, client mobile en TypeScript + React Native, back-end en JavaScript + Node.js + Express, hébergé sur Railway.",
 		},
 		tech: ['JavaScript', 'HTML', 'React Native', 'TypeScript', 'PostgreSQL', 'Node.js', 'Express', 'Zod', 'Bcrypt', 'Github'],

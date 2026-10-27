@@ -12,20 +12,18 @@ export default async function Home({ params }: PageProps<'/[locale]'>) {
 
 	return (
 		<Container className="space-y-12 py-12">
-
 			{/*Messages*/}
-			<div className='flex flex-col space-y-2'>
+			<div className="flex flex-col space-y-2">
 				{/*Warning message - WIP*/}
-				<MessageBox type='warning'>
+				<MessageBox type="warning">
 					<p>{t('temp.wip')}</p>
 				</MessageBox>
 
 				{/*Info message - Link to resume*/}
-				<MessageBox type='info'>
+				<MessageBox type="info">
 					<p>{t('pages.home.msg-noGimmicks')}</p>
 				</MessageBox>
 			</div>
-
 
 			<section className="space-y-2 w-full">
 				<h1 className="text-4xl font-bold tracking-tight">{profile.name}</h1>

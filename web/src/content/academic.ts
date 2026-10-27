@@ -11,10 +11,10 @@ export type AcademicSource = {
 	start: string;
 	end: string | null; //null means current position
 	summary: Text;
-	summary_short?: Text;	//short format description better suited for the resume
+	summary_short?: Text; //short format description better suited for the resume
 	images?: GalleryImage[];
 	highlights: TextList;
-	featResume: boolean;	//use this field to filter entries out from the resume section
+	featResume: boolean; //use this field to filter entries out from the resume section
 };
 
 export type Academic = Omit<AcademicSource, 'title' | 'mapLabel' | 'location' | 'summary' | 'summary_short' | 'highlights'> & {
@@ -50,7 +50,7 @@ const academic = [
 			fr: 'Ce programme s’adressait aux étudiants souhaitant se spécialiser en informatique et titulaires d’un baccalauréat dans un domaine sans rapport. Il condense en une seule année la matière d’un baccalauréat, chaque cours regroupant souvent le contenu de deux ou trois cours de premier cycle. Durant cette période, les étudiants doivent réaliser de nombreux projets, individuels et en équipe, afin d’acquérir une solide maîtrise de langages tels que Java, C++, Python, SQL, voire Assembly.',
 		},
 		summary_short: {
-			en: 'Accelerated one-year program condensing a full Computer Science bachelor\'s curriculum, designed for degree holders from other fields. Completed individual and team projects in Java, C++, Python, SQL and Assembly, covering software engineering, data structures, databases and operating systems.',
+			en: "Accelerated one-year program condensing a full Computer Science bachelor's curriculum, designed for degree holders from other fields. Completed individual and team projects in Java, C++, Python, SQL and Assembly, covering software engineering, data structures, databases and operating systems.",
 			fr: 'Programme accéléré d’un an condensant le cursus complet d’un baccalauréat en informatique, destiné aux titulaires d’un diplôme dans un autre domaine. Réalisation de projets individuels et en équipe en Java, C++, Python, SQL et Assembly, couvrant le génie logiciel, les structures de données, les bases de données et les systèmes d’exploitation.',
 		},
 		highlights: {
