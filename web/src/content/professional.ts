@@ -52,8 +52,8 @@ const professional = [
 			fr: "J'ai aidé l'équipe à concevoir et développer de nouvelles fonctionnalités pour son projet de réalité virtuelle sous Unity",
 		},
 		summary_short: {
-			en: 'Onboarded onto a production Unity/C# codebase and shipped new features independently, using Meta\'s XR SDK without disrupting existing architecture. Collaborated with the development team to discuss the feasability and implementation of bug fixes and new functionalities.',
-			fr: 'Onboarded onto a production Unity/C# codebase and shipped new features independently, using Meta\'s XR SDK without disrupting existing architecture. Collaborated with the development team to discuss the feasability and implementation of bug fixes and new functionalities.',
+			en: 'Onboarded onto a production Unity/C# codebase and shipped new features independently, using Meta\'s XR SDK without disrupting existing architecture. Collaborated with the development team to discuss the feasibility and implementation of bug fixes and new functionalities.',
+			fr: "J'ai pris en main une base de code Unity/C# en production et livré en autonomie de nouvelles fonctionnalités avec le Meta XR SDK, sans perturber l'architecture existante. J'ai collaboré avec l'équipe de développement pour évaluer la faisabilité et la mise en œuvre de corrections de bugs et de nouvelles fonctionnalités.",
 		},
 
 		highlights: {
@@ -85,7 +85,7 @@ const professional = [
 		},
 		summary_short: {
 			en: 'I manage end-to-end client engagements: requirement gathering, technical implementation and handoff. Specialized in development with TypeScript + Next.js / React on the front end and JavaScript + Node.js / Express in the back end.',
-			fr: 'I manage end-to-end client engagements: requirement gathering, technical implementation and handoff. Specialized in development with TypeScript + Next.js / React on the front end and JavaScript + Node.js / Express in the back end.',
+			fr: 'Je gère des missions client de bout en bout : recueil des besoins, mise en œuvre technique et livraison. Spécialité : développement front-end en TypeScript + Next.js / React et back-end en JavaScript + Node.js / Express.',
 		},
 		highlights: {
 			en: ['Frontend', 'Backend', 'Migration', 'Agentic Development'],

@@ -1,4 +1,7 @@
 {
+	"temp": {
+		"wip": "Veuillez noter: Ce site est encore en developpement."
+	},
 	"lines": {
 		"professional": {
 			"name": "Expérience professionnelle",
@@ -29,7 +32,8 @@
 		"home": {
 			"intro": "Texte d’introduction provisoire.",
 			"legendTitle": "Lignes",
-			"mapTitle": "Carte de carrière"
+			"mapTitle": "Carte de carrière",
+			"msg-noGimmicks": "Pressés par le temps? Allez directement sur mon CV:"
 		},
 		"professional": {
 			"title": "Expérience professionnelle",

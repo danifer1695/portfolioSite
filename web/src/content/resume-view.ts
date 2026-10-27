@@ -69,7 +69,7 @@ export async function getResumeView(locale: Locale): Promise<ResumeView> {
 				subtitle: study.institution,
 				location: study.location,
 				period: formatPeriod(study.start, study.end, LOCALE, present),
-				description: study.summary,
+				description: study.summary_short,
 				points: study.highlights,
 				features: study.featResume,
 			})),

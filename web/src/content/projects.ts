@@ -72,8 +72,8 @@ const projects = [
 			fr: "Développée en solo de bout en bout, cette extension Chromium Manifest V3 est née de mes propres besoins dans l'apprentissage du japonais. Son objectif est de rendre l'apprentissage des kanji aussi fluide que possible, en permettant de consulter directement n'importe quel caractère rencontré en naviguant sur le web. Il suffit de surligner un texte contenant un ou plusieurs kanji pour qu'une petite fenêtre contextuelle apparaisse avec des informations détaillées à leur sujet. L'utilisateur peut ensuite enregistrer ceux qu'il souhaite apprendre et les retrouver dans la fenêtre principale de l'application. L'extension propose également un système de répétition espacée : l'utilisateur est interrogé sur ses kanji enregistrés, et l'application détermine quand les lui proposer à nouveau en fonction de son niveau de maîtrise. Sur le plan technique, le projet comprend le client Chromium principal, ainsi qu'une application mobile compagnon actuellement en développement. Le back-end est hébergé sur Railway et utilise PostgreSQL pour le stockage et la gestion des données utilisateur.",
 		},
 		summary_short: {
-			en: "Manifest V3 Chromium application for japanese language learning. Developed solo end-to-end with self-managed deadlines, and now live on the Chrome Web Store. Web client developed using vanilla JavaScript plus HTML/CSS, mobile client with TypeScript + React Native, back end with JavScript + Node.js + Express, hosted on Railway.",
-			fr: "Manifest V3 Chromium application for japanese language learning. Developed solo end-to-end with self-managed deadlines, and now live on the Chrome Web Store. Web client developed using vanilla JavaScript plus HTML/CSS, mobile client with TypeScript + React Native, back end with JavScript + Node.js + Express, hosted on Railway.",
+			en: "Manifest V3 Chromium application for Japanese language learning. Developed solo end-to-end with self-managed deadlines, and now live on the Chrome Web Store. Web client developed using vanilla JavaScript plus HTML/CSS, mobile client with TypeScript + React Native, back end with JavaScript + Node.js + Express, hosted on Railway.",
+			fr: "Application Chromium Manifest V3 dédiée à l'apprentissage du japonais. Développée en solo de bout en bout, avec des échéances autogérées, et désormais disponible sur le Chrome Web Store. Client web développé en JavaScript vanilla avec HTML/CSS, client mobile en TypeScript + React Native, back-end en JavaScript + Node.js + Express, hébergé sur Railway.",
 		},
 		tech: ['JavaScript', 'HTML', 'React Native', 'TypeScript', 'PostgreSQL', 'Node.js', 'Express', 'Zod', 'Bcrypt', 'Github'],
 		year: '2026',
@@ -101,7 +101,7 @@ const projects = [
 		},
 		summary_short: {
 			en: 'Group project at Concordia University. Developed an arcade version of Snake allowing multiple players to compete for a high score through local servers. Given my previous experience in game development, I was put in charge of the graphics and gameplay code overhaul.',
-			fr: 'Group project at Concordia University. Developed an arcade version of Snake allowing multiple players to compete for a high score through local servers. Given my previous experience in game development, I was put in charge of the graphics and gameplay code overhaul.',
+			fr: "Projet de groupe à l'Université Concordia. Développement d'une version arcade de Snake permettant à plusieurs joueurs de s'affronter pour le meilleur score via des serveurs locaux. Compte tenu de mon expérience en développement de jeux vidéo, la refonte du code graphique et du gameplay m'a été confiée.",
 		},
 		tech: ['Java', 'Git', 'Maven', 'SQLite', 'Swing'],
 		year: '2026',
@@ -129,7 +129,7 @@ const projects = [
 		},
 		summary_short: {
 			en: 'Real-time 3D rendering engine built from the ground up in C++ and OpenGL. Used my extensive past experience as a user of 3D rendering tools to create an application that remains simple and intuitive to use.',
-			fr: 'Real-time 3D rendering engine built from the ground up in C++ and OpenGL. Used my extensive past experience as a user of 3D rendering tools to create an application that remains simple and intuitive to use.',
+			fr: "Moteur de rendu 3D temps réel conçu de A à Z en C++ et OpenGL. Ma longue expérience d'utilisation d'outils de rendu 3D m'a permis de créer une application qui reste simple et intuitive.",
 		},
 		tech: ['C++', 'OpenGL', 'GLSL', 'Git', 'ImGui', 'RenderDoc'],
 		year: '2025',
