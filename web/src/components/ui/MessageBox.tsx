@@ -9,5 +9,5 @@ const styles: Record<MessageType, string> = {
 };
 
 export default function MessageBox({ type, children, className }: { type: MessageType; children: React.ReactNode; className?: string }) {
-	return <div className={cn('border-dashed rounded-xl border-2 px-6 py-4 font-bold', styles[type], className)}>{children}</div>;
+	return <div className={cn('w-fit border-dashed rounded-xl border-2 px-6 py-4 font-semibold', styles[type], className)}>{children}</div>;
 }

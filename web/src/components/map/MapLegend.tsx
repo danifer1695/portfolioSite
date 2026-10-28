@@ -16,13 +16,13 @@ export function MapLegend({
 	const t = useTranslations();
 
 	return (
-		<section aria-labelledby="legend-heading" className="space-y-4">
+		<section aria-labelledby="legend-heading" className="space-y-4 rounded-xl border-2 border-muted">
 			{/*Legend title*/}
-			<h2 id="legend-heading" className="text-2xl font-semibold">
+			<h2 id="legend-heading" className="text-2xl w-full my-4 text-center font-semibold">
 				{t('pages.home.legendTitle')}
 			</h2>
 
-			<ul className="flex flex-col gap-4 sm:flex-row sm:gap-10">
+			<ul className="flex flex-col">
 				{lineIds.map((id) => (
 					<li key={id}>
 						<Link
@@ -31,7 +31,12 @@ export function MapLegend({
 							onPointerLeave={onDeactivate}
 							onFocus={() => onActivate(id)}
 							onBlur={onDeactivate}
-							className={cn('group flex items-center gap-3 motion-safe:transition-opacity', isMuted(id) && 'opacity-25', focusRing)}
+							className={cn(
+								'p-4 group flex items-center gap-3 border-t-2 border-t-muted motion-safe:transition-all bg-transparent',
+								`hover:${lines[id].bgClass}`,
+								isMuted(id) && 'opacity-25',
+								focusRing,
+							)}
 						>
 							{/*Line Badge*/}
 							<span
@@ -43,7 +48,7 @@ export function MapLegend({
 							{/*Line Info*/}
 							<span>
 								<span className="block font-semibold group-hover:underline">{t(`lines.${id}.name`)}</span>
-								<span className="block text-sm text-muted">{t(`lines.${id}.tagline`)}</span>
+								{/*<span className="block text-sm text-muted">{t(`lines.${id}.tagline`)}</span>*/}
 							</span>
 						</Link>
 					</li>

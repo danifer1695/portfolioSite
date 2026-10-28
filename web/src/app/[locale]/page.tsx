@@ -1,4 +1,5 @@
 import { SubwayMap } from '@/components/map/SubwayMap';
+import { LinkButton } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 import MessageBox from '@/components/ui/MessageBox';
 import { getMapView } from '@/content/map-view';
@@ -20,8 +21,11 @@ export default async function Home({ params }: PageProps<'/[locale]'>) {
 				</MessageBox>
 
 				{/*Info message - Link to resume*/}
-				<MessageBox type="info">
-					<p>{t('pages.home.msg-noGimmicks')}</p>
+				<MessageBox type="info" className="flex flex-row gap-4">
+					<p className="align:center">{t('pages.home.msg-noGimmicks')}</p>
+					<LinkButton variant="primary" bgClass="bg-info-fg" textClass="text-white" href="/resume">
+						{t('pages.resume.title')}
+					</LinkButton>
 				</MessageBox>
 			</div>
 
