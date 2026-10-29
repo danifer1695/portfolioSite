@@ -12,11 +12,11 @@
 		"build": "wrangler deploy --dry-run --outdir dist"
 	},
 	"devDependencies": {
-		"@cloudflare/vitest-plugin": "^1.4.7",
+		"@cloudflare/vitest-plugin": "^1.4.10",
 		"@types/node": "^22.20.5",
 		"typescript": "^5.5.2",
 		"vitest": "~4.1.12",
-		"wrangler": "^4.152.0"
+		"wrangler": "^4.155.0"
 	},
 	"dependencies": {
 		"@hono/zod-validator": "^0.9.1",
