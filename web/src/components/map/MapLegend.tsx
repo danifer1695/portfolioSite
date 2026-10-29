@@ -4,11 +4,11 @@ import { cn } from '@/lib/cn';
 import { focusRing } from '@/lib/styles';
 import { useTranslations } from 'next-intl';
 
-const hoverLineColors ={
+const hoverLineColors = {
 	professional: `hover:bg-line-p hover:${lines['professional'].textClass}`,
 	academics: `hover:bg-line-a hover:${lines['academics'].textClass}`,
 	technical: `hover:bg-line-t hover:${lines['technical'].textClass}`,
-}
+};
 
 export function MapLegend({
 	isMuted,

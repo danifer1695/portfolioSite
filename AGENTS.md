@@ -1,5 +1,6 @@
 OTHER DOCUMENTS TO CHECK:
-- doc/CONTEXT.md: A rundown of the project's development  process so far
+
+- doc/CONTEXT.md: A rundown of the project's development process so far
 - doc/MILESTONE.md: A record of project milestones this project has gone through
 - doc/STRUCTURE.md: Document detailing design choices for the site's structures
 
