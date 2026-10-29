@@ -55,7 +55,7 @@ export function Header({ initials, nav }: Props) {
 						flex-wrap
 						items-center
 						gap-x-5
-						gap-y-2
+						gap-y-4
 						text-sm"
 					>
 						{nav.map((item) => (
