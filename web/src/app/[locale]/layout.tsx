@@ -11,7 +11,6 @@ import { routing } from '@/i18n/routings';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
-import { initLocale } from '@/i18n/locale';
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
