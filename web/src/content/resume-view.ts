@@ -4,9 +4,9 @@ import { lineIds, lines } from './lines';
 import { getProfessional } from './professional';
 import { getAcademic } from './academic';
 import { getProjects } from './projects';
-import { profile } from './profile';
 import type { Locale } from '@/i18n/routings';
 import { getTranslations } from 'next-intl/server';
+import { getProfile } from './profile';
 
 export type ResumeEntry = {
 	id: string;
@@ -49,6 +49,7 @@ const displayURL = (href: string) => href.replace(/^https?:\/\/(www\.)?/, '');
 export async function getResumeView(locale: Locale): Promise<ResumeView> {
 	const t = await getTranslations({ locale });
 	const present = t('common.present');
+	const profile = getProfile(locale);
 
 	const entriesByLine: Record<LineId, () => readonly ResumeEntry[]> = {
 		professional: () =>

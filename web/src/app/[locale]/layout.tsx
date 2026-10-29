@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import '@/app/globals.css';
-
-import { profile } from '@/content/profile';
 import { mainNav } from '@/content/navigation';
 import { SkipLink } from '@/components/layout/SkipLink';
 import { Header } from '@/components/layout/Header';
@@ -11,6 +9,8 @@ import { routing } from '@/i18n/routings';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
+import { getProfile } from '@/content/profile';
+import { initLocale } from '@/i18n/locale';
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -23,6 +23,9 @@ const geistMono = Geist_Mono({
 });
 
 export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Promise<Metadata> {
+	const locale = await initLocale(params);
+	const profile = getProfile(locale);
+
 	return {
 		metadataBase: new URL(profile.siteURL),
 		title: {
@@ -38,9 +41,8 @@ export function generateStaticParams() {
 }
 
 export default async function LocaleLayout({ children, params }: LayoutProps<'/[locale]'>) {
-	const { locale } = await params;
-	if (!hasLocale(routing.locales, locale)) notFound();
-	setRequestLocale(locale);
+	const locale = await initLocale(params);
+	const profile = getProfile(locale);
 
 	return (
 		<html lang={locale} className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>

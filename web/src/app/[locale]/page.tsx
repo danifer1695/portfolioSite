@@ -3,12 +3,13 @@ import { LinkButton } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 import MessageBox from '@/components/ui/MessageBox';
 import { getMapView } from '@/content/map-view';
-import { profile } from '@/content/profile';
+import { getProfile } from '@/content/profile';
 import { initLocale } from '@/i18n/locale';
 import { getTranslations } from 'next-intl/server';
 
 export default async function Home({ params }: PageProps<'/[locale]'>) {
 	const locale = await initLocale(params);
+	const profile = getProfile(locale);
 	const t = await getTranslations({ locale });
 
 	return (
