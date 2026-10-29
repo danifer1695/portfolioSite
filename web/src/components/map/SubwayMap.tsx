@@ -20,12 +20,12 @@ export function SubwayMap({ view, title }: { view: MapView; title: string }) {
 	const { width, height } = view.grid;
 
 	return (
-		<div className="flex flex-col md:flex-row-reverse gap-12">
+		<div className="flex flex-col md:flex-row-reverse md:justify-center gap-12">
 			{/*Map Legend*/}
 			<MapLegend isMuted={isLineMuted} onActivate={(id) => setActive({ line: id, stop: null })} onDeactivate={reset} />
 
-			{/*Dotted border*/}
-			<div className="rounded-lg border-2 border-dashed border-border">
+			{/*Dashed border*/}
+			<div className="rounded-lg border-2 border-dashed border-border justify-center flex-1">
 				{/*Map*/}
 				<svg
 					//viewBox tells the SVG what coordinate system it uses.
@@ -33,7 +33,7 @@ export function SubwayMap({ view, title }: { view: MapView; title: string }) {
 					//In this case, it is set to occupy 'full' space
 					//Params: min-x min-y width height
 					viewBox={`${-PAD} ${-PAD} ${width + PAD * 2} ${height + PAD * 2}`}
-					className="h-[70vh]"
+					className="h-[70vh] justify-self-center"
 					aria-labelledby="map-title"
 				>
 					<title id="map-title">{title}</title>

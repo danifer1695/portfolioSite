@@ -4,6 +4,12 @@ import { cn } from '@/lib/cn';
 import { focusRing } from '@/lib/styles';
 import { useTranslations } from 'next-intl';
 
+const hoverLineColors ={
+	professional: `hover:bg-line-p hover:${lines['professional'].textClass}`,
+	academics: `hover:bg-line-a hover:${lines['academics'].textClass}`,
+	technical: `hover:bg-line-t hover:${lines['technical'].textClass}`,
+}
+
 export function MapLegend({
 	isMuted,
 	onActivate,
@@ -16,7 +22,7 @@ export function MapLegend({
 	const t = useTranslations();
 
 	return (
-		<section aria-labelledby="legend-heading" className="space-y-4 rounded-xl border-2 border-muted">
+		<section aria-labelledby="legend-heading" className="space-y-4 rounded-xl border-2 border-muted md:self-start">
 			{/*Legend title*/}
 			<h2 id="legend-heading" className="text-2xl w-full my-4 text-center font-semibold">
 				{t('pages.home.legendTitle')}
@@ -33,8 +39,8 @@ export function MapLegend({
 							onBlur={onDeactivate}
 							className={cn(
 								'p-4 group flex items-center gap-3 border-t-2 border-t-muted motion-safe:transition-all bg-transparent',
-								`hover:${lines[id].bgClass}`,
-								isMuted(id) && 'opacity-25',
+								hoverLineColors[id],
+								/*isMuted(id) && 'opacity-25',*/
 								focusRing,
 							)}
 						>
@@ -47,7 +53,7 @@ export function MapLegend({
 
 							{/*Line Info*/}
 							<span>
-								<span className="block font-semibold group-hover:underline">{t(`lines.${id}.name`)}</span>
+								<span className="block font-semibold">{t(`lines.${id}.name`)}</span>
 								{/*<span className="block text-sm text-muted">{t(`lines.${id}.tagline`)}</span>*/}
 							</span>
 						</Link>

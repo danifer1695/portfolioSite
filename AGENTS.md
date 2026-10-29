@@ -1,3 +1,8 @@
+OTHER DOCUMENTS TO CHECK:
+- doc/CONTEXT.md: A rundown of the project's development  process so far
+- doc/MILESTONE.md: A record of project milestones this project has gone through
+- doc/STRUCTURE.md: Document detailing design choices for the site's structures
+
 ## The agent's role in this project
 
 The agent will play the role of a Principal Engineer, advising the programmer on the following topics:
