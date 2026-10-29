@@ -46,26 +46,32 @@ export function Header({ nav }: { nav: readonly NavItem[] }) {
 					</span>
 				</Link>
 
-				{/*Do not display an empty nav if list is empty*/}
-				<nav aria-label="Main">
-					<ul
-						className="
-						flex
-						flex-wrap
-						items-center
-						gap-x-5
-						gap-y-4
-						text-sm"
-					>
-						{nav.map((item) => (
-							<li key={item.href}>
-								<NavLink href={item.href} dotClass={item.dotClass}>
-									{t(item.labelKey)}
-								</NavLink>
-							</li>
-						))}
-					</ul>
-				</nav>
+				{/*Navigation items + expandable profile container*/}
+				<div className="flex flex-col">
+					{/*Navigation items*/}
+					<nav aria-label="Main">
+						<ul
+							className="
+							flex
+							flex-wrap
+							items-center
+							gap-x-5
+							gap-y-4
+							text-sm"
+						>
+							{nav.map((item) => (
+								<li key={item.href}>
+									<NavLink href={item.href} dotClass={item.dotClass}>
+										{t(item.labelKey)}
+									</NavLink>
+								</li>
+							))}
+						</ul>
+					</nav>
+
+					{/*Navigation items*/}
+					<div id="expandable-container">{/*...*/}</div>
+				</div>
 
 				<LocaleSwitcher />
 			</Container>
