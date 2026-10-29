@@ -23,9 +23,8 @@ const geistMono = Geist_Mono({
 });
 
 export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Promise<Metadata> {
-
-	const locale = await initLocale(params)
-	const profile = getProfile(locale)
+	const locale = await initLocale(params);
+	const profile = getProfile(locale);
 
 	return {
 		metadataBase: new URL(profile.siteURL),
@@ -42,9 +41,8 @@ export function generateStaticParams() {
 }
 
 export default async function LocaleLayout({ children, params }: LayoutProps<'/[locale]'>) {
-
-	const locale = await initLocale(params)
-	const profile = getProfile(locale)
+	const locale = await initLocale(params);
+	const profile = getProfile(locale);
 
 	return (
 		<html lang={locale} className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>

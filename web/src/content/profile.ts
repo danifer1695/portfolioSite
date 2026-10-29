@@ -1,27 +1,26 @@
-import { Text, TextList, tr, trList } from "@/i18n/i18n"
-import { Locale } from "@/i18n/routings"
-
+import { Text, TextList, tr, trList } from '@/i18n/i18n';
+import { Locale } from '@/i18n/routings';
 
 export type ProfileSource = {
-	name: string
-	initials: string
-	headline: Text
-	intro: Text
-	about: TextList
-	skills: readonly string[]
-	description: Text
-	siteURL: string
-	email: string
-	phone: string
-	social: readonly { label: string; href: string}[]
-}
+	name: string;
+	initials: string;
+	headline: Text;
+	intro: Text;
+	about: TextList;
+	skills: readonly string[];
+	description: Text;
+	siteURL: string;
+	email: string;
+	phone: string;
+	social: readonly { label: string; href: string }[];
+};
 
 export type Profile = Omit<ProfileSource, 'headline' | 'intro' | 'about' | 'description'> & {
-	headline: string
-	intro: string
-	about: readonly string[]
-	description: string
-}
+	headline: string;
+	intro: string;
+	about: readonly string[];
+	description: string;
+};
 
 const profile = {
 	name: 'Daniel Fernandez Martinez',
@@ -59,5 +58,5 @@ export function getProfile(locale: Locale): Profile {
 		intro: tr(profile.intro, locale),
 		about: trList(profile.about, locale),
 		description: tr(profile.description, locale),
-	}
+	};
 }

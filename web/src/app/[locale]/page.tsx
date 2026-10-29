@@ -9,7 +9,7 @@ import { getTranslations } from 'next-intl/server';
 
 export default async function Home({ params }: PageProps<'/[locale]'>) {
 	const locale = await initLocale(params);
-	const profile = getProfile(locale)
+	const profile = getProfile(locale);
 	const t = await getTranslations({ locale });
 
 	return (

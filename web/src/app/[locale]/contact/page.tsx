@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/contact'
 
 export default async function ContactPage({ params }: PageProps<'/[locale]/contact'>) {
 	const locale = await initLocale(params);
-	const profile = getProfile(locale)
+	const profile = getProfile(locale);
 	const t = await getTranslations({ locale, namespace: 'pages.contact' });
 
 	return (

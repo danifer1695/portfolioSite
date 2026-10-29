@@ -10,8 +10,8 @@ type SocialLink = { label: string; href: string };
 
 export function Footer({ social }: { social: readonly SocialLink[] }) {
 	const t = useTranslations('footer');
-	const locale = useLocale()
-	const profile = getProfile(locale)
+	const locale = useLocale();
+	const profile = getProfile(locale);
 
 	/*print-hidden: hide this element for printing*/
 	return (
