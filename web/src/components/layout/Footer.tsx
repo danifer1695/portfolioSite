@@ -3,13 +3,16 @@ import { Container } from '@/components/ui/container';
 import { ExternalLink } from '@/components/ui/externalLink';
 import { cn } from '@/lib/cn';
 import { focusRing } from '@/lib/styles';
-import { useTranslations } from 'next-intl';
-import { profile } from '@/content/profile';
+import { useLocale, useTranslations } from 'next-intl';
+import { getProfile } from '@/content/profile';
 
 type SocialLink = { label: string; href: string };
 
 export function Footer({ social }: { social: readonly SocialLink[] }) {
 	const t = useTranslations('footer');
+	const locale = useLocale()
+	const profile = getProfile(locale)
+
 	/*print-hidden: hide this element for printing*/
 	return (
 		<footer className="text-white bg-metroBlue print:hidden">

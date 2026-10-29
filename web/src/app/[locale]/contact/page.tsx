@@ -1,9 +1,9 @@
 import { ContactForm } from '@/components/contact/ContactForm';
 import { Container } from '@/components/ui/container';
-import { profile } from '@/content/profile';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { initLocale } from '@/i18n/locale';
+import { getProfile } from '@/content/profile';
 
 export async function generateMetadata({ params }: PageProps<'/[locale]/contact'>): Promise<Metadata> {
 	const locale = await initLocale(params);
@@ -13,6 +13,7 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/contact'
 
 export default async function ContactPage({ params }: PageProps<'/[locale]/contact'>) {
 	const locale = await initLocale(params);
+	const profile = getProfile(locale)
 	const t = await getTranslations({ locale, namespace: 'pages.contact' });
 
 	return (
