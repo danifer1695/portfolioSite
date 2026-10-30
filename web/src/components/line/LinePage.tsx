@@ -7,10 +7,22 @@ import type { Line } from '@/content/lines';
 import { LineTrack } from './LineTrack';
 import type { Stop } from './types';
 import { OpenStopFromId } from './OpenStopFromId';
+import MessageBox from '../ui/MessageBox';
+import { useTranslations } from 'next-intl';
 
 export function LinePage({ line, title, intro, stops }: { line: Line; title: string; intro: string; stops: readonly Stop[] }) {
+	const t = useTranslations();
+
 	return (
 		<Container className="space-y-10 py-12">
+			{/*Messages*/}
+			<div className="flex flex-col space-y-2">
+				{/*Warning message - WIP*/}
+				<MessageBox type="warning">
+					<p>{t('temp.wip')}</p>
+				</MessageBox>
+			</div>
+
 			{/*Content header*/}
 			<header className="flex items-center gap-4">
 				<span

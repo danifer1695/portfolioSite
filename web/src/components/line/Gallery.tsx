@@ -8,7 +8,7 @@ export function Gallery({ images }: { images: readonly GalleryImage[] }) {
 	//snap-x, snap-center, snap-mandatory: make it so scroll settles with an image in the middle
 
 	return (
-		<ul className="fex snap-x snap-mandatory gap-4 overflow-x-auto pb-2">
+		<ul className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2">
 			{images.map((img) => (
 				<li key={img.src} className="shrink-0 snap-center">
 					<Image

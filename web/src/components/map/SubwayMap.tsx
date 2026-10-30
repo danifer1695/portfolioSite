@@ -20,7 +20,7 @@ export function SubwayMap({ view, title }: { view: MapView; title: string }) {
 	const { width, height } = view.grid;
 
 	return (
-		<div className="flex flex-col md:flex-row-reverse md:justify-center gap-12">
+		<div className="flex flex-col justify-self-center md:justify-center gap-12">
 			{/*Map Legend*/}
 			<MapLegend isMuted={isLineMuted} onActivate={(id) => setActive({ line: id, stop: null })} onDeactivate={reset} />
 

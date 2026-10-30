@@ -33,7 +33,9 @@
 			"intro": "Placeholder intro.",
 			"legendTitle": "Lines",
 			"mapTitle": "Career Map",
-			"msg-noGimmicks": "No time for gimmicks? Go straight to the resume page: "
+			"goToResume": "Go to Resume",
+			"openToRelocation": "Open to relocation",
+			"photoAlt": "Profile picture of {name}"
 		},
 		"professional": {
 			"title": "Work Experience",

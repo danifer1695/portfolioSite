@@ -1,19 +1,18 @@
 import { Link } from '@/i18n/navigation';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Container } from '@/components/ui/container';
 import { cn } from '@/lib/cn';
 import { focusRing } from '@/lib/styles';
 import type { NavItem } from '@/content/navigation';
 import { NavLink } from './NavLink';
 import { LocaleSwitcher } from './LocaleSwitcher';
+import { getProfile } from '@/content/profile';
 
-type Props = {
-	initials: string;
-	nav: readonly NavItem[];
-};
-
-export function Header({ initials, nav }: Props) {
+export function Header({ nav }: { nav: readonly NavItem[] }) {
 	const t = useTranslations();
+	const locale = useLocale();
+	const profile = getProfile(locale);
+
 	return (
 		<header className="sticky top-0 z-50 text-white bg-metroBlue print:hidden">
 			<Container
@@ -43,11 +42,11 @@ export function Header({ initials, nav }: Props) {
 						font-bold
 					"
 					>
-						{initials}
+						{profile.initials}
 					</span>
 				</Link>
 
-				{/*Do not display an empty nav if list is empty*/}
+				{/*Navigation items*/}
 				<nav aria-label="Main">
 					<ul
 						className="

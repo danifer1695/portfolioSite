@@ -6,9 +6,7 @@ import { SkipLink } from '@/components/layout/SkipLink';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { routing } from '@/i18n/routings';
-import { hasLocale, NextIntlClientProvider } from 'next-intl';
-import { notFound } from 'next/navigation';
-import { setRequestLocale } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
 import { getProfile } from '@/content/profile';
 import { initLocale } from '@/i18n/locale';
 
@@ -42,18 +40,17 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({ children, params }: LayoutProps<'/[locale]'>) {
 	const locale = await initLocale(params);
-	const profile = getProfile(locale);
 
 	return (
 		<html lang={locale} className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
 			<body className="min-h-full flex flex-col">
 				<NextIntlClientProvider>
 					<SkipLink />
-					<Header initials={profile.initials} nav={mainNav} />
+					<Header nav={mainNav} />
 					<main id="main" tabIndex={-1} className="flex-1 outline-none">
 						{children}
 					</main>
-					<Footer social={profile.social} />
+					<Footer />
 				</NextIntlClientProvider>
 			</body>
 		</html>

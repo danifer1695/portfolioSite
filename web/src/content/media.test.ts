@@ -4,6 +4,7 @@ import { getProfessional } from './professional';
 import { getProjects } from './projects';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
+import { getProfile } from './profile';
 
 const allImages = [...getProfessional('en'), ...getAcademic('en'), ...getProjects('en')].flatMap((e) => e.images ?? []);
 
@@ -13,5 +14,10 @@ describe('media contract', () => {
 	});
 	it('every image has alt text', () => {
 		for (const img of allImages) expect(img.alt.trim(), img.src).not.toBe('');
+	});
+
+	it('profile photo exists in public/', () => {
+		const { src } = getProfile('en').photo;
+		expect(existsSync(join(process.cwd(), 'public', src)), src).toBe(true);
 	});
 });

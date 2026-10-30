@@ -6,9 +6,7 @@ import { focusRing } from '@/lib/styles';
 import { useLocale, useTranslations } from 'next-intl';
 import { getProfile } from '@/content/profile';
 
-type SocialLink = { label: string; href: string };
-
-export function Footer({ social }: { social: readonly SocialLink[] }) {
+export function Footer() {
 	const t = useTranslations('footer');
 	const locale = useLocale();
 	const profile = getProfile(locale);
@@ -33,7 +31,7 @@ export function Footer({ social }: { social: readonly SocialLink[] }) {
 				</Link>
 				<p>{t('copyright', { year: new Date().getFullYear(), name: profile.name })}</p>
 				<ul className="flex gap-4">
-					{social.map((s) => (
+					{profile.social.map((s) => (
 						<li key={s.href}>
 							<ExternalLink href={s.href} className={focusRing}>
 								{s.label}
