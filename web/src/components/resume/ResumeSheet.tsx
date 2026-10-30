@@ -42,12 +42,14 @@ export function ResumeSheet({ view }: { view: ResumeView }) {
 					{/*Work experience*/}
 					<ResumeSection section={view.sections[0]} className="flex-1" />
 
-					{/*Project sections*/}
-					<ResumeSection section={view.sections[2]} className="flex-1" />
-				</div>
+					<div className="flex-1 flex flex-col gap-5">
+						{/*Project sections*/}
+						<ResumeSection section={view.sections[2]} />
 
-				{/*Academic bg*/}
-				<ResumeSection section={view.sections[1]} />
+						{/*Academic bg*/}
+						<ResumeSection section={view.sections[1]} />
+					</div>
+				</div>
 
 				{/*Skills list*/}
 				<section className="break-inside-avoid">

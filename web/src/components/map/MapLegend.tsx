@@ -22,13 +22,13 @@ export function MapLegend({
 	const t = useTranslations();
 
 	return (
-		<section aria-labelledby="legend-heading" className="divide-y-2 divide-muted rounded-xl md:self-start">
+		<section aria-labelledby="legend-heading" className="w-full divide-y-2 divide-muted rounded-xl md:self-start">
 			{/*Legend title*/}
 			<h2 id="legend-heading" className="text-2xl rounded-t-xl w-full py-4 text-center font-semibold bg-metroBlue">
 				{t('pages.home.legendTitle')}
 			</h2>
 
-			<ul className="flex flex-col md:flex-row md:divide-x-2 md:divide-muted divide-solid">
+			<ul className="w-full flex flex-col md:flex-row md:divide-x-2 md:divide-muted divide-solid">
 				{lineIds.map((id) => (
 					<li key={id}>
 						<Link
