@@ -8,21 +8,20 @@ The header will contain An icon positioned at the top left, and navigation links
 The footer will contain a link to the contact page, a copyright label and links to socials.
 
 **Header**:
-Usually the header will contain the following elements:
+The header will contain the following elements:
 
 - Logo with my initials encircled in it.
 - Page navigation links
 - Language selection
 
-But when in '/' the header behaves differently:
-
-- Logo cirlcle expands, and inside a photo of myself blends in on top of the initials.
-- Page navigation and language selection elements stay in place, but below it, a container expands, containing my profile details (name, headline, about, description, skills...). This container has an id='expandable-container' in the code.
-- This should transitioin smoothly when switching pages.
-
 ## HOME PAGE
 
-The hope page will be designed to visually resemble a Metro map. Laid out as a column it will include:
+The home page will be designed to visually resemble a Metro map. Laid out as a column it will include:
+
+- First section will be the bio. It will be structure as follows:
+  - To the left, a photo of myself framed in a circle to echo the design language of the initials in the header.
+  - To the right, a box, containing my profile data
+  - In the background of this section, horizontally spanning the entire screen, an image of my choosing.
 
 - A legend with clickable elements representing each of the subway lines (A - Academics, T - Technical, P - Professional) that will link to their respective pages. Hovering over each one of them will highlight its line on the map by muting the rest.
 - A graphic respresentation of my past experience laid out to resemble a subway map. Like with the elements in the legend section, hovering over one of the lines will highlight it by muting the rest. The stops will be interactable too.
