@@ -11,10 +11,7 @@ export type ProjectSource = {
 	tech: readonly string[];
 	year: string;
 	featured: boolean;
-	links: {
-		repo?: string;
-		live?: string;
-	};
+	links: string[];
 	images?: GalleryImage[];
 	highlights: TextList;
 	featResume: boolean;
@@ -50,7 +47,7 @@ const projects = [
 		tech: ['Next.js', 'TypeScript', 'Tailwind', 'Hono', 'Cloudflare'],
 		year: '2026',
 		featured: true,
-		links: { repo: 'https://github.com/danifer1695/portfolioSite' },
+		links: ['https://github.com/danifer1695/portfolioSite'],
 		highlights: {
 			en: ['Full-Stack development', 'Solo-Developed', 'AI-enhanced workflow'],
 			fr: ['Développement Full-Stack', 'Développé en solo', 'Workflow assisté par IA'],
@@ -78,7 +75,7 @@ const projects = [
 		tech: ['JavaScript', 'HTML', 'React Native', 'TypeScript', 'PostgreSQL', 'Node.js', 'Express', 'Zod', 'Bcrypt', 'Github'],
 		year: '2026',
 		featured: true,
-		links: { repo: 'https://github.com/danifer1695/kanji_extension' },
+		links: ['https://github.com/danifer1695/kanji_extension'],
 		highlights: {
 			en: ['Solo-Developed', 'Full-Stack development', 'Published on the Chrome Web Store'],
 			fr: ['Développé en solo', 'Développement Full-Stack', 'Publié sur le Chrome Web Store'],
@@ -106,7 +103,7 @@ const projects = [
 		tech: ['Java', 'Git', 'Maven', 'SQLite', 'Swing'],
 		year: '2026',
 		featured: true,
-		links: { repo: 'https://github.com/lucienfradet/Snake_COMP_5541' },
+		links: ['https://github.com/lucienfradet/Snake_COMP_5541'],
 		highlights: {
 			en: ['2D Graphics development', 'Game Design', 'Work with existing codebase', 'Team project'],
 			fr: ['Développement graphique 2D', 'Game design', 'Travail sur une base de code existante', "Projet d'équipe"],
@@ -134,7 +131,7 @@ const projects = [
 		tech: ['C++', 'OpenGL', 'GLSL', 'Git', 'ImGui', 'RenderDoc'],
 		year: '2025',
 		featured: true,
-		links: { repo: 'https://github.com/danifer1695/3DEngine' },
+		links: ['https://github.com/danifer1695/3DEngine'],
 		highlights: {
 			en: ['Graphics Programming', 'Shader Programming', 'Solo-Developed', 'Self-Taught'],
 			fr: ['Programmation graphique', 'Programmation de shaders', 'Développé en solo', 'Autodidacte'],

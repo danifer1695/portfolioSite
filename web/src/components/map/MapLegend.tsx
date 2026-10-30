@@ -30,7 +30,7 @@ export function MapLegend({
 
 			<ul className="w-full flex flex-col md:flex-row md:divide-x-2 md:divide-muted divide-solid">
 				{lineIds.map((id) => (
-					<li key={id}>
+					<li key={id} className="md:flex-1">
 						<Link
 							href={lines[id].href}
 							onPointerEnter={() => onActivate(id)}

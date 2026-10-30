@@ -28,6 +28,11 @@ export function StopCard({ stop, line }: { stop: Stop; line: Line }) {
 				<h2 className="text-xl font-semibold">{stop.title}</h2>
 				<p className="text-muted">{stop.subtitle}</p>
 				<p className="text-sm text-muted">{stop.period}</p>
+				{stop.links?.length === 0 && (
+					<a href={stop.links[0]} className="text-md text-foreground">
+						{stop.links[0]}
+					</a>
+				)}
 			</summary>
 
 			{/*Collapsable content*/}
