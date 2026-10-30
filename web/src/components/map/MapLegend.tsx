@@ -5,9 +5,9 @@ import { focusRing } from '@/lib/styles';
 import { useTranslations } from 'next-intl';
 
 const hoverLineColors = {
-	professional: `hover:bg-line-p hover:${lines['professional'].textClass}`,
-	academics: `hover:bg-line-a hover:${lines['academics'].textClass}`,
-	technical: `hover:bg-line-t hover:${lines['technical'].textClass}`,
+	professional: `hover:bg-line-p/50 hover:${lines['professional'].textClass}`,
+	academics: `hover:bg-line-a/50 hover:${lines['academics'].textClass}`,
+	technical: `hover:bg-line-t/50 hover:${lines['technical'].textClass}`,
 };
 
 export function MapLegend({
@@ -22,13 +22,13 @@ export function MapLegend({
 	const t = useTranslations();
 
 	return (
-		<section aria-labelledby="legend-heading" className="space-y-4 rounded-xl border-2 border-muted md:self-start">
+		<section aria-labelledby="legend-heading" className="divide-y-2 divide-muted rounded-xl md:self-start">
 			{/*Legend title*/}
-			<h2 id="legend-heading" className="text-2xl w-full my-4 text-center font-semibold">
+			<h2 id="legend-heading" className="text-2xl rounded-t-xl w-full py-4 text-center font-semibold bg-metroBlue">
 				{t('pages.home.legendTitle')}
 			</h2>
 
-			<ul className="flex flex-col">
+			<ul className="flex flex-col md:flex-row md:divide-x-2 md:divide-muted divide-solid">
 				{lineIds.map((id) => (
 					<li key={id}>
 						<Link
@@ -38,9 +38,9 @@ export function MapLegend({
 							onFocus={() => onActivate(id)}
 							onBlur={onDeactivate}
 							className={cn(
-								'p-4 group flex items-center gap-3 border-t-2 border-t-muted motion-safe:transition-all bg-transparent',
+								'flex-1 p-4 group flex items-center gap-3 motion-safe:transition-all bg-muted-md/70',
 								hoverLineColors[id],
-								/*isMuted(id) && 'opacity-25',*/
+								isMuted(id) && 'opacity-25',
 								focusRing,
 							)}
 						>

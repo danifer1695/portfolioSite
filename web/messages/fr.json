@@ -33,7 +33,9 @@
 			"intro": "Texte d’introduction provisoire.",
 			"legendTitle": "Lignes",
 			"mapTitle": "Carte de carrière",
-			"msg-noGimmicks": "Pressés par le temps? Allez directement sur mon CV:"
+			"goToResume": "Voir mon CV",
+			"openToRelocation": "Ouvert à la mobilité",
+			"photoAlt": "Photo profil de {name}"
 		},
 		"professional": {
 			"title": "Expérience professionnelle",

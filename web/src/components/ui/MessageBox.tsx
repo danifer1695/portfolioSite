@@ -1,4 +1,5 @@
 import { cn } from '@/lib/cn';
+import { MessageCircleMore, OctagonAlert, TriangleAlert } from 'lucide-react';
 
 type MessageType = 'info' | 'warning' | 'error';
 
@@ -9,5 +10,22 @@ const styles: Record<MessageType, string> = {
 };
 
 export default function MessageBox({ type, children, className }: { type: MessageType; children: React.ReactNode; className?: string }) {
-	return <div className={cn('w-fit border-dashed rounded-xl border-2 px-6 py-4 font-semibold', styles[type], className)}>{children}</div>;
+	//Determine which icon to show
+	function determineIcon(type: MessageType) {
+		switch (type) {
+			case 'info':
+				return <MessageCircleMore color="var(--info-fg)" />;
+			case 'warning':
+				return <TriangleAlert color="var(--warning-fg)" />;
+			default:
+				return <OctagonAlert color="var(--error-fg)" />;
+		}
+	}
+
+	return (
+		<div className={cn('flex gap-4 border-dashed rounded-xl border-2 px-6 py-4', styles[type], className)}>
+			{determineIcon(type)}
+			{children}
+		</div>
+	);
 }

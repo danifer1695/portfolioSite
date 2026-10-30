@@ -1,8 +1,11 @@
 import { Text, TextList, tr, trList } from '@/i18n/i18n';
 import { Locale } from '@/i18n/routings';
+import { GalleryImage } from './media';
 
 export type ProfileSource = {
 	name: string;
+	photo: Omit<GalleryImage, 'alt'>;
+	location: Text;
 	initials: string;
 	headline: Text;
 	intro: Text;
@@ -15,8 +18,9 @@ export type ProfileSource = {
 	social: readonly { label: string; href: string }[];
 };
 
-export type Profile = Omit<ProfileSource, 'headline' | 'intro' | 'about' | 'description'> & {
+export type Profile = Omit<ProfileSource, 'headline' | 'location' | 'intro' | 'about' | 'description'> & {
 	headline: string;
+	location: string;
 	intro: string;
 	about: readonly string[];
 	description: string;
@@ -24,6 +28,15 @@ export type Profile = Omit<ProfileSource, 'headline' | 'intro' | 'about' | 'desc
 
 const profile = {
 	name: 'Daniel Fernandez Martinez',
+	photo: {
+		src: '/images/profile/profil.png',
+		width: 600,
+		height: 600,
+	},
+	location: {
+		en: 'Lille, France',
+		fr: 'Lille, Hauts-de-France',
+	},
 	initials: 'DF',
 	headline: {
 		en: 'Software Developer',
@@ -56,6 +69,7 @@ export function getProfile(locale: Locale): Profile {
 		...profile,
 		headline: tr(profile.headline, locale),
 		intro: tr(profile.intro, locale),
+		location: tr(profile.location, locale),
 		about: trList(profile.about, locale),
 		description: tr(profile.description, locale),
 	};
