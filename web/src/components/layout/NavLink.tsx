@@ -14,7 +14,11 @@ export function NavLink({ href, /*dotClass, */ children }: Props) {
 		<Link
 			href={href}
 			aria-current={isActive ? 'page' : undefined}
-			className={cn('flex text-lg items-center gap-2 underline-offset-4 hover:underline', isActive && 'font-semibold underline', focusRing)}
+			className={cn(
+				'flex text-md md:text-lg items-center gap-2 underline-offset-4 hover:underline',
+				isActive && 'font-semibold underline',
+				focusRing,
+			)}
 		>
 			{/*{dotClass && <span aria-hidden="true" className={cn('size-3 rounded-full ring-2 ring-white', dotClass)} />}*/}
 			{children}

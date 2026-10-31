@@ -20,7 +20,7 @@ export default async function ProfessionalPage({ params }: PageProps<'/[locale]/
 		slug: job.slug,
 		title: job.role,
 		subtitle: job.company,
-		period: formatPeriod(job.start, job.end, 'en', t('common.present')),
+		period: formatPeriod(job.start, job.end, locale, t('common.present')),
 		summary: job.summary,
 		highlights: job.highlights,
 		images: job.images ?? [],

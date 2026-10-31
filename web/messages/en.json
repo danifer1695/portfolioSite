@@ -35,7 +35,9 @@
 			"mapTitle": "Career Map",
 			"goToResume": "Go to Resume",
 			"openToRelocation": "Open to relocation",
-			"photoAlt": "Profile picture of {name}"
+			"photoAlt": "Profile picture of {name}",
+			"moreInfo": "Learn More",
+			"mapHint": "Hover over a stop to display its info"
 		},
 		"professional": {
 			"title": "Work Experience",

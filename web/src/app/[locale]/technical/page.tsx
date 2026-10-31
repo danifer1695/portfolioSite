@@ -22,6 +22,7 @@ export default async function TechnicalPage({ params }: PageProps<'/[locale]/tec
 		period: project.year,
 		summary: project.summary,
 		highlights: project.highlights,
+		links: project.links,
 		images: project.images ?? [],
 	}));
 

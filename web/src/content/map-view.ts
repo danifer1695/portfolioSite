@@ -5,6 +5,7 @@ import { interchanges, mapGrid, linePaths, type LineStop, type LabelSide, type G
 import { getProfessional } from './professional';
 import { getProjects } from './projects';
 import { Locale } from '@/i18n/routings';
+import { formatPeriod } from '@/lib/format';
 
 export type MapStationView = {
 	slug: string;
@@ -34,6 +35,17 @@ export type MapView = {
 	grid: { width: number; height: number };
 	lines: readonly MapLineView[];
 	interchanges: readonly MapInterchangeView[];
+	stops: Record<string, MapStopInfo>;
+};
+
+//Stop info to be displayed when hovering over a stop on the map
+export type MapStopInfo = {
+	slug: string;
+	line: LineId;
+	title: string;
+	subtitle: string;
+	period: string;
+	summary: string;
 };
 
 //lookup table containing all label information for all lines
@@ -45,7 +57,47 @@ function buildMapLabels(locale: Locale): Record<string, string> {
 	]);
 }
 
-export function getMapView(locale: Locale): MapView {
+function buildStopInfo(locale: Locale, present: string): Record<string, MapStopInfo> {
+	const all: MapStopInfo[] = [
+		...getProfessional(locale).map(
+			(e) =>
+				({
+					slug: e.slug,
+					line: 'professional',
+					title: e.role,
+					subtitle: e.company,
+					period: formatPeriod(e.start, e.end, locale, present),
+					summary: e.summary,
+				}) satisfies MapStopInfo,
+		),
+		...getAcademic(locale).map(
+			(e) =>
+				({
+					slug: e.slug,
+					line: 'academics',
+					title: e.title,
+					subtitle: e.institution,
+					period: formatPeriod(e.start, e.end, locale, present),
+					summary: e.summary,
+				}) satisfies MapStopInfo,
+		),
+		...getProjects(locale).map(
+			(e) =>
+				({
+					slug: e.slug,
+					line: 'technical',
+					title: e.title,
+					subtitle: e.tech.join(', '),
+					period: e.year,
+					summary: e.summary,
+				}) satisfies MapStopInfo,
+		),
+	];
+
+	return Object.fromEntries(all.map((s) => [s.slug, s]));
+}
+
+export function getMapView(locale: Locale, present: string): MapView {
 	const mapLabels = buildMapLabels(locale);
 
 	const lineViews = linePaths.map((path) => ({
@@ -60,7 +112,7 @@ export function getMapView(locale: Locale): MapView {
 				y: stop.y,
 				labelSide: stop.labelSide,
 				label: mapLabels[stop.slug] ?? stop.slug,
-				href: `${locale}${lines[path.id].href}#${stop.slug}`, //page#id
+				href: `/${locale}${lines[path.id].href}#${stop.slug}`, //page#id
 				line: path.id,
 			})),
 	}));
@@ -82,5 +134,6 @@ export function getMapView(locale: Locale): MapView {
 				lines: [stopA.line, stopB.line],
 			};
 		}),
+		stops: buildStopInfo(locale, present),
 	};
 }

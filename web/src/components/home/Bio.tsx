@@ -55,18 +55,14 @@ export function Bio({ profile }: { profile: Profile }) {
 					<p className="text-lg text-muted">{profile.intro}</p>
 					<ul className="space-y-2">
 						{/*Location*/}
-						<li key="location" className="flex gap-4">
-							<div className="flex">
-								<MapPin className="align-middle justify-self-center" />
-							</div>
+						<li key="location" className="flex items-center gap-4">
+							<MapPin aria-hidden="true" className="shrink-0" />
 							<div className="w-full rounded-lg bg-muted-md/70 px-4 py-2">{profile.location}</div>
 						</li>
 
 						{/*Open to relocation*/}
-						<li key="relocation" className="flex gap-4">
-							<div className="flex">
-								<CircleSmall className="align-middle justify-self-center" />
-							</div>
+						<li key="relocation" className="flex items-center gap-4">
+							<CircleSmall aria-hidden="true" className="shrink-0" />
 							<div className="w-full rounded-lg bg-muted-md/70 px-4 py-2">{t('pages.home.openToRelocation')}</div>
 						</li>
 					</ul>

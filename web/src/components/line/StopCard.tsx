@@ -3,6 +3,7 @@ import type { Stop } from './types';
 import { cn } from '@/lib/cn';
 import { Gallery } from './Gallery';
 import { focusRing } from '@/lib/styles';
+import { LinkButton } from '../ui/button';
 
 export function StopCard({ stop, line }: { stop: Stop; line: Line }) {
 	return (
@@ -32,6 +33,24 @@ export function StopCard({ stop, line }: { stop: Stop; line: Line }) {
 
 			{/*Collapsable content*/}
 			<div className="space-y-4 pt-4">
+				{/*Links*/}
+				{stop.links && (
+					<ul className="flex flex-wrap gap-4">
+						{/*GitHub*/}
+						{stop.links.github && (
+							<LinkButton href={stop.links.github} bgClass={line.bgClass} textClass={line.textClass}>
+								GitHub
+							</LinkButton>
+						)}
+
+						{/*Website / Store*/}
+						{stop.links.live && (
+							<LinkButton href={stop.links.live} bgClass={line.bgClass} textClass={line.textClass}>
+								Website
+							</LinkButton>
+						)}
+					</ul>
+				)}
 				<p className="max-w-prose">{stop.summary}</p>
 
 				{/*display each of the highlights in little pills*/}
