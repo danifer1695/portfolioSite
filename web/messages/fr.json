@@ -35,7 +35,9 @@
 			"mapTitle": "Carte de carrière",
 			"goToResume": "Voir mon CV",
 			"openToRelocation": "Ouvert à la mobilité",
-			"photoAlt": "Photo profil de {name}"
+			"photoAlt": "Photo profil de {name}",
+			"moreInfo": "Plus d'info",
+			"mapHint": "Survolez un arrêt pour afficher ses informations"
 		},
 		"professional": {
 			"title": "Expérience professionnelle",

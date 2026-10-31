@@ -16,7 +16,7 @@ export default async function Home({ params }: PageProps<'/[locale]'>) {
 			<Bio profile={profile} />
 			<Container className="space-y-12 py-12">
 				{/*Subway map*/}
-				<SubwayMap view={getMapView(locale)} title={t('pages.home.mapTitle')} />
+				<SubwayMap view={getMapView(locale, t('common.present'))} title={t('pages.home.mapTitle')} />
 			</Container>
 		</>
 	);

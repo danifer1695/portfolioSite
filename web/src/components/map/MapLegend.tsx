@@ -22,7 +22,7 @@ export function MapLegend({
 	const t = useTranslations();
 
 	return (
-		<section aria-labelledby="legend-heading" className="w-full divide-y-2 divide-muted rounded-xl md:self-start">
+		<section aria-labelledby="legend-heading" className="w-full divide-y-2 overflow-hidden divide-muted rounded-xl md:self-start">
 			{/*Legend title*/}
 			<h2 id="legend-heading" className="text-2xl rounded-t-xl w-full py-4 text-center font-semibold bg-metroBlue">
 				{t('pages.home.legendTitle')}
@@ -42,6 +42,7 @@ export function MapLegend({
 								hoverLineColors[id],
 								isMuted(id) && 'opacity-25',
 								focusRing,
+								'focus-visible:-outline-offset-4', //inside the link, so overflow does not hide it
 							)}
 						>
 							{/*Line Badge*/}

@@ -1,12 +1,13 @@
 'use client';
 
-import type { MapView } from '@/content/map-view';
+import type { MapStopInfo, MapView } from '@/content/map-view';
 import type { LineId } from '@/content/lines';
 import { MapLine } from './MapLine';
 import { MapLegend } from './MapLegend';
 import { MapInterchange } from './MapInterchange';
 import { MapStation } from './MapStation';
 import { useState } from 'react';
+import { MapInfo } from './MapInfo';
 
 type Active = { line: LineId | null; stop: string | null };
 const NONE: Active = { line: null, stop: null }; //specific case of Active type where nothing is selected
@@ -18,6 +19,8 @@ export function SubwayMap({ view, title }: { view: MapView; title: string }) {
 	const reset = () => setActive(NONE);
 	const isLineMuted = (id: LineId) => active.line !== null && active.line !== id; //check if given line is currently active
 	const { width, height } = view.grid;
+
+	const info: MapStopInfo | undefined = active.stop ? view.stops[active.stop] : undefined;
 
 	return (
 		<div className="flex flex-col w-full justify-self-center md:justify-center gap-8">
@@ -80,7 +83,7 @@ export function SubwayMap({ view, title }: { view: MapView; title: string }) {
 				</div>
 
 				{/*Info window*/}
-				<div className="w-full max-w-100 border-2 border-muted rounded-xl"></div>
+				<MapInfo info={info} />
 			</div>
 		</div>
 	);
