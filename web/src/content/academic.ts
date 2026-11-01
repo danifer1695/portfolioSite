@@ -10,7 +10,7 @@ export type AcademicSource = {
 	location: Text;
 	start: string;
 	end: string | null; //null means current position
-	summary: Text;
+	summary: TextList;
 	summary_short?: Text; //short format description better suited for the resume
 	images?: GalleryImage[];
 	highlights: TextList;
@@ -21,7 +21,7 @@ export type Academic = Omit<AcademicSource, 'title' | 'mapLabel' | 'location' | 
 	title: string;
 	mapLabel: string;
 	location: string;
-	summary: string;
+	summary: readonly string[];
 	summary_short?: string;
 	highlights: readonly string[];
 };
@@ -46,8 +46,14 @@ const academic = [
 		start: '2025-09',
 		end: '2026-08',
 		summary: {
-			en: "This program was aimed at students who wanted to specialize in Computer Science and held a Bachelor's degree but in an unrelated field. It condenses the material taught in a Bachelor's degree into one single year, with classes often combining two or three undergrad courses' worth of material. During this time, students are expected to complete an array of projects both individual and team-based, gaining proficiency in languages such as Java, C++, Python, SQL or even Assembly.",
-			fr: 'Ce programme s’adressait aux étudiants souhaitant se spécialiser en informatique et titulaires d’un baccalauréat dans un domaine sans rapport. Il condense en une seule année la matière d’un baccalauréat, chaque cours regroupant souvent le contenu de deux ou trois cours de premier cycle. Durant cette période, les étudiants doivent réaliser de nombreux projets, individuels et en équipe, afin d’acquérir une solide maîtrise de langages tels que Java, C++, Python, SQL, voire Assembly.',
+			en: [
+				"This program was aimed at students who wanted to specialize in Computer Science and held a Bachelor's degree but in an unrelated field. It condenses the material taught in a Bachelor's degree into one single year, with classes often combining two or three undergrad courses' worth of material.",
+				'During this time, students are expected to complete an array of projects both individual and team-based, gaining proficiency in languages such as Java, C++, Python, SQL or even Assembly.',
+			],
+			fr: [
+				'Ce programme s’adressait aux étudiants souhaitant se spécialiser en informatique et titulaires d’un baccalauréat dans un domaine sans rapport. Il condense en une seule année la matière d’un baccalauréat, chaque cours regroupant souvent le contenu de deux ou trois cours de premier cycle.',
+				'Durant cette période, les étudiants doivent réaliser de nombreux projets, individuels et en équipe, afin d’acquérir une solide maîtrise de langages tels que Java, C++, Python, SQL, voire Assembly.',
+			],
 		},
 		summary_short: {
 			en: "Accelerated one-year program condensing a full Computer Science bachelor's curriculum, designed for degree holders from other fields. Completed individual and team projects in Java, C++, Python, SQL and Assembly, covering software engineering, data structures, databases and operating systems.",
@@ -107,8 +113,12 @@ const academic = [
 		start: '2018-09',
 		end: '2020-04',
 		summary: {
-			en: "Intensive program aimed at people looking to join the video game industry as concept artists. For 18 months, students would dedicate every waking moment to build their technique, learn new workflows and put together a professional-grade concept art portfolio to showcase to Montreal's many studios. One of the program's biggest strengths was their roster of industry professionals teaching the courses, thanks to whom students would get first-hand knowledge of what would be expected from them once they made it into the industry themselves.",
-			fr: 'Programme intensif destiné aux personnes souhaitant intégrer l’industrie du jeu vidéo en tant que concept artists. Pendant 18 mois, les étudiants consacraient chaque instant à perfectionner leur technique, à apprendre de nouveaux flux de travail et à constituer un portfolio de concept art de niveau professionnel à présenter aux nombreux studios montréalais. L’une des grandes forces du programme était son équipe d’enseignants issus de l’industrie, grâce auxquels les étudiants savaient de première main ce que l’on attendrait d’eux une fois entrés à leur tour dans le milieu.',
+			en: [
+				"Intensive program aimed at people looking to join the video game industry as concept artists. For 18 months, students would dedicate every waking moment to build their technique, learn new workflows and put together a professional-grade concept art portfolio to showcase to Montreal's many studios. One of the program's biggest strengths was their roster of industry professionals teaching the courses, thanks to whom students would get first-hand knowledge of what would be expected from them once they made it into the industry themselves.",
+			],
+			fr: [
+				'Programme intensif destiné aux personnes souhaitant intégrer l’industrie du jeu vidéo en tant que concept artists. Pendant 18 mois, les étudiants consacraient chaque instant à perfectionner leur technique, à apprendre de nouveaux flux de travail et à constituer un portfolio de concept art de niveau professionnel à présenter aux nombreux studios montréalais. L’une des grandes forces du programme était son équipe d’enseignants issus de l’industrie, grâce auxquels les étudiants savaient de première main ce que l’on attendrait d’eux une fois entrés à leur tour dans le milieu.',
+			],
 		},
 		summary_short: {
 			en: '18-month intensive program preparing students to join the video game industry as concept artists. Taught by working industry professionals, with a focus on production workflows and building a professional-grade portfolio.',
@@ -138,8 +148,12 @@ const academic = [
 		start: '2018-06',
 		end: '2018-09',
 		summary: {
-			en: "Unwilling to sit idle during the time before I joined Syn Studio's program, I took a full-time semester at Focal Point School in Gdansk, Poland. Taught by industry giants Darek Zabrocky and Michal Kus, this intensive program taught us to work efficiently while preserving quality in a high-pressure environment, all while adjusting to life as students in a foreign country.",
-			fr: 'Ne voulant pas rester inactif avant d’intégrer le programme de Syn Studio, j’ai suivi un semestre à temps plein à la Focal Point School de Gdańsk, en Pologne. Enseigné par des figures majeures de l’industrie, Darek Zabrocky et Michal Kus, ce programme intensif nous a appris à travailler efficacement tout en préservant la qualité dans un environnement sous pression, le tout en nous adaptant à la vie d’étudiant dans un pays étranger.',
+			en: [
+				"Unwilling to sit idle during the time before I joined Syn Studio's program, I took a full-time semester at Focal Point School in Gdansk, Poland. Taught by industry giants Darek Zabrocky and Michal Kus, this intensive program taught us to work efficiently while preserving quality in a high-pressure environment, all while adjusting to life as students in a foreign country.",
+			],
+			fr: [
+				'Ne voulant pas rester inactif avant d’intégrer le programme de Syn Studio, j’ai suivi un semestre à temps plein à la Focal Point School de Gdańsk, en Pologne. Enseigné par des figures majeures de l’industrie, Darek Zabrocky et Michal Kus, ce programme intensif nous a appris à travailler efficacement tout en préservant la qualité dans un environnement sous pression, le tout en nous adaptant à la vie d’étudiant dans un pays étranger.',
+			],
 		},
 		summary_short: {
 			en: 'Full-time intensive semester in concept art taught by industry veterans Darek Zabrocky and Michal Kus, focused on working efficiently under pressure without compromising quality.',
@@ -169,8 +183,14 @@ const academic = [
 		start: '2013-09',
 		end: '2017-05',
 		summary: {
-			en: '4-year career program where we were taught the workflows and techniques that we would be expected to be familiar with when entering the animation or video game industries. Courses covered topics like 2D animation, 3D animation, 3D modeling, anatomy, drawing, painting, concept art, or project management. Each year, students were expected to group up with other fellow artists and students from other programs to produce a game or animation project that they would be working on from fall to summer semesters.',
-			fr: 'Programme professionnalisant de quatre ans au cours duquel nous apprenions les flux de travail et les techniques que l’on attendrait de nous en entrant dans l’industrie de l’animation ou du jeu vidéo. Les cours couvraient des sujets tels que l’animation 2D, l’animation 3D, la modélisation 3D, l’anatomie, le dessin, la peinture, le concept art et la gestion de projet. Chaque année, les étudiants devaient se regrouper avec d’autres artistes et des étudiants d’autres programmes pour produire un jeu ou un projet d’animation, sur lequel ils travaillaient du semestre d’automne au semestre d’été.',
+			en: [
+				'4-year career program where we were taught the workflows and techniques that we would be expected to be familiar with when entering the animation or video game industries. Courses covered topics like 2D animation, 3D animation, 3D modeling, anatomy, drawing, painting, concept art, or project management.',
+				' Each year, students were expected to group up with other fellow artists and students from other programs to produce a game or animation project that they would be working on from fall to summer semesters.',
+			],
+			fr: [
+				'Programme professionnalisant de quatre ans au cours duquel nous apprenions les flux de travail et les techniques que l’on attendrait de nous en entrant dans l’industrie de l’animation ou du jeu vidéo. Les cours couvraient des sujets tels que l’animation 2D, l’animation 3D, la modélisation 3D, l’anatomie, le dessin, la peinture, le concept art et la gestion de projet.',
+				' Chaque année, les étudiants devaient se regrouper avec d’autres artistes et des étudiants d’autres programmes pour produire un jeu ou un projet d’animation, sur lequel ils travaillaient du semestre d’automne au semestre d’été.',
+			],
 		},
 		summary_short: {
 			en: 'Four-year degree covering the techniques and production workflows of the animation and video game industries, from 2D/3D animation and 3D modeling to concept art. Each year culminated in a team-based game or animation project developed alongside students from other programs.',
@@ -200,8 +220,12 @@ const academic = [
 		start: '2012-06',
 		end: '2014-09',
 		summary: {
-			en: 'During my last year of High School and first year of college, in the summer semesters of 2012 and 2014, I attended Parsons as an independent student to take some college courses on drawing, painting and illustration.',
-			fr: 'Durant ma dernière année de lycée et ma première année d’université, lors des semestres d’été 2012 et 2014, j’ai fréquenté Parsons en tant qu’étudiant indépendant afin de suivre quelques cours universitaires de dessin, de peinture et d’illustration.',
+			en: [
+				'During my last year of High School and first year of college, in the summer semesters of 2012 and 2014, I attended Parsons as an independent student to take some college courses on drawing, painting and illustration.',
+			],
+			fr: [
+				'Durant ma dernière année de lycée et ma première année d’université, lors des semestres d’été 2012 et 2014, j’ai fréquenté Parsons en tant qu’étudiant indépendant afin de suivre quelques cours universitaires de dessin, de peinture et d’illustration.',
+			],
 		},
 		summary_short: {
 			en: 'College-level summer courses in drawing, painting and illustration, taken as an independent student in 2012 and 2014.',
@@ -224,7 +248,7 @@ export function getAcademic(locale: Locale): readonly Academic[] {
 			title: tr(e.title, locale),
 			mapLabel: tr(e.mapLabel, locale),
 			location: tr(e.location, locale),
-			summary: tr(e.summary, locale),
+			summary: trList(e.summary, locale),
 			summary_short: e.summary_short && tr(e.summary_short, locale),
 			highlights: trList(e.highlights, locale),
 		}));

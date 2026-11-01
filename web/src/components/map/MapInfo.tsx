@@ -7,7 +7,7 @@ import { Info } from 'lucide-react';
 
 export function MapInfo({ info }: { info?: MapStopInfo }) {
 	const t = useTranslations('pages.home');
-	//const linkHref = `/${info?.line}#${info?.slug}`
+	const linkHref = `/${info?.line}#${info?.slug}`;
 
 	return (
 		<div className="hidden md:flex w-full max-w-100 flex-col gap-3 rounded-xl border-2 border-muted p-6">
@@ -28,14 +28,13 @@ export function MapInfo({ info }: { info?: MapStopInfo }) {
 					</div>
 					<p className="text-muted">{info.subtitle}</p>
 					<p className="text-sm text-muted">{info.period}</p>
-					<p className="line-clamp-8">{info.summary}</p>
-					{/*<LinkButton
-						href={linkHref}
-						bgClass={lines[info.line].bgClass}
-						textClass={lines[info.line].textClass}
-					>
+
+					{/*Short summary*/}
+					<p className="text-foreground line-clamp-10">{info.summary}</p>
+
+					<LinkButton href={linkHref} bgClass={lines[info.line].bgClass} textClass={lines[info.line].textClass}>
 						{t('moreInfo')}
-					</LinkButton>*/}
+					</LinkButton>
 				</>
 			) : (
 				<div className="flex flex-row h-full w-full items-center justify-self-center">

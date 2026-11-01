@@ -28,6 +28,7 @@ export function LinkButton({
 	textClass,
 	borderClass,
 	href,
+	target = '_self',
 	className = '',
 	children,
 }: {
@@ -36,11 +37,12 @@ export function LinkButton({
 	textClass?: string;
 	borderClass?: string;
 	href: string;
+	target?: '_self' | '_blank';
 	className?: string;
 	children: React.ReactNode;
 }) {
 	return (
-		<Link href={href} className={cn(base, variants[variant], textClass, borderClass, bgClass, className)}>
+		<Link href={href} target={target} className={cn(base, variants[variant], textClass, borderClass, bgClass, className)}>
 			{children}
 		</Link>
 	);

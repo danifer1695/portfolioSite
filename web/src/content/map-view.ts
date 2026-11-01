@@ -67,7 +67,7 @@ function buildStopInfo(locale: Locale, present: string): Record<string, MapStopI
 					title: e.role,
 					subtitle: e.company,
 					period: formatPeriod(e.start, e.end, locale, present),
-					summary: e.summary,
+					summary: e.summary_short ?? e.summary[0],
 				}) satisfies MapStopInfo,
 		),
 		...getAcademic(locale).map(
@@ -78,7 +78,7 @@ function buildStopInfo(locale: Locale, present: string): Record<string, MapStopI
 					title: e.title,
 					subtitle: e.institution,
 					period: formatPeriod(e.start, e.end, locale, present),
-					summary: e.summary,
+					summary: e.summary_short ?? e.summary[0],
 				}) satisfies MapStopInfo,
 		),
 		...getProjects(locale).map(
@@ -89,7 +89,7 @@ function buildStopInfo(locale: Locale, present: string): Record<string, MapStopI
 					title: e.title,
 					subtitle: e.tech.join(', '),
 					period: e.year,
-					summary: e.summary,
+					summary: e.summary_short,
 				}) satisfies MapStopInfo,
 		),
 	];

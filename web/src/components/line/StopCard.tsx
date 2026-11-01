@@ -38,20 +38,28 @@ export function StopCard({ stop, line }: { stop: Stop; line: Line }) {
 					<ul className="flex flex-wrap gap-4">
 						{/*GitHub*/}
 						{stop.links.github && (
-							<LinkButton href={stop.links.github} bgClass={line.bgClass} textClass={line.textClass}>
+							<LinkButton href={stop.links.github} target="_blank" bgClass={line.bgClass} textClass={line.textClass}>
 								GitHub
 							</LinkButton>
 						)}
 
 						{/*Website / Store*/}
 						{stop.links.live && (
-							<LinkButton href={stop.links.live} bgClass={line.bgClass} textClass={line.textClass}>
+							<LinkButton href={stop.links.live} target="_blank" bgClass={line.bgClass} textClass={line.textClass}>
 								Website
 							</LinkButton>
 						)}
 					</ul>
 				)}
-				<p className="max-w-prose">{stop.summary}</p>
+
+				{/*Summary*/}
+				<div className="flex flex-col gap-2">
+					{stop.summary.map((par) => (
+						<p key={par} className="text-justify">
+							{par}
+						</p>
+					))}
+				</div>
 
 				{/*display each of the highlights in little pills*/}
 				<ul className="flex flex-wrap gap-2">
