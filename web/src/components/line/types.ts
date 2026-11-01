@@ -5,7 +5,7 @@ export type Stop = {
 	title: string;
 	subtitle: string;
 	period: string; //formatted with lib/format's formatPeriod
-	summary: string;
+	summary: readonly string[];
 	links?: { github?: string; live?: string };
 	highlights: readonly string[];
 	images: readonly GalleryImage[];

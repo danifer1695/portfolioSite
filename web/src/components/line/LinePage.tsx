@@ -14,7 +14,7 @@ export function LinePage({ line, title, intro, stops }: { line: Line; title: str
 	const t = useTranslations();
 
 	return (
-		<Container className="space-y-10 py-12">
+		<Container className="space-y-10 py-12 md:max-w-4xl">
 			{/*Messages*/}
 			<div className="flex flex-col space-y-2">
 				{/*Warning message - WIP*/}

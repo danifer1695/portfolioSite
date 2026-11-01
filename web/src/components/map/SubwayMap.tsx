@@ -16,11 +16,14 @@ const PAD = 1; //margin in grid units so that stops are not clipped
 //this component puts everything together to display the final subway map
 export function SubwayMap({ view, title }: { view: MapView; title: string }) {
 	const [active, setActive] = useState<Active>(NONE); //by default nothing is selected
+	//specific for the map info panel. We dont want to clear it when a stop is un-hovered
+	const [infoShown, setInfoShown] = useState<Active>(NONE);
+
 	const reset = () => setActive(NONE);
 	const isLineMuted = (id: LineId) => active.line !== null && active.line !== id; //check if given line is currently active
 	const { width, height } = view.grid;
 
-	const info: MapStopInfo | undefined = active.stop ? view.stops[active.stop] : undefined;
+	const info: MapStopInfo | undefined = infoShown.stop ? view.stops[infoShown.stop] : undefined;
 
 	return (
 		<div className="flex flex-col w-full justify-self-center md:justify-center gap-8">
@@ -74,7 +77,10 @@ export function SubwayMap({ view, title }: { view: MapView; title: string }) {
 									{...s}
 									isActive={active.stop === s.slug}
 									isMuted={isLineMuted(s.line)}
-									onActivate={() => setActive({ line: s.line, stop: s.slug })}
+									onActivate={() => {
+										setActive({ line: s.line, stop: s.slug });
+										setInfoShown({ line: s.line, stop: s.slug });
+									}}
 									onDeactivate={reset}
 								/>
 							)),

@@ -16,7 +16,7 @@ export const lines: Record<LineId, Line> = {
 	professional: {
 		code: 'W',
 		href: '/professional',
-		bgClass: 'bg-line-p',
+		bgClass: 'bg-line-p hover:bg-line-p/70',
 		borderClass: 'border-line-p',
 		fillClass: 'fill-line-p',
 		textClass: 'text-white',
@@ -25,7 +25,7 @@ export const lines: Record<LineId, Line> = {
 	academics: {
 		code: 'A',
 		href: '/academics',
-		bgClass: 'bg-line-a',
+		bgClass: 'bg-line-a hover:bg-line-a/70',
 		borderClass: 'border-line-a',
 		fillClass: 'fill-line-a',
 		textClass: 'text-white',
@@ -34,7 +34,7 @@ export const lines: Record<LineId, Line> = {
 	technical: {
 		code: 'P',
 		href: '/technical',
-		bgClass: 'bg-line-t',
+		bgClass: 'bg-line-t hover:bg-line-t/70',
 		borderClass: 'border-line-t',
 		fillClass: 'fill-line-t',
 		textClass: 'text-black',

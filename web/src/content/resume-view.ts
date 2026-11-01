@@ -59,7 +59,7 @@ export async function getResumeView(locale: Locale): Promise<ResumeView> {
 				subtitle: job.company,
 				location: job.location,
 				period: formatPeriod(job.start, job.end, LOCALE, present),
-				description: job.summary_short || job.summary,
+				description: job.summary_short ?? job.summary[0],
 				points: job.highlights,
 				features: job.featResume,
 			})),
