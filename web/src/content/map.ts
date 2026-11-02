@@ -23,7 +23,7 @@ export type LinePath = {
 export type Interchange = readonly [slugA: string, slugB: string];
 
 //Map grid: portrait ratio - works on phones and desktop
-export const mapGrid = { width: 12, height: 16 };
+export const mapGrid = { width: 10, height: 16 };
 
 //This is where we map out all the lines. (Maybe we could automate it in the future)
 export const linePaths: readonly LinePath[] = [
