@@ -13,7 +13,7 @@
 	},
 	"dependencies": {
 		"clsx": "^2.1.1",
-		"lucide-react": "^1.65.0",
+		"lucide-react": "^1.66.0",
 		"motion": "^14.9.0",
 		"next": "16.4.3",
 		"next-intl": "^4.14.9",
@@ -31,6 +31,6 @@
 		"tailwindcss": "^4",
 		"typescript": "^5",
 		"vitest": "^4.1.12",
-		"wrangler": "^4.155.0"
+		"wrangler": "^4.156.0"
 	}
 }
