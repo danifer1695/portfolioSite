@@ -6,29 +6,59 @@ export function ResumeSection({ section, className }: { section: ResumeSectionVi
 	const { line } = section;
 
 	return (
-		<section className={className}>
-			<div className="mb-2 flex intems-center gap-2 text-xs font-bold uppercase tracking-widest text-neutral-500">
-				{/*Big Line Icon Circle thing*/}
-				<span
-					aria-hidden="true"
-					className={cn(
-						'flex size-8 items-center justify-center rounded-full text-[10px] [print-color-adjust:exact]',
-						line.bgClass,
-						line.textClass,
-					)}
-				>
-					{line.code}
-				</span>
+		<section className={cn('relative', className)}>
+			{/*Big Line Icon Circle thing*/}
+			{/*<span
+				aria-hidden="true"
+				className={cn(
+					'absolute top-0 left-0 -translate-x-1/3 -translate-y-1/4 flex size-8 items-center justify-center rounded-full text-[10px] [print-color-adjust:exact]',
+					line.bgClass,
+					line.textClass,
+				)}
+			>
+				{line.code}
+			</span>*/}
+
+			{/*Section Headeer*/}
+			<div
+				className={cn(
+					`
+				mb-2
+				px-4
+				py-2
+				w-fit
+				flex
+				intems-center
+				gap-2
+				text-xs
+				text-center
+				font-bold
+				uppercase
+				rounded-full
+				text-neutral-500`,
+					line.bgClass,
+					line.textClass,
+				)}
+			>
 				<h1 className="text-xl">{section.heading}</h1>
 			</div>
 
 			{/*Section Entries*/}
-			<ol className={cn('space-y-3 border-l-4 pl-4 [print-color-adjust:exact]', line.borderClass)}>
+			<ol className={cn('space-y-3 border-l-6 [print-color-adjust:exact]', line.borderClass)}>
 				{/*Map out all the entries in this section of the resume*/}
 				{section.entries.map(
 					(e) =>
 						e.features && ( //Only render this entry if features is true
-							<li key={e.id} className="break-inside-avoid">
+							<li key={e.id} className="relative pl-4 break-inside-avoid">
+								<span
+									aria-hidden="true"
+									className={cn(
+										'absolute top-0 left-0 -translate-x-2/3 flex size-4 items-center justify-center rounded-full text-[10px] [print-color-adjust:exact]',
+										line.bgClass,
+										line.textClass,
+									)}
+								/>
+
 								<div className="flex flex-col flex-wrap items-baseline justify-between gap-x-4">
 									{/*Title and subtitle (company) in a column*/}
 									<h2 className="font-semibold">{e.title}</h2>
