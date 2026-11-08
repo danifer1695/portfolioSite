@@ -30,7 +30,8 @@ export function ResumeSection({ section, className }: { section: ResumeSectionVi
 				flex
 				intems-center
 				gap-2
-				text-xs
+				text-xl
+				print:text-xs
 				text-center
 				font-bold
 				uppercase
@@ -40,7 +41,7 @@ export function ResumeSection({ section, className }: { section: ResumeSectionVi
 					line.textClass,
 				)}
 			>
-				<h1 className="text-xl">{section.heading}</h1>
+				<h1>{section.heading}</h1>
 			</div>
 
 			{/*Section Entries*/}
