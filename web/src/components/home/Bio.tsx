@@ -55,7 +55,7 @@ export function Bio({ profile }: { profile: Profile }) {
 						"
 					/>
 
-					<div className="flex flex-col w-full">
+					<div className="flex flex-col w-full text-white">
 						<h1 className="text-6xl place-self-center font-bold tracking-widest uppercase">Daniel</h1>
 						<h1 className="text-2xl place-self-center font-bold tracking-wide">Fernandez Matinez</h1>
 					</div>
@@ -68,12 +68,12 @@ export function Bio({ profile }: { profile: Profile }) {
 					md:justify-self-end
 					space-y-4
 					rounded-2xl
-					bg-background/90
+					bg-background
 					p-6
 					text-foreground
 					shadow-lg"
 				>
-					<h1 className="text-4xl font-bold tracking-tight">{t('pages.home.planJourney')}</h1>
+					<h1 className="text-4xl text-metroBlue dark:text-foreground font-bold tracking-tight">{t('pages.home.planJourney')}</h1>
 					<p className="text-lg text-muted">{profile.intro}</p>
 
 					{/*Destination selection fields & button*/}
@@ -82,12 +82,12 @@ export function Bio({ profile }: { profile: Profile }) {
 							{/*Location*/}
 							<li key="location" className="flex items-center gap-4">
 								<MapPin aria-hidden="true" className="shrink-0" />
-								<div className="w-full rounded-lg bg-muted-md/70 px-4 py-2">{profile.location}</div>
+								<div className="w-full border-1 border-border rounded-lg bg-transparent px-4 py-2">{profile.location}</div>
 							</li>
 							{/*Open to relocation*/}
 							<li key="relocation" className="flex items-center gap-4">
 								<CircleSmall aria-hidden="true" className="shrink-0" />
-								<div className="w-full rounded-lg bg-muted-md/70 px-4 py-2">{t('pages.home.openToRelocation')}</div>
+								<div className="w-full border-1 border-border rounded-lg bg-transparent px-4 py-2">{t('pages.home.openToRelocation')}</div>
 							</li>
 						</ul>
 
@@ -96,9 +96,9 @@ export function Bio({ profile }: { profile: Profile }) {
 							whileHover={{ scale: 1.05 }}
 							whileTap={{ scale: 0.95 }}
 							onClick={FaceRotation}
-							className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-foreground shadow-lg"
+							className="hidden md:block border-border/70 border-1 absolute -right-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white shadow-lg"
 						>
-							<ArrowUpDown className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" color="var(--background)" />
+							<ArrowUpDown className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" color="black" />
 						</motion.button>
 					</div>
 
@@ -109,7 +109,7 @@ export function Bio({ profile }: { profile: Profile }) {
 							</li>
 						))}
 					</ul>
-					<LinkButton href="/contact" textClass="font-bold text-xl" className="w-full mt-4">
+					<LinkButton href="/contact" textClass="font-bold text-white text-xl" className="w-full mt-4">
 						{t('pages.home.letsGo')}
 					</LinkButton>
 				</div>

@@ -68,7 +68,7 @@ export function ContactForm() {
 			</label>
 			<label className="block space-y-1">
 				<span className="text-sm font-medium">{t('message')}</span>
-				<textarea name="message" required minLength={10} maxLength={5000} rows={6} className={field} />
+				<textarea name="message" required minLength={1} maxLength={5000} rows={6} className={field} />
 			</label>
 
 			{/*Honeypot: hidden from people, trap bots*/}

@@ -28,15 +28,16 @@ export function ResumeSection({ section, className }: { section: ResumeSectionVi
 				py-2
 				w-fit
 				flex
-				intems-center
+				items-center
 				gap-2
 				text-xl
-				print:text-xs
+				print:text-md
 				text-center
 				font-bold
 				uppercase
 				rounded-full
-				text-neutral-500`,
+				text-neutral-500
+				`,
 					line.bgClass,
 					line.textClass,
 				)}
