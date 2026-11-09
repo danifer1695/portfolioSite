@@ -4,10 +4,9 @@ import { Profile } from '@/content/profile';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Container } from '../ui/container';
-import { LinkButton } from '../ui/button';
-import { ArrowUpDown, CircleSmall, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useState } from 'react';
+import { PlanJourney } from './PlanJourney';
 
 //UPDATE IF I WANT A BG IMAGE
 const background: string = '';
@@ -62,57 +61,7 @@ export function Bio({ profile }: { profile: Profile }) {
 				</div>
 
 				{/*Profile box*/}
-				<div
-					className="
-					md:max-w-150
-					md:justify-self-end
-					space-y-4
-					rounded-2xl
-					bg-background
-					p-6
-					text-foreground
-					shadow-lg"
-				>
-					<h1 className="text-4xl text-metroBlue dark:text-foreground font-bold tracking-tight">{t('pages.home.planJourney')}</h1>
-					<p className="text-lg text-muted">{profile.intro}</p>
-
-					{/*Destination selection fields & button*/}
-					<div className="relative">
-						<ul className="space-y-2">
-							{/*Location*/}
-							<li key="location" className="flex items-center gap-4">
-								<MapPin aria-hidden="true" className="shrink-0" />
-								<div className="w-full border-1 border-border rounded-lg bg-transparent px-4 py-2">{profile.location}</div>
-							</li>
-							{/*Open to relocation*/}
-							<li key="relocation" className="flex items-center gap-4">
-								<CircleSmall aria-hidden="true" className="shrink-0" />
-								<div className="w-full border-1 border-border rounded-lg bg-transparent px-4 py-2">{t('pages.home.openToRelocation')}</div>
-							</li>
-						</ul>
-
-						{/*Flip icon*/}
-						<motion.button
-							whileHover={{ scale: 1.05 }}
-							whileTap={{ scale: 0.95 }}
-							onClick={FaceRotation}
-							className="hidden md:block border-border/70 border-1 absolute -right-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white shadow-lg"
-						>
-							<ArrowUpDown className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" color="black" />
-						</motion.button>
-					</div>
-
-					<ul className="flex flex-wrap gap-2">
-						{profile.skills.map((skill) => (
-							<li key={skill} className="rounded-full border border-border px-3 py-0.5 text-sm">
-								{skill}
-							</li>
-						))}
-					</ul>
-					<LinkButton href="/contact" textClass="font-bold text-white text-xl" className="w-full mt-4">
-						{t('pages.home.letsGo')}
-					</LinkButton>
-				</div>
+				<PlanJourney profile={profile} onFlip={FaceRotation} />
 			</Container>
 		</section>
 	);

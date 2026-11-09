@@ -38,7 +38,15 @@
 			"planJourney": "Lets plan our journey together!",
 			"photoAlt": "Profile picture of {name}",
 			"moreInfo": "Click for more info",
-			"mapHint": "Hover over a stop to display its info"
+			"mapHint": "Hover over a stop to display its info",
+			"journey": {
+				"from": "From",
+				"to": "To",
+				"toPlaceholder": "Your company",
+				"startDate": "Start date (optional)",
+				"endDate": "End date (optional)",
+				"skillsToggle": "Skills you need (optional)"
+			}
 		},
 		"professional": {
 			"title": "Work Experience",
@@ -75,6 +83,16 @@
 					"rate_limited": "Too many messages. Please wait a minute and try again.",
 					"generic": "Something went wrong. Please try again, or email me directly."
 				}
+			},
+			"journey": {
+				"greeting": "Hello Daniel,",
+				"company": "I work at {company}.",
+				"needSkills": "I’m looking for someone with experience in {skills}",
+				"needGeneric": "I’m looking for a developer",
+				"fromTo": "for a project from {from} to {to}",
+				"from": "for a project starting {from}",
+				"to": "for a project until {to}",
+				"closing": "Thank you, talk to you soon!"
 			}
 		},
 		"notFound": {

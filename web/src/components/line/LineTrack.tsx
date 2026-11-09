@@ -1,4 +1,4 @@
-import { lines, type Line } from '@/content/lines';
+import { type Line } from '@/content/lines';
 import type { Stop } from './types';
 import { cn } from '@/lib/cn';
 import { StopCard } from './StopCard';
