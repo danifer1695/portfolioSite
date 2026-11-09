@@ -24,26 +24,18 @@ The home page will be designed to visually resemble a Metro map. Laid out as a c
   - In the background of this section, horizontally spanning the entire screen, an image of my choosing.
 
 **Plan your Journey box**
-This element will be built to resemble a transpor service website, where a user enters some initial information to plan their trip. In this particular case, the information will be used to build a pre-written message that will be used in the 'contact' page. The box is made up of the following elements:
-	- Title: just reads "Lets plan our journey together" or similar.
-	- Intro: Brief intro describing the kinds of services that I offer.
-	- 'From' box: fake input box, displays my current location (Lille)
-	- 'To' box: Real input box, will prompt the user to enter their company name (as a default display before they enter their own text)
-	- Starting date: a button that opens a small callendar and lets the user select a day (optional)
-	- End date: Similar to starting date.
-	- Skill expandable section: contains a collection of selectible buttons listing my skills (optional)
-	- 'Lets go!' button: links to the contact page.
+This element will be built to resemble a transpor service website, where a user enters some initial information to plan their trip. In this particular case, the information will be used to build a pre-written message that will be used in the 'contact' page. The box is made up of the following elements: - Title: just reads "Lets plan our journey together" or similar. - Intro: Brief intro describing the kinds of services that I offer. - 'From' box: fake input box, displays my current location (Lille) - 'To' box: Real input box, will prompt the user to enter their company name (as a default display before they enter their own text) - Starting date: a button that opens a small callendar and lets the user select a day (optional) - End date: Similar to starting date. - Skill expandable section: contains a collection of selectible buttons listing my skills (optional) - 'Lets go!' button: links to the contact page.
 On clicking the last button, the user is taken to the contact page, with the fields pre-filled with their given information.
 the message should be formatted following this logic (pseudocode incoming):
-	company: ${toBox.input ?? ''}
-	message: `
-		Hello Daniel,
-		${!toBox.empty ? `I work at ${toBox.input}.` : ''}
-		${!skills.empty ? `I require someone with experience in `${skills.join(', ')}` : ''}${!startDate.empty ? ` to work on a project from ${startDate.date}` : '.'}${!endDate.empty ? `to ${endDate.date}.` : ''}
-	`
+company: ${toBox.input ?? ''}
+message: `		Hello Daniel,
+		${!toBox.empty ?`I work at ${toBox.input}.`: ''}
+		${!skills.empty ?`I require someone with experience in `${skills.join(', ')}` : ''}${!startDate.empty ? ` to work on a project from ${startDate.date}` : '.'}${!endDate.empty ? `to ${endDate.date}.` : ''}
+`
 Exact wording can change if needed.
 
 **Subway Map**
+
 - A legend with clickable elements representing each of the subway lines (A - Academics, T - Technical, P - Professional) that will link to their respective pages. Hovering over each one of them will highlight its line on the map by muting the rest.
 - A graphic respresentation of my past experience laid out to resemble a subway map. Like with the elements in the legend section, hovering over one of the lines will highlight it by muting the rest. The stops will be interactable too.
 

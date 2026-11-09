@@ -15,6 +15,12 @@ export function formatMonth(value: string, locale: string) {
 	return new Intl.DateTimeFormat(locale, { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(year, month - 1)));
 }
 
+//transform '2027-01-10' into 'January 10, 2027'
+export function formatDay(value: string, locale: string) {
+	const [year, month, day] = value.split('-').map(Number);
+	return new Intl.DateTimeFormat(locale, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(Date.UTC(year, month - 1, day)));
+}
+
 //formats time periods.
 //PresentLabel is a string saying 'Present', 'Presente', 'Maintenant'... changes depending on locale
 export function formatPeriod(start: string, end: string | null, locale: string, presentLabel: string) {

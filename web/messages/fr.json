@@ -38,7 +38,15 @@
 			"planJourney": "Planifions notre aventure!",
 			"photoAlt": "Photo profil de {name}",
 			"moreInfo": "Cliquez pour en apprendre plus",
-			"mapHint": "Survolez un arrêt pour afficher ses informations"
+			"mapHint": "Survolez un arrêt pour afficher ses informations",
+			"journey": {
+				"from": "De",
+				"to": "À",
+				"toPlaceholder": "Votre entreprise",
+				"startDate": "Début (facultatif)",
+				"endDate": "Jusqu'a (facultatif)",
+				"skillsToggle": "Compétences requises (facultatif)"
+			}
 		},
 		"professional": {
 			"title": "Expérience professionnelle",
@@ -75,6 +83,16 @@
 					"rate_limited": "Trop de messages envoyés. Veuillez patienter une minute et réessayer.",
 					"generic": "Une erreur s’est produite. Veuillez réessayer ou m’écrire directement par e-mail."
 				}
+			},
+			"journey": {
+				"greeting": "Bonjour Daniel,",
+				"company": "Je travaille chez {company}.",
+				"needSkills": "Je recherche quelqu’un ayant de l’expérience en {skills}",
+				"needGeneric": "Je recherche un développeur",
+				"fromTo": "pour un projet du {from} au {to}",
+				"from": "pour un projet à partir du {from}",
+				"to": "pour un projet jusqu’au {to}",
+				"closing": "Merci, à bientôt!"
 			}
 		},
 		"notFound": {

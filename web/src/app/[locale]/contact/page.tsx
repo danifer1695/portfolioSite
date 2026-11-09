@@ -5,6 +5,7 @@ import { getTranslations } from 'next-intl/server';
 import { initLocale } from '@/i18n/locale';
 import { getProfile } from '@/content/profile';
 import MessageBox from '@/components/ui/MessageBox';
+import { Suspense } from 'react';
 
 export async function generateMetadata({ params }: PageProps<'/[locale]/contact'>): Promise<Metadata> {
 	const locale = await initLocale(params);
@@ -45,8 +46,10 @@ export default async function ContactPage({ params }: PageProps<'/[locale]/conta
 				</dd>
 			</dl>
 
-			{/*Form placeholder*/}
-			<ContactForm />
+			{/*Contact form*/}
+			<Suspense fallback={null}>
+				<ContactForm skills={profile.skills} />
+			</Suspense>
 		</Container>
 	);
 }

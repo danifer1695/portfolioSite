@@ -2,7 +2,6 @@
 //they all work the same so it does not make sense to write them separately 3 times.
 
 import { Container } from '../ui/container';
-import { cn } from '@/lib/cn';
 import type { Line } from '@/content/lines';
 import { LineTrack } from './LineTrack';
 import type { Stop } from './types';

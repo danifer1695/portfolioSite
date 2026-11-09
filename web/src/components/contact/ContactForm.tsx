@@ -4,15 +4,22 @@ import { cn } from '@/lib/cn';
 import { useState } from 'react';
 import { Button } from '../ui/button';
 import { focusRing } from '@/lib/styles';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import { buildJourneyMessage, parseJourney } from '@/lib/journey';
+import { useSearchParams } from 'next/navigation';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? '';
 const field = cn('w-full rounded-md border border-border bg-background px-3 py-2', focusRing);
 
-export function ContactForm() {
+export function ContactForm({ skills }: { skills: readonly string[] }) {
 	const t = useTranslations('pages.contact.form');
+	const tJourney = useTranslations('pages.contact.journey');
+	const locale = useLocale();
+
+	const journey = parseJourney(useSearchParams(), skills);
+	const prefilledMessage = buildJourneyMessage(journey, tJourney, locale);
 
 	const [status, setStatus] = useState<Status>('idle');
 	const [errorMessage, setErrorMessage] = useState('');
@@ -54,21 +61,28 @@ export function ContactForm() {
 	//REACT component
 	return (
 		<form onSubmit={handleSubmit} className="max-w-prose space-y-4">
+			{/*Name*/}
 			<label className="block space-y-1">
 				<span className="text-sm font-medium">{t('name')}</span>
 				<input name="name" required maxLength={100} autoComplete="name" className={field} />
 			</label>
+
+			{/*Email*/}
 			<label className="block space-y-1">
 				<span className="text-sm font-medium">{t('email')}</span>
 				<input name="email" required maxLength={254} autoComplete="email" className={field} />
 			</label>
+
+			{/*Company*/}
 			<label className="block space-y-1">
 				<span className="text-sm font-medium">{t('company')}</span>
-				<input name="company" required maxLength={100} autoComplete="organization" className={field} />
+				<input name="company" maxLength={100} autoComplete="organization" defaultValue={journey.company} className={field} />
 			</label>
+
+			{/*Message*/}
 			<label className="block space-y-1">
 				<span className="text-sm font-medium">{t('message')}</span>
-				<textarea name="message" required minLength={1} maxLength={5000} rows={6} className={field} />
+				<textarea name="message" required minLength={1} maxLength={5000} rows={6} defaultValue={prefilledMessage} className={field} />
 			</label>
 
 			{/*Honeypot: hidden from people, trap bots*/}
