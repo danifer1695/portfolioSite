@@ -35,7 +35,7 @@
 			"mapTitle": "Career Map",
 			"letsGo": "Let's go!",
 			"openToRelocation": "Open to relocation",
-			"planJourney": "Lets plan our journey together!",
+			"planJourney": "Have a project in mind?",
 			"photoAlt": "Profile picture of {name}",
 			"moreInfo": "Click for more info",
 			"mapHint": "Hover over a stop to display its info",
@@ -45,7 +45,7 @@
 				"toPlaceholder": "Your company",
 				"startDate": "Start date (optional)",
 				"endDate": "End date (optional)",
-				"skillsToggle": "Skills you need (optional)"
+				"skillsToggle": "Required skills (optional)"
 			}
 		},
 		"professional": {
@@ -63,7 +63,8 @@
 		"resume": {
 			"title": "Resume",
 			"print": "Print / Save as PDF",
-			"skills": "Skills"
+			"skills": "Skills:",
+			"languages": "Languages:"
 		},
 		"contact": {
 			"title": "Contact",

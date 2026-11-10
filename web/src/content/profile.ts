@@ -11,6 +11,7 @@ export type ProfileSource = {
 	intro: Text;
 	about: TextList;
 	skills: readonly string[];
+	languages: TextList;
 	description: Text;
 	siteURL: string;
 	email: string;
@@ -18,11 +19,12 @@ export type ProfileSource = {
 	social: readonly { label: string; href: string }[];
 };
 
-export type Profile = Omit<ProfileSource, 'headline' | 'location' | 'intro' | 'about' | 'description'> & {
+export type Profile = Omit<ProfileSource, 'headline' | 'location' | 'intro' | 'about' | 'description' | 'languages'> & {
 	headline: string;
 	location: string;
 	intro: string;
 	about: readonly string[];
+	languages: readonly string[];
 	description: string;
 };
 
@@ -43,14 +45,18 @@ const profile = {
 		fr: 'Développement logiciel',
 	},
 	intro: {
-		en: 'Software developer with experience in Full-Stack development, Game Development and Production Design',
-		fr: 'Développement logiciel, avec une expérience en développement Full-Stack, en développement de jeux vidéo et en conception visuelle',
+		en: 'Software developer with full-stack experience and a background in visual and game development.',
+		fr: 'Développeur logiciel avec de l’expérience en développement full-stack et une formation en développement visuel et en conception de jeux vidéo.',
 	},
 	about: {
 		en: ['Currently based in Lille, France', '5 years of experience in game development'],
 		fr: ['Actuellement basé à Lille, France', '5 ans d’expérience dans le développement de jeux vidéo'],
 	},
 	skills: ['TypeScript', 'React', 'Next.js', 'Node.js', 'JavaScript', 'PostgreSQL', 'Java', 'C/C++', 'C#', 'Unity', 'OpenGL'],
+	languages: {
+		en: ['English', 'Spanish', 'French', 'Japanese'],
+		fr: ['Anglais', 'Espagnol', 'Français', 'Japonais'],
+	},
 	description: {
 		en: 'Software Developer. Portfolio, projects and contact.',
 		fr: 'Développement logiciel. Portfolio, projets et contact.',
@@ -71,6 +77,7 @@ export function getProfile(locale: Locale): Profile {
 		intro: tr(profile.intro, locale),
 		location: tr(profile.location, locale),
 		about: trList(profile.about, locale),
+		languages: trList(profile.languages, locale),
 		description: tr(profile.description, locale),
 	};
 }

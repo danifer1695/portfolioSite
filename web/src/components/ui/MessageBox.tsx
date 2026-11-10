@@ -23,7 +23,7 @@ export default function MessageBox({ type, children, className }: { type: Messag
 	}
 
 	return (
-		<div className={cn('flex gap-4 border-dashed rounded-xl border-2 px-6 py-4 print:hidden', styles[type], className)}>
+		<div className={cn('flex gap-4 border-dashed rounded-xl border-2 px-6 py-4', styles[type], className)}>
 			{determineIcon(type)}
 			{children}
 		</div>

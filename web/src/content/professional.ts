@@ -188,7 +188,7 @@ const professional = [
 			en: ['QA', 'Localization', 'Translation'],
 			fr: ['QA', 'Localisation', 'Traduction'],
 		},
-		featResume: true,
+		featResume: false,
 	},
 	{
 		slug: 'ta',

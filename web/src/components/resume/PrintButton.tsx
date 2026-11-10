@@ -4,7 +4,7 @@ import { Button } from '../ui/button';
 
 export function PrintButton({ label }: { label: string }) {
 	return (
-		<Button onClick={() => window.print()} className="text-white print:hidden">
+		<Button onClick={() => window.print()} className="px-12 text-2xl text-white print:hidden">
 			{label}
 		</Button>
 	);

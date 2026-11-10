@@ -35,7 +35,7 @@
 			"mapTitle": "Carte de carrière",
 			"letsGo": "C'est parti!",
 			"openToRelocation": "Ouvert à la mobilité",
-			"planJourney": "Planifions notre aventure!",
+			"planJourney": "Avez-vous un projet en tête?",
 			"photoAlt": "Photo profil de {name}",
 			"moreInfo": "Cliquez pour en apprendre plus",
 			"mapHint": "Survolez un arrêt pour afficher ses informations",
@@ -63,7 +63,8 @@
 		"resume": {
 			"title": "CV",
 			"print": "Imprimer / Enregistrer en PDF",
-			"skills": "Compétences"
+			"skills": "Compétences:",
+			"languages": "Langages:"
 		},
 		"contact": {
 			"title": "Contact",
