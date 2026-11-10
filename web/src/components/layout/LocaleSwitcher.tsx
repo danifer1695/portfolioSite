@@ -14,15 +14,15 @@ export function LocaleSwitcher() {
 		<ul className="flex gap-2 text-sm">
 			{routing.locales.map((locale) => (
 				<li key={locale}>
-					<Link
-						href={pathname}
-						locale={locale}
+					<a
+						href={`/${locale}${pathname === '/' ? '' : pathname}`}
+						hrefLang={locale}
 						lang={locale}
 						aria-current={locale === current ? 'true' : undefined}
 						className={cn('uppercase underline-offset-4 hover:underline', locale === current && 'font-bold underline', focusRing)}
 					>
 						{locale}
-					</Link>
+					</a>
 				</li>
 			))}
 		</ul>

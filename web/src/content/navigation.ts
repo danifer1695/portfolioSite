@@ -15,6 +15,6 @@ export const mainNav: readonly NavItem[] = [
 		href: lines[id].href,
 		dotClass: lines[id].bgClass,
 	})),
-	{ labelKey: 'nav.resume', href: '/resume' },
+	//{ labelKey: 'nav.resume', href: '/resume' },
 	{ labelKey: 'nav.contact', href: '/contact' },
 ];

@@ -2,7 +2,6 @@
 //they all work the same so it does not make sense to write them separately 3 times.
 
 import { Container } from '../ui/container';
-import { cn } from '@/lib/cn';
 import type { Line } from '@/content/lines';
 import { LineTrack } from './LineTrack';
 import type { Stop } from './types';
@@ -23,21 +22,8 @@ export function LinePage({ line, title, intro, stops }: { line: Line; title: str
 				</MessageBox>
 			</div>
 
-			{/*Content header*/}
-			<header className="flex items-center gap-4">
-				<span
-					className={cn('flex size-12 shrink-0 items-center justify-center rounded-full text-xl font-bold', line.bgClass, line.textClass)}
-				>
-					{line.code}
-				</span>
-				<div>
-					<h1 className="text-4xl font-bold tracking-tight">{title}</h1>
-					<p className="text-muted">{intro}</p>
-				</div>
-			</header>
-
 			{/*Line - ordered list*/}
-			<LineTrack line={line} stops={stops} />
+			<LineTrack intro={intro} title={title} line={line} stops={stops} />
 			<OpenStopFromId />
 		</Container>
 	);

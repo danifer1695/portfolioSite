@@ -111,7 +111,10 @@ const projects = [
 		tech: ['JavaScript', 'HTML', 'React Native', 'TypeScript', 'PostgreSQL', 'Node.js', 'Express', 'Zod', 'Bcrypt', 'Github'],
 		year: '2026',
 		featured: true,
-		links: { github: 'https://github.com/danifer1695/kanji_extension' },
+		links: {
+			github: 'https://github.com/danifer1695/kanji_extension',
+			live: 'https://chromewebstore.google.com/detail/shirabeyou/nppdilhajmbaihgiannigcejnfegjnfn',
+		},
 		highlights: {
 			en: ['Solo-Developed', 'Full-Stack development', 'Published on the Chrome Web Store'],
 			fr: ['Développé en solo', 'Développement Full-Stack', 'Publié sur le Chrome Web Store'],

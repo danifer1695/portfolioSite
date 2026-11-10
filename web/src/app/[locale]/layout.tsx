@@ -9,6 +9,7 @@ import { routing } from '@/i18n/routings';
 import { NextIntlClientProvider } from 'next-intl';
 import { getProfile } from '@/content/profile';
 import { initLocale } from '@/i18n/locale';
+import { themeScript } from '@/lib/theme';
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -42,7 +43,12 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
 	const locale = await initLocale(params);
 
 	return (
-		<html lang={locale} className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+		<html lang={locale} className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`} suppressHydrationWarning>
+			{/*Inject theme script to header*/}
+			<head>
+				<script dangerouslySetInnerHTML={{ __html: themeScript }} />
+			</head>
+
 			<body className="min-h-full flex flex-col">
 				<NextIntlClientProvider>
 					<SkipLink />
