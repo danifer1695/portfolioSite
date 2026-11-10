@@ -6,7 +6,7 @@ export const themeScript = `
 			const stored = localStorage.getItem('${THEME_KEY}');
 			const theme = stored === 'light' || stored === 'dark'
 				? stored
-				: matchMedia('(prefers-color-cheme: dark)').matches ? 'dark' : 'light';
+				: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 			document.documentElement.dataset.theme = theme;
 		} catch {}
 	})();

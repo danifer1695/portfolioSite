@@ -19,19 +19,23 @@ export default async function ResumePage({ params }: PageProps<'/[locale]/resume
 	const view = await getResumeView(locale);
 
 	return (
-		<Container className="space-y-4 py-12">
-			{/*Messages*/}
-			<div className="flex flex-col space-y-2">
-				{/*Warning message - WIP*/}
-				<MessageBox type="warning">
-					<p>{t('temp.wip')}</p>
-				</MessageBox>
-			</div>
+		<>
+			<Container className="space-y-4 pt-12 pb-4 print:hidden">
+				{/*Messages*/}
+				<div className="flex flex-col space-y-2">
+					{/*Warning message - WIP*/}
+					<MessageBox type="warning">
+						<p>{t('temp.wip')}</p>
+					</MessageBox>
+				</div>
 
-			<div className="flex justif-end print:hidden">
-				<PrintButton label={t('pages.resume.print')} />
-			</div>
-			<ResumeSheet view={view} />
-		</Container>
+				<div className="flex justify-center">
+					<PrintButton label={t('pages.resume.print')} />
+				</div>
+			</Container>
+			<Container>
+				<ResumeSheet view={view} />
+			</Container>
+		</>
 	);
 }

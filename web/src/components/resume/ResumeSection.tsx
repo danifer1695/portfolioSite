@@ -6,7 +6,7 @@ export function ResumeSection({ section, className }: { section: ResumeSectionVi
 	const { line } = section;
 
 	return (
-		<section className={cn('relative', className)}>
+		<section className={cn(' break-inside-avoid relative', className)}>
 			{/*Big Line Icon Circle thing*/}
 			{/*<span
 				aria-hidden="true"
@@ -30,13 +30,13 @@ export function ResumeSection({ section, className }: { section: ResumeSectionVi
 				flex
 				items-center
 				gap-2
-				text-xl
-				print:text-md
+				text-md
 				text-center
 				font-bold
 				uppercase
 				rounded-full
 				text-neutral-500
+				[print-color-adjust:exact]
 				`,
 					line.bgClass,
 					line.textClass,
@@ -52,6 +52,7 @@ export function ResumeSection({ section, className }: { section: ResumeSectionVi
 					(e) =>
 						e.features && ( //Only render this entry if features is true
 							<li key={e.id} className="relative pl-4 break-inside-avoid">
+								{/*Line stop dot*/}
 								<span
 									aria-hidden="true"
 									className={cn(
@@ -61,18 +62,22 @@ export function ResumeSection({ section, className }: { section: ResumeSectionVi
 									)}
 								/>
 
-								<div className="flex flex-col flex-wrap items-baseline justify-between gap-x-4">
-									{/*Title and subtitle (company) in a column*/}
-									<h2 className="font-semibold">{e.title}</h2>
-									<span className="font-normal text-neutral-600">{e.subtitle}</span>
-
-									<p className="flex flex-col text-xs text-neutral-500">
-										{e.period}
-										{e.location && ` • ${e.location}`}
-									</p>
+								<div className="flex justify-between">
+									<div className="flex flex-col flex-wrap items-baseline justify-between gap-x-4">
+										{/*Title and subtitle (company) in a column*/}
+										<h2 className="font-semibold">{e.title}</h2>
+										<span className="font-normal text-neutral-600">
+											{e.subtitle}
+											{e.location && ` • ${e.location}`}
+										</span>
+									</div>
+									<div className="flex flex-col text-xs font-semibold">
+										<p>{e.period}</p>
+									</div>
 								</div>
 
-								<p className="mt-1 text-xs text-justify text-neutral-700">{e.description}</p>
+								{/*Only display description if not undefined*/}
+								{e.description && <p className="mt-1 text-xs text-neutral-700">{e.description}</p>}
 								{/*{e.points.length > 0 && (
 							<ul className="mt-1 list-disc pl-4 text-xs text-neutral-700">
 								{e.points.map((p) => (

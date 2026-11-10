@@ -35,7 +35,7 @@
 /*Physical page when printing*/
 @page {
 	size: A4;
-	margin: 12mm;
+	margin: 4mm;
 }
 
 /*Tur each variable into tailwind utilities*/

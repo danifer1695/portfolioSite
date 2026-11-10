@@ -39,6 +39,8 @@ export type ResumeView = {
 	sections: readonly ResumeSectionView[];
 	skillHeading: string;
 	skills: readonly string[];
+	languageHeading: string;
+	languages: readonly string[];
 };
 
 const LOCALE = 'en';
@@ -102,5 +104,7 @@ export async function getResumeView(locale: Locale): Promise<ResumeView> {
 		})),
 		skillHeading: t('pages.resume.skills'),
 		skills: profile.skills,
+		languageHeading: t('pages.resume.languages'),
+		languages: profile.languages,
 	};
 }
