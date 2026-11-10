@@ -9,7 +9,7 @@ const base =
 	'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent';
 
 const variants = {
-	primary: 'bg-accent text-accent-foreground hover:bg-accent/90',
+	primary: 'bg-accent text-white hover:bg-accent/90',
 	secondary: 'border border-border hover:bg-metroBlue',
 	ghost: 'hover:bg-metroBlue',
 } as const;
@@ -36,7 +36,7 @@ export function LinkButton({
 	bgClass?: string;
 	textClass?: string;
 	borderClass?: string;
-	href: string;
+	href: React.ComponentProps<typeof Link>['href'];
 	target?: '_self' | '_blank';
 	className?: string;
 	children: React.ReactNode;

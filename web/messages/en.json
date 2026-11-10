@@ -35,10 +35,18 @@
 			"mapTitle": "Career Map",
 			"letsGo": "Let's go!",
 			"openToRelocation": "Open to relocation",
-			"planJourney": "Lets plan our journey together!",
+			"planJourney": "Have a project in mind?",
 			"photoAlt": "Profile picture of {name}",
 			"moreInfo": "Click for more info",
-			"mapHint": "Hover over a stop to display its info"
+			"mapHint": "Hover over a stop to display its info",
+			"journey": {
+				"from": "From",
+				"to": "To",
+				"toPlaceholder": "Your company",
+				"startDate": "Start date (optional)",
+				"endDate": "End date (optional)",
+				"skillsToggle": "Required skills (optional)"
+			}
 		},
 		"professional": {
 			"title": "Work Experience",
@@ -55,7 +63,8 @@
 		"resume": {
 			"title": "Resume",
 			"print": "Print / Save as PDF",
-			"skills": "Skills"
+			"skills": "Skills:",
+			"languages": "Languages:"
 		},
 		"contact": {
 			"title": "Contact",
@@ -75,6 +84,16 @@
 					"rate_limited": "Too many messages. Please wait a minute and try again.",
 					"generic": "Something went wrong. Please try again, or email me directly."
 				}
+			},
+			"journey": {
+				"greeting": "Hello Daniel,",
+				"company": "I work at {company}.",
+				"needSkills": "I’m looking for someone with experience in {skills}",
+				"needGeneric": "I’m looking for a developer",
+				"fromTo": "for a project from {from} to {to}",
+				"from": "for a project starting {from}",
+				"to": "for a project until {to}",
+				"closing": "Thank you, talk to you soon!"
 			}
 		},
 		"notFound": {

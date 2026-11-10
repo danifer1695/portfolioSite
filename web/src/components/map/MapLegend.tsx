@@ -22,13 +22,17 @@ export function MapLegend({
 	const t = useTranslations();
 
 	return (
-		<section aria-labelledby="legend-heading" className="w-full divide-y-2 overflow-hidden divide-muted rounded-xl md:self-start">
+		<section
+			aria-labelledby="legend-heading"
+			className="w-full divide-y-2 overflow-hidden divide-border rounded-xl md:self-start shadow-xl"
+		>
 			{/*Legend title*/}
-			<h2 id="legend-heading" className="text-2xl rounded-t-xl w-full py-4 text-center font-semibold bg-metroBlue">
+			<h2 id="legend-heading" className="text-2xl rounded-t-xl w-full py-4 text-white text-center font-semibold bg-metroBlue">
 				{t('pages.home.legendTitle')}
 			</h2>
 
-			<ul className="w-full flex flex-col md:flex-row md:divide-x-2 md:divide-muted divide-solid">
+			{/*Line Sections*/}
+			<ul className="w-full flex flex-col md:flex-row md:divide-x-2 md:divide-border divide-solid">
 				{lineIds.map((id) => (
 					<li key={id} className="md:flex-1">
 						<Link
@@ -38,7 +42,7 @@ export function MapLegend({
 							onFocus={() => onActivate(id)}
 							onBlur={onDeactivate}
 							className={cn(
-								'flex-1 p-4 group flex items-center gap-3 motion-safe:transition-all bg-muted-md/70',
+								'flex-1 p-4 group flex items-center gap-3 motion-safe:transition-all bg-transparent dark:bg-muted-md/70',
 								hoverLineColors[id],
 								isMuted(id) && 'opacity-25',
 								focusRing,

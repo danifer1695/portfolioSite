@@ -7,6 +7,8 @@ import type { NavItem } from '@/content/navigation';
 import { NavLink } from './NavLink';
 import { LocaleSwitcher } from './LocaleSwitcher';
 import { getProfile } from '@/content/profile';
+import { ThemeToggle } from './ThemeToggle';
+import { LinkButton } from '../ui/button';
 
 export function Header({ nav }: { nav: readonly NavItem[] }) {
 	const t = useTranslations();
@@ -14,7 +16,7 @@ export function Header({ nav }: { nav: readonly NavItem[] }) {
 	const profile = getProfile(locale);
 
 	return (
-		<header className="sticky top-0 z-50 text-white bg-metroBlue print:hidden">
+		<header className="sticky top-0 z-50 text-white bg-metroBlue relative print:hidden">
 			<Container
 				className="
 				flex
@@ -51,7 +53,6 @@ export function Header({ nav }: { nav: readonly NavItem[] }) {
 					<ul
 						className="
 						flex
-						flex-wrap
 						items-center
 						gap-x-5
 						gap-y-4
@@ -67,8 +68,16 @@ export function Header({ nav }: { nav: readonly NavItem[] }) {
 					</ul>
 				</nav>
 
-				<LocaleSwitcher />
+				<LinkButton variant="primary" href="/resume" className="hidden md:flex">
+					{t('pages.resume.title')}
+				</LinkButton>
 			</Container>
+
+			{/*Settings: Left-side elemets*/}
+			<div className="hidden md:flex md:flex-row justify-between gap-8 py-3 px-8 absolute right-4 top-1/2 -translate-y-1/2">
+				<ThemeToggle />
+				<LocaleSwitcher />
+			</div>
 		</header>
 	);
 }

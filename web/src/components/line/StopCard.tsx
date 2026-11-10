@@ -7,14 +7,25 @@ import { LinkButton } from '../ui/button';
 
 export function StopCard({ stop, line }: { stop: Stop; line: Line }) {
 	return (
-		<details id={stop.slug} name="stops" className="group relative pb-10 pl-8">
+		<details
+			id={stop.slug}
+			name="stops"
+			className="
+				group
+				relative
+				py-5
+				px-8
+				rounded-xl
+				hover:bg-muted/20
+			"
+		>
 			{/*Non-collapsible stuff*/}
 			<summary className={cn('cursor-pointer list-none [&::-webkit-details-marker]:hidden', focusRing)}>
 				{/*Station circle, same visual language as the map*/}
 				<span
 					aria-hidden="true"
 					className={cn(
-						'absolute -left-[18px] top-1 size-7 rounded-full border-transparent border-4 motion-safe:transition-all motion-safe:duration-200',
+						'absolute -left-[18px] top-5 size-7 rounded-full border-transparent border-4 motion-safe:transition-all motion-safe:duration-200',
 						'scale-75',
 						line.bgClass,
 						`
@@ -55,7 +66,7 @@ export function StopCard({ stop, line }: { stop: Stop; line: Line }) {
 				{/*Summary*/}
 				<div className="flex flex-col gap-2">
 					{stop.summary.map((par) => (
-						<p key={par} className="text-justify">
+						<p key={par} className="">
 							{par}
 						</p>
 					))}

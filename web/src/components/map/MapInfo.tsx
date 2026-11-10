@@ -10,7 +10,7 @@ export function MapInfo({ info }: { info?: MapStopInfo }) {
 	const linkHref = `/${info?.line}#${info?.slug}`;
 
 	return (
-		<div className="hidden md:flex w-full max-w-100 flex-col gap-3 rounded-xl border-2 border-muted p-6">
+		<div className="hidden md:flex w-full max-w-100 flex-col gap-3 rounded-xl border-2 border-border p-6">
 			{info ? (
 				<>
 					<div className="flex flex-row gap-4 my-3">
@@ -39,7 +39,7 @@ export function MapInfo({ info }: { info?: MapStopInfo }) {
 			) : (
 				<div className="flex flex-row h-full w-full items-center justify-self-center">
 					<div className="shrink-0 flex flex-col w-full items-center justify-self-center gap-4">
-						<Info size={80} color="var(--muted)" />
+						<Info size={80} color="var(--border)" />
 						<p className="m-auto text-center text-muted">{t('mapHint')}</p>
 					</div>
 				</div>
