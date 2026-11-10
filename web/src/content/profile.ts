@@ -65,6 +65,7 @@ const profile = {
 	email: 'danifer1695@gmail.com',
 	phone: '+33 7 80 97 67 79',
 	social: [
+		{ label: 'Portfolio', href: 'https://danifer.dev' },
 		{ label: 'GitHub', href: 'https://github.com/danifer1695' },
 		{ label: 'LinkedIn', href: 'https://linkedin.com/in/danifer1695' },
 	],
