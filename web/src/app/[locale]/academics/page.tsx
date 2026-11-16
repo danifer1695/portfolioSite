@@ -5,11 +5,15 @@ import { getAcademic } from '@/content/academic';
 import { formatPeriod } from '@/lib/format';
 import { getTranslations } from 'next-intl/server';
 import { initLocale } from '@/i18n/locale';
+import { alternatesFor } from '@/i18n/metadata';
 
 export async function generateMetadata({ params }: PageProps<'/[locale]/academics'>): Promise<Metadata> {
 	const locale = await initLocale(params);
 	const t = await getTranslations({ locale, namespace: 'pages.academics' });
-	return { title: t('title') };
+	return {
+		title: t('title'),
+		alternates: alternatesFor('/academics', locale),
+	};
 }
 
 export default async function AcademicsPage({ params }: PageProps<'/[locale]/academics'>) {

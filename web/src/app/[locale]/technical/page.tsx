@@ -4,11 +4,15 @@ import { lines } from '@/content/lines';
 import { getProjects } from '@/content/projects';
 import { getTranslations } from 'next-intl/server';
 import { initLocale } from '@/i18n/locale';
+import { alternatesFor } from '@/i18n/metadata';
 
 export async function generateMetadata({ params }: PageProps<'/[locale]/technical'>): Promise<Metadata> {
 	const locale = await initLocale(params);
 	const t = await getTranslations({ locale, namespace: 'pages.technical' });
-	return { title: t('title') };
+	return {
+		title: t('title'),
+		alternates: alternatesFor('/technical', locale),
+	};
 }
 
 export default async function TechnicalPage({ params }: PageProps<'/[locale]/technical'>) {

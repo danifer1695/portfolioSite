@@ -6,11 +6,15 @@ import { initLocale } from '@/i18n/locale';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import MessageBox from '@/components/ui/MessageBox';
+import { alternatesFor } from '@/i18n/metadata';
 
 export async function generateMetadata({ params }: PageProps<'/[locale]/resume'>): Promise<Metadata> {
 	const locale = await initLocale(params);
 	const t = await getTranslations({ locale, namespace: 'pages.professional' });
-	return { title: t('title') };
+	return {
+		title: t('title'),
+		alternates: alternatesFor('/resume', locale),
+	};
 }
 
 export default async function ResumePage({ params }: PageProps<'/[locale]/resume'>) {
