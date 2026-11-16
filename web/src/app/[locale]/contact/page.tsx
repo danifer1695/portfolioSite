@@ -6,11 +6,15 @@ import { initLocale } from '@/i18n/locale';
 import { getProfile } from '@/content/profile';
 import MessageBox from '@/components/ui/MessageBox';
 import { Suspense } from 'react';
+import { alternatesFor } from '@/i18n/metadata';
 
 export async function generateMetadata({ params }: PageProps<'/[locale]/contact'>): Promise<Metadata> {
 	const locale = await initLocale(params);
 	const t = await getTranslations({ locale, namespace: 'pages.contact' });
-	return { title: t('title') };
+	return {
+		title: t('title'),
+		alternates: alternatesFor('/contact', locale),
+	};
 }
 
 export default async function ContactPage({ params }: PageProps<'/[locale]/contact'>) {

@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Pr
 	return {
 		metadataBase: new URL(profile.siteURL),
 		title: {
-			default: `[Portfolio - ${profile.name}]`,
-			template: '[DFM] - %s',
+			default: `${profile.name}`,
+			template: 'DFM - %s',
 		},
 		description: profile.description,
 	};
